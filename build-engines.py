@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build SerpApi engine parameter data for MCP usage."""
+"""Build SerpApi engine parameter schemas from the playground."""
 
 from __future__ import annotations
 

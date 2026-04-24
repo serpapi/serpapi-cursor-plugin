@@ -3,8 +3,9 @@
 A [Cursor plugin](https://cursor.com/docs/plugins) that gives Cursor Agent the ability to search Google, Amazon, Walmart, YouTube, Google Maps, Google Scholar, and [100+ other engines](https://serpapi.com/search-engine-apis) via the [SerpApi](https://serpapi.com) REST API.
 
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Engines](https://img.shields.io/badge/engines-107-blue.svg)](engines/)
-[![CI](https://github.com/serpapi/serpapi-cursor-plugin/actions/workflows/update-engines.yml/badge.svg)](https://github.com/serpapi/serpapi-cursor-plugin/actions/workflows/update-engines.yml)
+[![Engines](https://img.shields.io/badge/engines-112-blue.svg)](engines/)
+[![Validate](https://github.com/serpapi/serpapi-cursor-plugin/actions/workflows/validate.yml/badge.svg)](https://github.com/serpapi/serpapi-cursor-plugin/actions/workflows/validate.yml)
+[![Update Engines](https://github.com/serpapi/serpapi-cursor-plugin/actions/workflows/update-engines.yml/badge.svg)](https://github.com/serpapi/serpapi-cursor-plugin/actions/workflows/update-engines.yml)
 
 ## Quick Start
 
