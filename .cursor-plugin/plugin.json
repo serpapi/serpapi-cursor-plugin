@@ -1,0 +1,12 @@
+{
+  "name": "serpapi",
+  "description": "Search Google, Amazon, Walmart, YouTube, and 50+ engines via SerpApi",
+  "version": "1.0.0",
+  "author": {
+    "name": "SerpApi"
+  },
+  "homepage": "https://serpapi.com",
+  "repository": "https://github.com/serpapi/serpapi-cursor-plugin",
+  "license": "MIT",
+  "keywords": ["search", "google", "amazon", "walmart", "serp", "seo", "scraping"]
+}
