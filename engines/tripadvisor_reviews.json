@@ -93,7 +93,7 @@
         "vi",
         "zh"
       ],
-      "description": "Parameter defines the language to use for the Tripadvisor reviews. Head to Tripadvisor reviews languages for a full list of supported Tripadvisor Reviews languages. If translate is enabled, reviews will be translated to the selected language.",
+      "description": "Parameter defines the language to use for the Tripadvisor reviews. Head to Tripadvisor reviews languages for a full list of supported Tripadvisor Reviews languages.",
       "group": "localization"
     },
     "sort_by": {
@@ -102,12 +102,7 @@
         "most_recent",
         "detailed_review"
       ],
-      "description": "Parameter defines the sorting order of the results. Available options: `most_recent` - Most Recent (Default) `detailed_review` - Detailed Review",
-      "group": "advanced_parameters"
-    },
-    "translate": {
-      "type": "checkbox",
-      "description": "Parameter defines whether to translate reviews to the choosen language. It can be set to `true` to translate reviews, or `false` to return reviews in their original language. By default, reviews are returned in their original language.",
+      "description": "Parameter defines the sorting order of the results. Available options: `most_recent` - Most Recent (Default) `detailed_review` - Detailed Reviews",
       "group": "advanced_parameters"
     },
     "rating": {
@@ -127,10 +122,6 @@
         "Solo"
       ],
       "description": "Parameter defines to include only results from a specific types of visit. Available options: `Business` - Business `Couples` - Couples `Family` - Family `Friends` - Friends `Solo` - Solo To include multiple types of visit, separate values with a comma `,` (e.g. `Business,Couples` to include reviews from 'Business' and 'Couples' types of visit).",
-      "group": "advanced_filters"
-    },
-    "original_language": {
-      "description": "Parameter defines the original languages of the reviews to include. It can be set to a single language (e.g. `en` for English) or multiple languages separated by comma (e.g. `en,fr,es` to include reviews in English, French, and Spanish). Head to Tripadvisor reviews languages for a full list of supported Tripadvisor Reviews languages.",
       "group": "advanced_filters"
     },
     "offset": {

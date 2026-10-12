@@ -153,6 +153,8 @@
         "featured",
         "priced",
         "pricea",
+        "paymentd",
+        "paymenta",
         "days",
         "beds",
         "baths",
@@ -160,7 +162,7 @@
         "lot",
         "priorityscore"
       ],
-      "description": "Parameter defines the sorting order of the results. It defaults to `globalrelevanceex` (Homes for You). Available options: `globalrelevanceex` - Homes for You `featured` - Verified Source `priced` - Price (high to low) `pricea` - Price (low to high) `days` - Newest `beds` - Bedrooms `baths` - Bathrooms `size` - Square Feet `lot` - Lot Size `priorityscore` - Recommended `featured` (Verified Source) and `priorityscore` (Recommended) are only available when `status_type` is `rent`.",
+      "description": "Parameter defines the sorting order of the results. It defaults to `globalrelevanceex` (Homes for You). Available options: `globalrelevanceex` - Homes for You `featured` - Verified Source `priced` - Price (high to low) `pricea` - Price (low to high) `paymentd` - Payment (high to low) `paymenta` - Payment (low to high) `days` - Newest `beds` - Bedrooms `baths` - Bathrooms `size` - Square Feet `lot` - Lot Size `priorityscore` - Recommended `featured` (Verified Source) and `priorityscore` (Recommended) are only available when `status_type` is `rent`. When `status_type` is `rent`, use `paymenta` or `paymentd` instead of `pricea` or `priced`.",
       "group": "sorting"
     },
     "page": {

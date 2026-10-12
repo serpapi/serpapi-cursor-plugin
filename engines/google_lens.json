@@ -825,15 +825,14 @@
       "type": "select",
       "options": [
         "all",
-        "products",
         "exact_matches",
         "visual_matches"
       ],
-      "description": "Parameter defines the type of search to perform. By default, the search type is `all`. Available options: `all` - All `products` - Products `exact_matches` - Exact Matches `visual_matches` - Visual Matches.",
+      "description": "Parameter defines the type of search to perform. By default, the search type is `all`. Available options: `all` - All `exact_matches` - Exact Matches `visual_matches` - Visual Matches.",
       "group": "search_type"
     },
     "q": {
-      "description": "Parameter defines the search query to use along in the Google Lens search. It is only applicable when type is set to `all`, `visual_matches`, or `products`.",
+      "description": "Parameter defines the search query to use along in the Google Lens search. It is only applicable when type is set to `all` or `visual_matches`.",
       "group": "advanced_parameters"
     },
     "safe": {

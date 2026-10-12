@@ -1,0 +1,348 @@
+{
+  "engine": "airbnb",
+  "params": {
+    "q": {
+      "description": "Parameter defines the destination to search for. You can use anything that you would use in a regular Airbnb search: a city, a region, a neighborhood, an address, or a landmark (e.g., `Austin, TX`, `Lake Tahoe`, or `Paris, France`). Either q or map\\_bounds should be set.",
+      "group": "search_query"
+    },
+    "map_bounds": {
+      "description": "Parameter defines the GPS coordinates of the map area to search in, like moving the map on Airbnb. Only places within these bounds are shown. Its value must be 4 comma-separated numbers matching the following format: `north` + `,` + `east` + `,` + `south` + `,` + `west` `north` and `south` are latitudes, and `east` and `west` are longitudes (e.g., `30.30,-97.70,30.24,-97.78` for Downtown Austin, TX). Either q or map\\_bounds should be set.",
+      "group": "geographic_location"
+    },
+    "airbnb_domain": {
+      "type": "select",
+      "options": [
+        "airbnb.com",
+        "sq.airbnb.com",
+        "ar.airbnb.com",
+        "hy.airbnb.com",
+        "az.airbnb.com",
+        "bs.airbnb.com",
+        "bg.airbnb.com",
+        "airbnb.cn",
+        "zh.airbnb.com",
+        "airbnb.com.hk",
+        "airbnb.com.tw",
+        "zh-t.airbnb.com",
+        "hr.airbnb.com",
+        "airbnb.cz",
+        "cs.airbnb.com",
+        "airbnb.dk",
+        "da.airbnb.com",
+        "airbnb.be",
+        "airbnb.nl",
+        "nl.airbnb.com",
+        "airbnb.com.au",
+        "airbnb.ca",
+        "airbnb.gy",
+        "airbnb.co.in",
+        "airbnb.ie",
+        "airbnb.com.mt",
+        "airbnb.co.nz",
+        "airbnb.com.sg",
+        "airbnb.co.za",
+        "airbnb.ae",
+        "airbnb.co.uk",
+        "airbnb.com.ee",
+        "et.airbnb.com",
+        "airbnb.fi",
+        "fi.airbnb.com",
+        "fr.airbnb.be",
+        "fr.airbnb.ca",
+        "airbnb.fr",
+        "airbnb.lu",
+        "fr.airbnb.ch",
+        "fr.airbnb.com",
+        "ka.airbnb.com",
+        "airbnb.at",
+        "airbnb.de",
+        "airbnb.ch",
+        "de.airbnb.com",
+        "airbnb.gr",
+        "el.airbnb.com",
+        "he.airbnb.com",
+        "hi.airbnb.com",
+        "airbnb.hu",
+        "hu.airbnb.com",
+        "airbnb.is",
+        "is.airbnb.com",
+        "airbnb.co.id",
+        "id.airbnb.com",
+        "ga.airbnb.com",
+        "airbnb.it",
+        "it.airbnb.ch",
+        "it.airbnb.com",
+        "airbnb.jp",
+        "ja.airbnb.com",
+        "kn.airbnb.com",
+        "airbnb.co.kr",
+        "ko.airbnb.com",
+        "lv.airbnb.com",
+        "lt.airbnb.com",
+        "mk.airbnb.com",
+        "airbnb.com.my",
+        "ms.airbnb.com",
+        "mt.airbnb.com",
+        "airbnb.no",
+        "no.airbnb.com",
+        "airbnb.pl",
+        "pl.airbnb.com",
+        "airbnb.com.br",
+        "airbnb.pt",
+        "pt.airbnb.com",
+        "ro.airbnb.com",
+        "airbnb.ru",
+        "ru.airbnb.com",
+        "sr.airbnb.com",
+        "sk.airbnb.com",
+        "sl.airbnb.com",
+        "airbnb.com.ar",
+        "airbnb.com.bz",
+        "airbnb.com.bo",
+        "airbnb.cl",
+        "airbnb.com.co",
+        "airbnb.co.cr",
+        "airbnb.com.ec",
+        "airbnb.com.sv",
+        "airbnb.com.gt",
+        "airbnb.com.hn",
+        "airbnb.mx",
+        "airbnb.com.ni",
+        "airbnb.com.pa",
+        "airbnb.com.py",
+        "airbnb.com.pe",
+        "airbnb.es",
+        "es.airbnb.com",
+        "airbnb.co.ve",
+        "es-l.airbnb.com",
+        "sw.airbnb.com",
+        "airbnb.se",
+        "sv.airbnb.com",
+        "airbnb.com.ph",
+        "tl.airbnb.com",
+        "th.airbnb.com",
+        "airbnb.com.tr",
+        "tr.airbnb.com",
+        "uk.airbnb.com",
+        "vi.airbnb.com",
+        "airbnb.com.vn",
+        "xh.airbnb.com",
+        "zu.airbnb.com"
+      ],
+      "description": "Parameter defines the Airbnb domain to use. The domain sets the language, the region, and the default currency of the results (e.g., `airbnb.co.uk` for English (United Kingdom) in GBP, or `fr.airbnb.ca` for French (Canada) in CAD). It defaults to `airbnb.com`. Head to the Airbnb domains page for a full list of supported Airbnb domains.",
+      "group": "localization"
+    },
+    "currency": {
+      "type": "select",
+      "options": [
+        "AED",
+        "ARS",
+        "AUD",
+        "AWG",
+        "BAM",
+        "BBD",
+        "BGN",
+        "BHD",
+        "BND",
+        "BRL",
+        "BTN",
+        "BZD",
+        "CAD",
+        "CHF",
+        "CLP",
+        "CNY",
+        "COP",
+        "CRC",
+        "CZK",
+        "DKK",
+        "EGP",
+        "EUR",
+        "FJD",
+        "GBP",
+        "GHS",
+        "GTQ",
+        "GYD",
+        "HKD",
+        "HNL",
+        "HRK",
+        "HUF",
+        "IDR",
+        "ILS",
+        "INR",
+        "JMD",
+        "JOD",
+        "JPY",
+        "KES",
+        "KRW",
+        "KZT",
+        "LAK",
+        "LKR",
+        "MAD",
+        "MOP",
+        "MXN",
+        "MYR",
+        "NOK",
+        "NZD",
+        "OMR",
+        "PEN",
+        "PGK",
+        "PHP",
+        "PLN",
+        "QAR",
+        "RON",
+        "RUB",
+        "SAR",
+        "SEK",
+        "SGD",
+        "THB",
+        "TRY",
+        "TTD",
+        "TWD",
+        "UAH",
+        "UGX",
+        "USD",
+        "UYU",
+        "VND",
+        "ZAR"
+      ],
+      "description": "Parameter defines the currency of the returned prices. It defaults to the currency of the Airbnb domain (e.g., `USD` for `airbnb.com`, or `EUR` for `airbnb.fr`). Head to the Airbnb currencies page for a full list of supported currency codes.",
+      "group": "localization"
+    },
+    "check_in_date": {
+      "description": "Parameter defines the check-in date. The format is **YYYY-MM-DD** (e.g., `2026-11-09`). It must be used together with check\\_out\\_date. When dates aren't set, Airbnb suggests dates for each place (usually a 5-night stay), and returns prices for these dates. They are available in `check_in_date` and `check_out_date` of each result.",
+      "group": "dates_and_guests"
+    },
+    "check_out_date": {
+      "description": "Parameter defines the check-out date. The format is **YYYY-MM-DD** (e.g., `2026-11-13`). It must be used together with check\\_in\\_date, and be later than it.",
+      "group": "dates_and_guests"
+    },
+    "adults": {
+      "type": "number",
+      "description": "Parameter defines the number of adults (ages 13 or above).",
+      "group": "dates_and_guests"
+    },
+    "children": {
+      "type": "number",
+      "description": "Parameter defines the number of children (ages 2 to 12).",
+      "group": "dates_and_guests"
+    },
+    "infants": {
+      "type": "number",
+      "description": "Parameter defines the number of infants (under 2).",
+      "group": "dates_and_guests"
+    },
+    "pets": {
+      "type": "number",
+      "description": "Parameter defines the number of pets. When set, only places allowing pets are shown.",
+      "group": "dates_and_guests"
+    },
+    "room_type": {
+      "type": "select",
+      "options": [
+        "entire_home",
+        "private_room"
+      ],
+      "description": "Parameter defines the type of place to show. It defaults to any type. Available options: `entire_home` - Entire home `private_room` - Private room To only show hotels, use `hotel` in property\\_types.",
+      "group": "advanced_filters"
+    },
+    "min_price": {
+      "type": "number",
+      "description": "Parameter defines the minimum trip price, including all fees, like Airbnb's price range filter (e.g., `500`). It's in the currency of the results. When dates aren't set, it applies to a 5-night stay.",
+      "group": "advanced_filters"
+    },
+    "max_price": {
+      "type": "number",
+      "description": "Parameter defines the maximum trip price, including all fees, like Airbnb's price range filter (e.g., `2000`). It's in the currency of the results. When dates aren't set, it applies to a 5-night stay.",
+      "group": "advanced_filters"
+    },
+    "bedrooms": {
+      "type": "number",
+      "description": "Parameter defines the minimum number of bedrooms.",
+      "group": "advanced_filters"
+    },
+    "beds": {
+      "type": "number",
+      "description": "Parameter defines the minimum number of beds.",
+      "group": "advanced_filters"
+    },
+    "bathrooms": {
+      "type": "number",
+      "description": "Parameter defines the minimum number of bathrooms.",
+      "group": "advanced_filters"
+    },
+    "property_types": {
+      "description": "Parameter defines the property types to show. It's a comma-separated list of options (e.g., `house,guesthouse`). Available options: `house` - House `apartment` - Apartment `guesthouse` - Guesthouse `hotel` - Hotel",
+      "group": "advanced_filters"
+    },
+    "amenities": {
+      "description": "Parameter defines the amenities the places must have. It's a comma-separated list of options (e.g., `wifi,pool,free_parking`). Head to the Airbnb amenities page for a full list of supported amenities.",
+      "group": "advanced_filters"
+    },
+    "accessibility_features": {
+      "description": "Parameter defines the accessibility features the places must have. It's a comma-separated list of options (e.g., `step_free_access,step_free_shower`). Head to the Airbnb accessibility features page for a full list of supported accessibility features.",
+      "group": "advanced_filters"
+    },
+    "host_languages": {
+      "description": "Parameter defines the languages the host must speak. It's a comma-separated list of language codes (e.g., `en,es`). Head to the Airbnb host languages page for a full list of supported languages.",
+      "group": "advanced_filters"
+    },
+    "instant_book": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to only show places that can be booked without waiting for the host's approval. It can be set to `true` or `false` (default).",
+      "group": "booking_options"
+    },
+    "self_check_in": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to only show places with self check-in. It can be set to `true` or `false` (default).",
+      "group": "booking_options"
+    },
+    "guest_favorite": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to only show Guest favorites, the most loved homes on Airbnb according to guests. It can be set to `true` or `false` (default).",
+      "group": "booking_options"
+    },
+    "luxe": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to only show Airbnb Luxe places, luxury homes with elevated design. It can be set to `true` or `false` (default).",
+      "group": "booking_options"
+    },
+    "page": {
+      "type": "number",
+      "description": "Value is used to get results on a specific page. (e.g., `1` (default) is the first page of results, `2` is the 2nd page of results, `3` is the 3rd page of results, etc.). Airbnb returns up to 18 results per page, and up to 15 pages.",
+      "group": "pagination"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `airbnb` to use the Airbnb API engine.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the Airbnb results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}
