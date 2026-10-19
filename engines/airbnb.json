@@ -209,11 +209,11 @@
       "group": "localization"
     },
     "check_in_date": {
-      "description": "Parameter defines the check-in date. The format is **YYYY-MM-DD** (e.g., `2026-11-09`). It must be used together with check\\_out\\_date. When dates aren't set, Airbnb suggests dates for each place (usually a 5-night stay), and returns prices for these dates. They are available in `check_in_date` and `check_out_date` of each result.",
+      "description": "Parameter defines the check-in date. The format is **YYYY-MM-DD** (e.g., `2026-11-19`). It must be used together with check\\_out\\_date. When dates aren't set, Airbnb suggests dates for each place (usually a 5-night stay), and returns prices for these dates. They are available in `check_in_date` and `check_out_date` of each result.",
       "group": "dates_and_guests"
     },
     "check_out_date": {
-      "description": "Parameter defines the check-out date. The format is **YYYY-MM-DD** (e.g., `2026-11-13`). It must be used together with check\\_in\\_date, and be later than it.",
+      "description": "Parameter defines the check-out date. The format is **YYYY-MM-DD** (e.g., `2026-11-23`). It must be used together with check\\_in\\_date, and be later than it.",
       "group": "dates_and_guests"
     },
     "adults": {

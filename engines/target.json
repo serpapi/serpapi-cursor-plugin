@@ -1,0 +1,98 @@
+{
+  "engine": "target",
+  "params": {
+    "q": {
+      "required": true,
+      "description": "Parameter defines the query you want to search. You can use anything that you would use in a regular Target search (e.g., `coffee`, `65 inch tv`, or `lego star wars`).",
+      "group": "search_query"
+    },
+    "store_id": {
+      "description": "Parameter defines the Target store to get prices and availability for, like the store selected on Target (e.g., `1375` for Mpls Nicollet Mall, MN). The store ID is the number at the end of the store's page URL on Target (e.g., `https://www.target.com/sl/mpls-nicollet-mall/1375`). It defaults to `1771` (Cedar Rapids South, IA), the store Target uses when it can't locate the visitor.",
+      "group": "localization"
+    },
+    "delivery_zip": {
+      "description": "Parameter defines the US ZIP code to deliver to (e.g., `10001`). It's used for the shipping dates and the same day delivery availability. It defaults to the location of the store.",
+      "group": "localization"
+    },
+    "sort": {
+      "type": "select",
+      "options": [
+        "relevance",
+        "featured",
+        "price_low",
+        "price_high",
+        "rating_high",
+        "best_seller",
+        "newest"
+      ],
+      "description": "Parameter defines the sorting of the results. It defaults to `relevance`. Available options: `relevance` - Relevance `featured` - Featured `price_low` - Price: low to high `price_high` - Price: high to low `rating_high` - Guest rating `best_seller` - Bestselling `newest` - Newest Target only shows sponsored products when results are sorted by `relevance`.",
+      "group": "advanced_filters"
+    },
+    "facet": {
+      "description": "Parameter defines the filters to apply, like Target's filters (e.g., deals, brands, sizes, colors, or guest ratings). It's a comma-separated list of filter IDs (e.g., `5tdv0,4yagy` for Sale and Dark Roast). Filter IDs are available in `filters[].options[].id` of the results when include\\_filters is set to `true`. Like on Target, a search without filters can be filtered automatically by Target (e.g., Brand: LEGO for `lego`), as shown in `applied_filters`. Setting facet replaces these filters with yours.",
+      "group": "advanced_filters"
+    },
+    "category_id": {
+      "description": "Parameter defines the category to search in (e.g., `hz89j` for Kitchen & Dining). Category IDs are available in the `Category` filter of the results when include\\_filters is set to `true`.",
+      "group": "advanced_filters"
+    },
+    "min_price": {
+      "type": "number",
+      "description": "Parameter defines the minimum price of the products, in US dollars (e.g., `10`).",
+      "group": "advanced_filters"
+    },
+    "max_price": {
+      "type": "number",
+      "description": "Parameter defines the maximum price of the products, in US dollars (e.g., `50`).",
+      "group": "advanced_filters"
+    },
+    "spelling": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to fix the spelling of misspelled queries, like Target. It can be set to `true` (default) to search for the spelling fix (e.g., `coffee` for `cofee`), as shown in `search_information.spelling_fix`, or `false` to search for the query as typed, like Target's Search instead for link.",
+      "group": "advanced_filters"
+    },
+    "page": {
+      "type": "number",
+      "description": "Value is used to get results on a specific page. (e.g., `1` (default) is the first page of results, `2` is the 2nd page of results, `3` is the 3rd page of results, etc.). Target returns up to 24 results per page, plus sponsored products, and up to 50 pages.",
+      "group": "pagination"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `target` to use the Target API engine.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the Target results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    },
+    "include_filters": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to include the `filters` of the search in the JSON response, with the IDs to use in facet and category\\_id. It can be set to `true` or `false` (default).",
+      "group": "serpapi_parameters"
+    }
+  }
+}
