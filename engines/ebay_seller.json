@@ -48,15 +48,15 @@
       "type": "select",
       "options": [
         [
-          24,
+          "24",
           "24 - Items Per Page"
         ],
         [
-          48,
+          "48",
           "48 - Items Per Page"
         ],
         [
-          72,
+          "72",
           "72 - Items Per Page"
         ]
       ],

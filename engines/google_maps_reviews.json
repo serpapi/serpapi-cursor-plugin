@@ -680,7 +680,7 @@
       "group": "advanced_google_maps_reviews_parameters"
     },
     "num": {
-      "description": "Parameter defines the maximum number of results to return. It ranges from `1` to `20`. It defaults to `10`. Parameter cannot be used on the initial page when neither next\\_page\\_token, topic\\_id, nor query is set. It always returns `8` results.",
+      "description": "Parameter defines the maximum number of results to return. It ranges from `1` to `20`. It defaults to `10`.",
       "group": "pagination"
     },
     "next_page_token": {

@@ -1,0 +1,106 @@
+{
+  "engine": "naver_maps",
+  "params": {
+    "query": {
+      "required": true,
+      "description": "Parameter defines the query you want to search. You can use anything that you would use in a regular Naver Maps search.",
+      "group": "search_query"
+    },
+    "center": {
+      "description": "Parameter defines the coordinates of the point in South Korea to search around, as `latitude,longitude` (e.g. `35.1796,129.0756` for Busan). The `distance` of each result is measured from this point. Naver Maps searches around Seoul City Hall when it's not set.",
+      "group": "geographic_location"
+    },
+    "sort_by": {
+      "type": "select",
+      "options": [
+        "distance"
+      ],
+      "description": "Parameter defines the order of the results. By default, results come in the order of the Naver Maps list. Options: `distance` - Distance Lists of franchise branches, such as 스타벅스, are already sorted by distance, and mart lists keep their own order.",
+      "group": "advanced_filters"
+    },
+    "open_state": {
+      "type": "select",
+      "options": [
+        "now"
+      ],
+      "description": "Parameter defines the open state of the places. Options: `now` - Open now It applies to restaurants and cafes, hospitals, pharmacies, animal hospitals, gyms and other leisure places, and attractions such as parks. The other lists ignore it.",
+      "group": "advanced_filters"
+    },
+    "bookable": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to only show places that can be booked on Naver. It can be set to `true` or `false` (default). Pharmacies, convenience stores, movie theaters, gas stations, franchise lists, and accommodations ignore it. Mart lists return no places with it.",
+      "group": "advanced_filters"
+    },
+    "coupon": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to only show places with a coupon. It can be set to `true` or `false` (default). Hospitals, pharmacies, animal hospitals, convenience stores, movie theaters, gas stations, and franchise lists ignore it.",
+      "group": "advanced_filters"
+    },
+    "naver_pay": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to only show places that accept Naver Pay. It can be set to `true` or `false` (default). It applies to restaurants and cafes, hair and nail salons, and place lists such as banks, hotels, and motels. Mart lists return no places with it, and the other lists ignore it.",
+      "group": "advanced_filters"
+    },
+    "wheelchair_accessible": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to only show places with a wheelchair accessible entrance. It can be set to `true` or `false` (default). Convenience stores, movie theaters, gas stations, and franchise lists ignore it.",
+      "group": "advanced_filters"
+    },
+    "check_in_date": {
+      "description": "Parameter defines the check-in date. The format is **YYYY-MM-DD** (e.g., `2026-11-26`). It must be used together with check\\_out\\_date. Dates apply to accommodation lists, such as 펜션, 캠핑장, and 글램핑. With dates, Naver Maps only returns the places available for the stay, and `price` is the average nightly price.",
+      "group": "dates_and_guests"
+    },
+    "check_out_date": {
+      "description": "Parameter defines the check-out date. The format is **YYYY-MM-DD** (e.g., `2026-11-28`). It must be used together with check\\_in\\_date, and be later than it.",
+      "group": "dates_and_guests"
+    },
+    "adults": {
+      "type": "number",
+      "description": "Parameter defines the number of adults. It's used together with check\\_in\\_date and check\\_out\\_date, and ignored without them. adults and children can add up to 15 guests, the most Naver Maps allows.",
+      "group": "dates_and_guests"
+    },
+    "children": {
+      "type": "number",
+      "description": "Parameter defines the number of children. It's used together with check\\_in\\_date and check\\_out\\_date, and ignored without them. Naver Maps has a single guest count, so children are added to adults: `adults=2` and `children=1` search for 3 guests, like `adults=3`. adults and children can add up to 15 guests, the most Naver Maps allows.",
+      "group": "dates_and_guests"
+    },
+    "page": {
+      "type": "number",
+      "description": "Value is used to get results on a specific page. (e.g., `1` (default) is the first page of results, `2` is the 2nd page of results, `3` is the 3rd page of results, etc.). Naver Maps returns up to 70 results per page, and up to 300 results (5 pages).",
+      "group": "pagination"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `naver_maps` to use the Naver Maps API engine.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the Naver Maps results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "engine": "flightradar24",
+  "params": {
+    "airport": {
+      "description": "Parameter defines the airport that flights depart from or arrive at, as a 3-letter IATA airport code (e.g., `LHR` for London Heathrow). You can search for it on Flightradar24 or IATA. Multiple airports can be separated by commas (e.g., `LHR,LGW`).",
+      "group": "search_query"
+    },
+    "map_bounds": {
+      "description": "Parameter defines the GPS coordinates of the map area to search in, like moving the map on Flightradar24. Only flights within these bounds are returned. Its value must be 4 comma-separated numbers matching the following format: `north` + `,` + `east` + `,` + `south` + `,` + `west` `north` and `south` are latitudes, and `east` and `west` are longitudes (e.g., `51.69,0.33,51.28,-0.51` for London). An area crossing the antimeridian has a `west` longitude greater than its `east` longitude (e.g., `60,-170,40,170` around the Aleutian Islands). When not set, flights are searched worldwide. Flightradar24 returns up to `1,500` flights per search, so narrow the map area or add filters to get every flight of a busy area.",
+      "group": "geographic_location"
+    },
+    "flight_number": {
+      "description": "Parameter defines the flight number to search for (e.g., `BA285`). Flights whose number starts with this value are returned, so `BA28` also returns `BA285` and `BA287`. Multiple flight numbers can be separated by commas (e.g., `BA285,BA287`).",
+      "group": "flight_filters"
+    },
+    "callsign": {
+      "description": "Parameter defines the callsign to search for (e.g., `BAW5L`). A callsign can differ from the flight number: `BA285` flies as `BAW5L`. Flights whose callsign starts with this value are returned. Multiple callsigns can be separated by commas (e.g., `BAW5L,BAW28K`).",
+      "group": "flight_filters"
+    },
+    "airline": {
+      "description": "Parameter defines the airline to search for, as a 3-letter ICAO airline code (e.g., `BAW` for British Airways), not its 2-letter IATA code (`BA`). The ICAO code is shown after the IATA code when you search for the airline on Flightradar24. Multiple airlines can be separated by commas (e.g., `BAW,VIR`).",
+      "group": "flight_filters"
+    },
+    "registration": {
+      "description": "Parameter defines the aircraft registration to search for (e.g., `G-XLEK`). Aircraft whose registration starts with this value are returned, so `G-XLE` returns the British Airways Airbus A380s, and `G-` returns every aircraft registered in the United Kingdom. Multiple registrations can be separated by commas (e.g., `G-XLEK,G-XLEH`).",
+      "group": "flight_filters"
+    },
+    "aircraft_type": {
+      "description": "Parameter defines the aircraft type to search for, as an ICAO aircraft type designator (e.g., `A388` for the Airbus A380-800). It's shown in the aircraft details of a flight on Flightradar24. Aircraft whose type starts with this value are returned, so `B77` returns every Boeing 777 variant. Multiple aircraft types can be separated by commas (e.g., `A388,B748`).",
+      "group": "flight_filters"
+    },
+    "departure_id": {
+      "description": "Parameter defines the airport that flights depart from, as a 3-letter IATA airport code (e.g., `LHR` for London Heathrow). You can search for it on Flightradar24 or IATA. Multiple airports can be separated by commas (e.g., `LHR,LGW`).",
+      "group": "airport_filters"
+    },
+    "arrival_id": {
+      "description": "Parameter defines the airport that flights arrive at, as a 3-letter IATA airport code (e.g., `JFK` for New York JFK). You can search for it on Flightradar24 or IATA. Multiple airports can be separated by commas (e.g., `JFK,EWR`).",
+      "group": "airport_filters"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `flightradar24` to use the Flightradar24 API engine.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the Flightradar24 results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}

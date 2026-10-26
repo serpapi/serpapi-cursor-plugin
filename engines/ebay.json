@@ -933,23 +933,19 @@
       "type": "select",
       "options": [
         [
-          50,
-          "50 - Items Per Page"
+          "60",
+          "60 - Items Per Page"
         ],
         [
-          25,
-          "25 - Items Per Page"
+          "120",
+          "120 - Items Per Page"
         ],
         [
-          100,
-          "100 - Items Per Page"
-        ],
-        [
-          200,
-          "200 - Items Per Page"
+          "240",
+          "240 - Items Per Page"
         ]
       ],
-      "description": "Parameter defines the maximum number of results to return. There are total of four options: `25`, `50` (default), `100` and `200` results.",
+      "description": "Parameter defines the maximum number of results to return. There are three options: `60` (default), `120` and `240` results.",
       "group": "pagination"
     },
     "_blrs": {

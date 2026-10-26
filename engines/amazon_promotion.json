@@ -1,0 +1,142 @@
+{
+  "engine": "amazon_promotion",
+  "params": {
+    "promotion_id": {
+      "required": true,
+      "description": "Parameter defines the Amazon promotion ID of the promotion page you want to retrieve. It's the ID in the promotion's `/promotion/psp/[PROMOTION ID]` page URL and `/promotion/details/popup/[PROMOTION ID]` terms URL (e.g., `A1C1U2DDI9B2GB`).",
+      "group": "search_query"
+    },
+    "amazon_domain": {
+      "type": "select",
+      "options": [
+        "amazon.com.au",
+        "amazon.com.be",
+        "amazon.com.br",
+        "amazon.ca",
+        "amazon.eg",
+        "amazon.fr",
+        "amazon.de",
+        "amazon.in",
+        "amazon.it",
+        "amazon.co.jp",
+        "amazon.nl",
+        "amazon.pl",
+        "amazon.sa",
+        "amazon.sg",
+        "amazon.es",
+        "amazon.se",
+        "amazon.com.tr",
+        "amazon.ae",
+        "amazon.co.uk",
+        "amazon.com",
+        "amazon.com.mx"
+      ],
+      "description": "Parameter defines the Amazon domain to use. It defaults to `amazon.com`. Head to Amazon domains for a full list of supported Amazon domains. `amazon.cn` is not supported, as Amazon no longer serves promotion pages there.",
+      "group": "localization"
+    },
+    "language": {
+      "type": "select",
+      "options": [
+        "amazon.com.au|en_AU",
+        "amazon.com.be|nl_BE",
+        "amazon.com.be|fr_BE",
+        "amazon.com.be|en_GB",
+        "amazon.com.br|pt_BR",
+        "amazon.ca|en_CA",
+        "amazon.ca|fr_CA",
+        "amazon.eg|ar_AE",
+        "amazon.eg|en_AE",
+        "amazon.fr|fr_FR",
+        "amazon.fr|en_GB",
+        "amazon.de|de_DE",
+        "amazon.de|en_GB",
+        "amazon.de|cs_CZ",
+        "amazon.de|nl_NL",
+        "amazon.de|pl_PL",
+        "amazon.de|tr_TR",
+        "amazon.de|da_DK",
+        "amazon.in|en_IN",
+        "amazon.in|hi_IN",
+        "amazon.in|ta_IN",
+        "amazon.in|te_IN",
+        "amazon.in|kn_IN",
+        "amazon.in|ml_IN",
+        "amazon.in|bn_IN",
+        "amazon.in|mr_IN",
+        "amazon.it|it_IT",
+        "amazon.it|en_GB",
+        "amazon.co.jp|ja_JP",
+        "amazon.co.jp|en_US",
+        "amazon.co.jp|zh_CN",
+        "amazon.nl|nl_NL",
+        "amazon.nl|en_GB",
+        "amazon.pl|pl_PL",
+        "amazon.sa|ar_AE",
+        "amazon.sa|en_AE",
+        "amazon.sg|en_SG",
+        "amazon.es|es_ES",
+        "amazon.es|pt_PT",
+        "amazon.es|en_GB",
+        "amazon.se|sv_SE",
+        "amazon.se|en_GB",
+        "amazon.com.tr|tr_TR",
+        "amazon.ae|en_AE",
+        "amazon.ae|ar_AE",
+        "amazon.co.uk|en_GB",
+        "amazon.com|en_US",
+        "amazon.com|es_US",
+        "amazon.com.mx|pt_MX"
+      ],
+      "description": "Parameter defines the language to use for the Amazon search. It's a locale name represented as \\_. (e.g., on amazon.com `en_US` for English, `es_US` for Spanish, or on amazon.co.jp `ja_JP` for Japanese). Head to Amazon languages for a full list of supported Amazon languages.",
+      "group": "localization"
+    },
+    "include_products": {
+      "type": "checkbox",
+      "description": "Set to `true` to retrieve items qualifying for the promotion (may result in a longer response time). Set to `false` (default) to only retrieve the promotion details.",
+      "group": "advanced_amazon_promotion_parameters"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `amazon_promotion` to use the Amazon Promotion API engine.",
+      "group": "serpapi_parameters"
+    },
+    "device": {
+      "type": "device",
+      "options": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "description": "Parameter defines the device to use to get the results. It can be set to `desktop` (default) to use a regular browser, `tablet` to use a tablet browser (currently using iPads), or `mobile` to use a mobile browser.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the Amazon Promotion results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}

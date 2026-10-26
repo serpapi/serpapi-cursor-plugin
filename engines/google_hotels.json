@@ -3,7 +3,7 @@
   "params": {
     "q": {
       "required": true,
-      "description": "Parameter defines the search query. You can use anything that you would use in a regular Google Hotels search.",
+      "description": "Parameter defines the search query. You can use anything that you would use in a regular Google Hotels search. Parameter isn't required when using property\\_token, and is ignored if both are set.",
       "group": "search_query"
     },
     "gl": {
@@ -988,12 +988,12 @@
     },
     "check_in_date": {
       "required": true,
-      "description": "Parameter defines the check-in date. The format is **YYYY-MM-DD**. e.g. `2026-10-20`",
+      "description": "Parameter defines the check-in date. The format is **YYYY-MM-DD**. e.g. `2026-10-27`",
       "group": "advanced_parameters"
     },
     "check_out_date": {
       "required": true,
-      "description": "Parameter defines the check-out date. The format is **YYYY-MM-DD**. e.g. `2026-10-21`",
+      "description": "Parameter defines the check-out date. The format is **YYYY-MM-DD**. e.g. `2026-10-28`",
       "group": "advanced_parameters"
     },
     "adults": {
@@ -1109,7 +1109,7 @@
       "group": "pagination"
     },
     "property_token": {
-      "description": "Parameter is used to get property details which consists of name, address, phone, prices, nearby places, and etc. You can find property\\_token from Google Hotels Properties API.",
+      "description": "Parameter is used to get property details which consists of name, address, phone, prices, nearby places, and etc. You can find property\\_token from Google Hotels Properties API. Parameter can be used without q. If both are set, q is ignored.",
       "group": "property_details"
     }
   },

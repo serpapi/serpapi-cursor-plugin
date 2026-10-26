@@ -1,0 +1,389 @@
+{
+  "engine": "booking",
+  "params": {
+    "q": {
+      "required": true,
+      "description": "Parameter defines the destination to search for: a city, a region, a district, a landmark, or an airport (e.g., `Paris`, `Tuscany`, `Manhattan`, or `Eiffel Tower`). Booking.com doesn't return results for most street addresses.",
+      "group": "search_query"
+    },
+    "hl": {
+      "type": "select",
+      "options": [
+        "en-us",
+        "en-gb",
+        "ar",
+        "bg",
+        "ca",
+        "zh-cn",
+        "zh-tw",
+        "hr",
+        "cs",
+        "da",
+        "nl",
+        "et",
+        "fi",
+        "fr",
+        "de",
+        "el",
+        "he",
+        "hi",
+        "hu",
+        "is",
+        "id",
+        "it",
+        "ja",
+        "ko",
+        "lv",
+        "lt",
+        "ms",
+        "no",
+        "pl",
+        "pt-br",
+        "pt-pt",
+        "ro",
+        "ru",
+        "sr",
+        "sk",
+        "sl",
+        "es",
+        "es-ar",
+        "es-mx",
+        "sv",
+        "tl",
+        "th",
+        "tr",
+        "uk",
+        "vi"
+      ],
+      "description": "Parameter defines the language to use for the Booking.com search (e.g., `en-us` (default) for English (US), `fr` for French, or `pt-br` for Portuguese (Brazil)). Head to the Booking.com languages page for a full list of supported languages.",
+      "group": "localization"
+    },
+    "currency": {
+      "type": "select",
+      "options": [
+        "hotel_currency",
+        "AED",
+        "AFN",
+        "ALL",
+        "AMD",
+        "ANG",
+        "AOA",
+        "ARS",
+        "AUD",
+        "AWG",
+        "AZN",
+        "BAM",
+        "BBD",
+        "BDT",
+        "BHD",
+        "BIF",
+        "BMD",
+        "BND",
+        "BOB",
+        "BRL",
+        "BSD",
+        "BTN",
+        "BWP",
+        "BYN",
+        "BZD",
+        "CAD",
+        "CDF",
+        "CHF",
+        "CLP",
+        "CNY",
+        "COP",
+        "CRC",
+        "CUP",
+        "CVE",
+        "CZK",
+        "DJF",
+        "DKK",
+        "DOP",
+        "DZD",
+        "EGP",
+        "ETB",
+        "EUR",
+        "FJD",
+        "GBP",
+        "GEL",
+        "GHS",
+        "GMD",
+        "GNF",
+        "GTQ",
+        "GYD",
+        "HKD",
+        "HNL",
+        "HTG",
+        "HUF",
+        "IDR",
+        "ILS",
+        "INR",
+        "IRR",
+        "ISK",
+        "JMD",
+        "JOD",
+        "JPY",
+        "KES",
+        "KGS",
+        "KHR",
+        "KMF",
+        "KRW",
+        "KWD",
+        "KYD",
+        "KZT",
+        "LAK",
+        "LKR",
+        "LRD",
+        "LSL",
+        "LYD",
+        "MAD",
+        "MDL",
+        "MGA",
+        "MKD",
+        "MMK",
+        "MNT",
+        "MOP",
+        "MRU",
+        "MUR",
+        "MVR",
+        "MWK",
+        "MXN",
+        "MYR",
+        "MZN",
+        "NAD",
+        "NGN",
+        "NIO",
+        "NOK",
+        "NPR",
+        "NZD",
+        "OMR",
+        "PAB",
+        "PEN",
+        "PGK",
+        "PHP",
+        "PKR",
+        "PLN",
+        "PYG",
+        "QAR",
+        "RON",
+        "RSD",
+        "RUB",
+        "RWF",
+        "SAR",
+        "SBD",
+        "SCR",
+        "SDG",
+        "SEK",
+        "SGD",
+        "SOS",
+        "SRD",
+        "SSP",
+        "STN",
+        "SYP",
+        "SZL",
+        "THB",
+        "TJS",
+        "TND",
+        "TOP",
+        "TRY",
+        "TTD",
+        "TWD",
+        "TZS",
+        "UAH",
+        "UGX",
+        "USD",
+        "UYU",
+        "UZS",
+        "VES",
+        "VND",
+        "VUV",
+        "WST",
+        "XAF",
+        "XCD",
+        "XOF",
+        "XPF",
+        "YER",
+        "ZAR",
+        "ZMW"
+      ],
+      "description": "Parameter defines the currency of the returned prices. It defaults to `hotel_currency`, the currency of each property (e.g., `EUR` in Paris), returned in `currency` of each property. Head to the Booking.com currencies page for a full list of supported currency codes.",
+      "group": "localization"
+    },
+    "check_in_date": {
+      "description": "Parameter defines the check-in date. The format is **YYYY-MM-DD** (e.g., `2026-11-26`). It must be used together with check\\_out\\_date. When dates aren't set, Booking.com returns properties without prices.",
+      "group": "dates_and_guests"
+    },
+    "check_out_date": {
+      "description": "Parameter defines the check-out date. The format is **YYYY-MM-DD** (e.g., `2026-11-29`). It must be used together with check\\_in\\_date, and be up to 90 nights later than it.",
+      "group": "dates_and_guests"
+    },
+    "flex_window": {
+      "type": "select",
+      "options": [
+        [
+          "1",
+          "± 1 day"
+        ],
+        [
+          "2",
+          "± 2 days"
+        ],
+        [
+          "3",
+          "± 3 days"
+        ],
+        [
+          "7",
+          "± 7 days"
+        ]
+      ],
+      "description": "Parameter defines how many days the check-in and check-out dates can move, earlier or later, for the best price of each property. Each property then has the dates of its price in `check_in_date` and `check_out_date`. It must be used together with check\\_in\\_date and check\\_out\\_date. Available options: `1` - ± 1 day `2` - ± 2 days `3` - ± 3 days `7` - ± 7 days",
+      "group": "dates_and_guests"
+    },
+    "adults": {
+      "type": "number",
+      "description": "Parameter defines the number of adults, from `1` to `30`. It defaults to `2`.",
+      "group": "dates_and_guests"
+    },
+    "children": {
+      "type": "number",
+      "description": "Parameter defines the number of children, from `0` (default) to `10`. Their ages must be set with children\\_ages.",
+      "group": "dates_and_guests"
+    },
+    "children_ages": {
+      "description": "Parameter defines the age of each child at check-out, from `0` to `17`. It's a comma-separated list of ages (e.g., `5` for one child, or `5,9` for two children). When children isn't set, it's the number of ages.",
+      "group": "dates_and_guests"
+    },
+    "rooms": {
+      "type": "number",
+      "description": "Parameter defines the number of rooms, from `1` (default) to `30`. It can't be greater than the number of adults.",
+      "group": "dates_and_guests"
+    },
+    "sort_by": {
+      "type": "select",
+      "options": [
+        "popularity",
+        "upsort_bh",
+        "price",
+        "price_from_high_to_low",
+        "review_score_and_price",
+        "bayesian_review_score",
+        "class",
+        "class_asc",
+        "class_and_price",
+        "distance_from_search",
+        "closest_beach_distance_v2",
+        "closest_ski_lift_distance"
+      ],
+      "description": "Parameter defines the sorting of the results. It defaults to `popularity` (Our top picks). Available options: `popularity` - Our top picks `upsort_bh` - Homes & apartments first `price` - Price (lowest first) `price_from_high_to_low` - Price (highest first) `review_score_and_price` - Best reviewed & lowest price `bayesian_review_score` - Top reviewed `class` - Property rating (high to low) `class_asc` - Property rating (low to high) `class_and_price` - Property rating and price `distance_from_search` - Distance from downtown `closest_beach_distance_v2` - Distance from closest beach `closest_ski_lift_distance` - Distance to nearest ski lift",
+      "group": "advanced_filters"
+    },
+    "min_price": {
+      "type": "number",
+      "description": "Parameter defines the minimum price per night, in the currency of the results (e.g., `100`). It must be used together with a currency code.",
+      "group": "advanced_filters"
+    },
+    "max_price": {
+      "type": "number",
+      "description": "Parameter defines the maximum price per night, in the currency of the results (e.g., `300`). It must be used together with a currency code.",
+      "group": "advanced_filters"
+    },
+    "hotel_class": {
+      "description": "Parameter defines the property ratings to show: stars for hotels, or Booking.com's own rating for homes and apartments. It's a comma-separated list of ratings from `1` to `5` (e.g., `4,5` for 4 and 5-star properties).",
+      "group": "advanced_filters"
+    },
+    "rating": {
+      "type": "select",
+      "options": [
+        [
+          "9",
+          "Wonderful: 9+"
+        ],
+        [
+          "8",
+          "Very Good: 8+"
+        ],
+        [
+          "7",
+          "Good: 7+"
+        ],
+        [
+          "6",
+          "Pleasant: 6+"
+        ]
+      ],
+      "description": "Parameter defines the minimum review score of the properties. Available options: `9` - Wonderful: 9+ `8` - Very Good: 8+ `7` - Good: 7+ `6` - Pleasant: 6+",
+      "group": "advanced_filters"
+    },
+    "free_cancellation": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to only show properties with free cancellation. It can be set to `true` or `false` (default).",
+      "group": "advanced_filters"
+    },
+    "property_types": {
+      "description": "Parameter defines the property types to show. It's a comma-separated list of property type IDs (e.g., `204` for hotels, or `201,220` for apartments and vacation homes). Head to the Booking.com property types page for a full list of supported property types.",
+      "group": "advanced_filters"
+    },
+    "nflt": {
+      "description": "Parameter defines any other Booking.com filters, like amenities, meals, districts, brands, or distance from the center. It's the value of the `nflt` parameter of Booking.com search URLs: a semicolon-separated list of filters (e.g., `hotelfacility=107;mealplan=1;di=2286`). The filters available for a search, with their values, are in `filters` of the results.",
+      "group": "advanced_filters"
+    },
+    "offset": {
+      "type": "number",
+      "description": "Parameter defines the result offset. It skips the given number of results. It's used for pagination. (e.g., `0` (default) is the first page of results, `25` is the 2nd page of results with the default limit, etc.). It can be up to `1000`: Booking.com returns the same properties for larger offsets, even when it finds more properties.",
+      "group": "pagination"
+    },
+    "limit": {
+      "type": "number",
+      "description": "Parameter defines the maximum number of results to return, from `1` to `100`. It defaults to `25`, like on Booking.com. Booking.com sometimes returns a few more properties: sponsored ones, or the searched property.",
+      "group": "pagination"
+    },
+    "session_token": {
+      "description": "Parameter defines the token that keeps the same Booking.com visitor between searches. Booking.com ranks properties differently for each visitor, so without it, the next pages can repeat properties of the previous ones. It's returned in `serpapi_pagination.session_token`, and the links of `serpapi_pagination` already include it.",
+      "group": "pagination"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `booking` to use the Booking.com API engine.",
+      "group": "serpapi_parameters"
+    },
+    "device": {
+      "type": "device",
+      "options": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "description": "Parameter defines the device to use to get the results. It can be set to `desktop` (default) to use a regular browser, `tablet` to use a tablet browser (currently using iPads), or `mobile` to use a mobile browser.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the Booking.com results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}
