@@ -1,0 +1,153 @@
+{
+  "engine": "facebook_marketplace",
+  "params": {
+    "q": {
+      "description": "Parameter defines the query you want to search. You can use anything that you would use in a regular Facebook Marketplace search (e.g., `iphone`, `honda civic`, or `sectional sofa`). Either q or category should be set. Without q, the listings of the category are returned, like on its Facebook Marketplace page.",
+      "group": "search_query"
+    },
+    "location": {
+      "type": "location",
+      "description": "Parameter defines the location to search around, like the location you set on Facebook Marketplace. If several locations match the location requested, we'll pick the most popular one. Head to the /locations.json API if you need more precise control. It is recommended to specify location at the city level (e.g., `Austin, Texas, United States`). Either location, or lat and lon should be set. They can't be used together.",
+      "group": "geographic_location"
+    },
+    "lat": {
+      "type": "number",
+      "description": "Parameter defines the GPS latitude of the location to search around (e.g., `30.2672`). Parameter is required when using lon parameter, and can't be used together with location.",
+      "group": "geographic_location"
+    },
+    "lon": {
+      "type": "number",
+      "description": "Parameter defines the GPS longitude of the location to search around (e.g., `-97.7431`). Parameter is required when using lat parameter, and can't be used together with location.",
+      "group": "geographic_location"
+    },
+    "radius": {
+      "type": "number",
+      "description": "Parameter defines the radius of the area to search in, in kilometers (e.g., `16` for 10 miles). It defaults to `65` (40 miles), like on Facebook Marketplace.",
+      "group": "geographic_location"
+    },
+    "category": {
+      "type": "select",
+      "options": [
+        "apparel",
+        "classifieds",
+        "electronics",
+        "entertainment",
+        "family",
+        "free",
+        "garden",
+        "hobbies",
+        "home",
+        "home-improvements",
+        "instruments",
+        "office-supplies",
+        "pets",
+        "propertyrentals",
+        "sports",
+        "toys",
+        "vehicles"
+      ],
+      "description": "Parameter defines the category to search in, like the categories of the Facebook Marketplace menu. It's the category name used in the URL of its Facebook Marketplace page (e.g., `electronics` for `https://www.facebook.com/marketplace/nyc/electronics`). Available options: `apparel` - Apparel `classifieds` - Classifieds `electronics` - Electronics `entertainment` - Entertainment `family` - Family `free` - Free Stuff `garden` - Garden & Outdoor `hobbies` - Hobbies `home` - Home Goods `home-improvements` - Home Improvement Supplies `instruments` - Musical Instruments `office-supplies` - Office Supplies `pets` - Pet Supplies `propertyrentals` - Property Rentals `sports` - Sporting Goods `toys` - Toys & Games `vehicles` - Vehicles Home Improvement Supplies (`home-improvements`) and Office Supplies (`office-supplies`) can't be used together with q: Facebook Marketplace doesn't filter a search by these categories.",
+      "group": "advanced_filters"
+    },
+    "min_price": {
+      "type": "number",
+      "description": "Parameter defines the minimum price, in the currency of the listings (e.g., `100`).",
+      "group": "advanced_filters"
+    },
+    "max_price": {
+      "type": "number",
+      "description": "Parameter defines the maximum price, in the currency of the listings (e.g., `500`).",
+      "group": "advanced_filters"
+    },
+    "condition": {
+      "description": "Parameter defines the conditions of the items to show. It's a comma-separated list of options (e.g., `new,used_like_new`). Available options: `new` - New `used_like_new` - Used - Like new `used_good` - Used - Good `used_fair` - Used - Fair",
+      "group": "advanced_filters"
+    },
+    "days_since_listed": {
+      "type": "select",
+      "options": [
+        [
+          "1",
+          "Last 24 hours"
+        ],
+        [
+          "7",
+          "Last 7 days"
+        ],
+        [
+          "30",
+          "Last 30 days"
+        ]
+      ],
+      "description": "Parameter defines how recently the listings were listed. It defaults to any date. Available options: `1` - Last 24 hours `7` - Last 7 days `30` - Last 30 days",
+      "group": "advanced_filters"
+    },
+    "delivery_method": {
+      "type": "select",
+      "options": [
+        "local_pick_up",
+        "shipping"
+      ],
+      "description": "Parameter defines how the items can be delivered. It defaults to both. Available options: `local_pick_up` - Local pickup `shipping` - Shipping Like on Facebook Marketplace, shipping is only available in the United States.",
+      "group": "advanced_filters"
+    },
+    "availability": {
+      "type": "select",
+      "options": [
+        "available",
+        "sold"
+      ],
+      "description": "Parameter defines whether to show the items available (default), or the ones already sold. Available options: `available` - Available `sold` - Sold",
+      "group": "advanced_filters"
+    },
+    "sort_by": {
+      "type": "select",
+      "options": [
+        "best_match",
+        "distance_ascend",
+        "creation_time_descend",
+        "price_ascend",
+        "price_descend"
+      ],
+      "description": "Parameter defines the order of the results. It defaults to `best_match`. Available options: `best_match` - Suggested `distance_ascend` - Distance: Nearest first `creation_time_descend` - Date listed: Newest first `price_ascend` - Price: Lowest first `price_descend` - Price: Highest first",
+      "group": "sorting"
+    },
+    "next_page_token": {
+      "description": "Parameter defines the next page token. It is used for retrieving the next page results. The next page token can be found in the SerpApi JSON response: `serpapi_pagination -> next_page_token`",
+      "group": "pagination"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `facebook_marketplace` to use the Facebook Marketplace API engine.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the Facebook Marketplace results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}

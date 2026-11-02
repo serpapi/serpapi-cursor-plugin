@@ -36,7 +36,7 @@
       "group": "pagination"
     },
     "gpc": {
-      "description": "Parameter defines the time period for results. (e.g., `stf=1792388152,1792992952|stftype=1` only returns results from the past 7 days. First integer within the parameter,`1792388152` is Unix Timestamp for 7 days ago. Second integer,`1792992952` is Unix Timestamp for now.).",
+      "description": "Parameter defines the time period for results. (e.g., `stf=1792982180,1793586980|stftype=1` only returns results from the past 7 days. First integer within the parameter,`1792982180` is Unix Timestamp for 7 days ago. Second integer,`1793586980` is Unix Timestamp for now.).",
       "group": "advanced_filters"
     },
     "q5": {
@@ -95,7 +95,7 @@
       "group": "serpapi_parameters"
     },
     "output": {
-      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a markdown-formatted version optimized for LLMs and AI agents.",
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
       "group": "serpapi_parameters"
     },
     "json_restrictor": {

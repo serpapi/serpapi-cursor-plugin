@@ -1,0 +1,1617 @@
+{
+  "engine": "baidu_maps",
+  "params": {
+    "q": {
+      "required": true,
+      "description": "Parameter defines the search query. You can use anything that you would use in a regular Baidu Maps search: a type of place, a business, a brand, or a landmark (e.g., `咖啡` (coffee), `酒店` (hotels), `星巴克` (Starbucks), or `故宫` (the Forbidden City)). Without c, the query can include the city to search in (e.g., `上海 咖啡` for coffee in Shanghai).",
+      "group": "search_query"
+    },
+    "c": {
+      "type": "select",
+      "options": [
+        [
+          131,
+          "北京 (beijing) - 131"
+        ],
+        [
+          289,
+          "上海 (shanghai) - 289"
+        ],
+        [
+          332,
+          "天津 (tianjin) - 332"
+        ],
+        [
+          132,
+          "重庆 (chongqing) - 132"
+        ],
+        [
+          127,
+          "合肥 (hefei) - 127"
+        ],
+        [
+          130,
+          "安庆 (anqing) - 130"
+        ],
+        [
+          126,
+          "蚌埠 (bangbu) - 126"
+        ],
+        [
+          188,
+          "亳州 (bozhou) - 188"
+        ],
+        [
+          299,
+          "池州 (chizhou) - 299"
+        ],
+        [
+          189,
+          "滁州 (chuzhou) - 189"
+        ],
+        [
+          128,
+          "阜阳 (fuyang) - 128"
+        ],
+        [
+          253,
+          "淮北 (huaibei) - 253"
+        ],
+        [
+          250,
+          "淮南 (huainan) - 250"
+        ],
+        [
+          252,
+          "黄山 (huangshan) - 252"
+        ],
+        [
+          298,
+          "六安 (liuan) - 298"
+        ],
+        [
+          358,
+          "马鞍山 (maanshan) - 358"
+        ],
+        [
+          370,
+          "宿州 (suzhou) - 370"
+        ],
+        [
+          337,
+          "铜陵 (tongling) - 337"
+        ],
+        [
+          129,
+          "芜湖 (wuhu) - 129"
+        ],
+        [
+          190,
+          "宣城 (xuancheng) - 190"
+        ],
+        [
+          300,
+          "福州 (fuzhou) - 300"
+        ],
+        [
+          193,
+          "龙岩 (longyan) - 193"
+        ],
+        [
+          133,
+          "南平 (nanping) - 133"
+        ],
+        [
+          192,
+          "宁德 (ningde) - 192"
+        ],
+        [
+          195,
+          "莆田 (putian) - 195"
+        ],
+        [
+          134,
+          "泉州 (quanzhou) - 134"
+        ],
+        [
+          254,
+          "三明 (sanming) - 254"
+        ],
+        [
+          194,
+          "厦门 (xiamen) - 194"
+        ],
+        [
+          255,
+          "漳州 (zhangzhou) - 255"
+        ],
+        [
+          36,
+          "兰州 (lanzhou) - 36"
+        ],
+        [
+          35,
+          "白银 (baiyin) - 35"
+        ],
+        [
+          136,
+          "定西 (dingxi) - 136"
+        ],
+        [
+          247,
+          "甘南藏族自治州 (gannanzhou) - 247"
+        ],
+        [
+          33,
+          "嘉峪关 (jiayuguan) - 33"
+        ],
+        [
+          34,
+          "金昌 (jinchang) - 34"
+        ],
+        [
+          37,
+          "酒泉 (jiuquan) - 37"
+        ],
+        [
+          182,
+          "临夏回族自治州 (linxiazhou) - 182"
+        ],
+        [
+          256,
+          "陇南 (longnan) - 256"
+        ],
+        [
+          359,
+          "平凉 (pingliang) - 359"
+        ],
+        [
+          135,
+          "庆阳 (qingyang) - 135"
+        ],
+        [
+          196,
+          "天水 (tianshui) - 196"
+        ],
+        [
+          118,
+          "武威 (wuwei) - 118"
+        ],
+        [
+          117,
+          "张掖 (zhangye) - 117"
+        ],
+        [
+          257,
+          "广州 (guangzhou) - 257"
+        ],
+        [
+          201,
+          "潮州 (chaozhou) - 201"
+        ],
+        [
+          119,
+          "东莞 (dongguan) - 119"
+        ],
+        [
+          138,
+          "佛山 (foshan) - 138"
+        ],
+        [
+          200,
+          "河源 (heyuan) - 200"
+        ],
+        [
+          301,
+          "惠州 (huizhou) - 301"
+        ],
+        [
+          302,
+          "江门 (jiangmen) - 302"
+        ],
+        [
+          259,
+          "揭阳 (jieyang) - 259"
+        ],
+        [
+          139,
+          "茂名 (maoming) - 139"
+        ],
+        [
+          141,
+          "梅州 (meizhou) - 141"
+        ],
+        [
+          197,
+          "清远 (qingyuan) - 197"
+        ],
+        [
+          303,
+          "汕头 (shantou) - 303"
+        ],
+        [
+          339,
+          "汕尾 (shanwei) - 339"
+        ],
+        [
+          137,
+          "韶关 (shaoguan) - 137"
+        ],
+        [
+          340,
+          "深圳 (shenzhen) - 340"
+        ],
+        [
+          199,
+          "阳江 (yangjiang) - 199"
+        ],
+        [
+          258,
+          "云浮 (yunfu) - 258"
+        ],
+        [
+          198,
+          "湛江 (zhanjiang) - 198"
+        ],
+        [
+          338,
+          "肇庆 (zhaoqing) - 338"
+        ],
+        [
+          187,
+          "中山 (zhongshan) - 187"
+        ],
+        [
+          140,
+          "珠海 (zhuhai) - 140"
+        ],
+        [
+          261,
+          "南宁 (nanning) - 261"
+        ],
+        [
+          203,
+          "百色 (baise) - 203"
+        ],
+        [
+          295,
+          "北海 (beihai) - 295"
+        ],
+        [
+          144,
+          "崇左 (chongzuo) - 144"
+        ],
+        [
+          204,
+          "防城港 (fangchenggang) - 204"
+        ],
+        [
+          142,
+          "桂林 (guilin) - 142"
+        ],
+        [
+          341,
+          "贵港 (guigang) - 341"
+        ],
+        [
+          143,
+          "河池 (hechi) - 143"
+        ],
+        [
+          260,
+          "贺州 (hezhou) - 260"
+        ],
+        [
+          202,
+          "来宾 (laibin) - 202"
+        ],
+        [
+          305,
+          "柳州 (liuzhou) - 305"
+        ],
+        [
+          145,
+          "钦州 (qinzhou) - 145"
+        ],
+        [
+          304,
+          "梧州 (wuzhou) - 304"
+        ],
+        [
+          361,
+          "玉林 (yulin) - 361"
+        ],
+        [
+          146,
+          "贵阳 (guiyang) - 146"
+        ],
+        [
+          263,
+          "安顺 (anshun) - 263"
+        ],
+        [
+          206,
+          "毕节市 (bijie) - 206"
+        ],
+        [
+          147,
+          "六盘水 (liupanshui) - 147"
+        ],
+        [
+          205,
+          "铜仁市 (tongren) - 205"
+        ],
+        [
+          262,
+          "遵义 (zunyi) - 262"
+        ],
+        [
+          343,
+          "黔西南布依族苗族自治州 (qianxinanzhou) - 343"
+        ],
+        [
+          342,
+          "黔东南苗族侗族自治州 (qiandongnanzhou) - 342"
+        ],
+        [
+          306,
+          "黔南布依族苗族自治州 (qiannanzhou) - 306"
+        ],
+        [
+          125,
+          "海口 (haikou) - 125"
+        ],
+        [
+          2359,
+          "白沙黎族自治县 (baisha) - 2359"
+        ],
+        [
+          1217,
+          "保亭黎族苗族自治县 (baoting) - 1217"
+        ],
+        [
+          1642,
+          "昌江黎族自治县 (changjiang) - 1642"
+        ],
+        [
+          1215,
+          "儋州 (danzhou) - 1215"
+        ],
+        [
+          2757,
+          "澄迈 (chengmai) - 2757"
+        ],
+        [
+          2634,
+          "东方 (dongfang) - 2634"
+        ],
+        [
+          1214,
+          "定安 (dingan) - 1214"
+        ],
+        [
+          2358,
+          "琼海 (qionghai) - 2358"
+        ],
+        [
+          2031,
+          "琼中黎族苗族自治县 (qiongzhong) - 2031"
+        ],
+        [
+          2032,
+          "乐东黎族自治县 (ledong) - 2032"
+        ],
+        [
+          2033,
+          "临高 (lingao) - 2033"
+        ],
+        [
+          1643,
+          "陵水黎族自治县 (lingshui) - 1643"
+        ],
+        [
+          121,
+          "三亚 (sanya) - 121"
+        ],
+        [
+          1641,
+          "屯昌 (tunchang) - 1641"
+        ],
+        [
+          1216,
+          "万宁 (wanning) - 1216"
+        ],
+        [
+          2758,
+          "文昌 (wenchang) - 2758"
+        ],
+        [
+          1644,
+          "五指山 (wuzhishan) - 1644"
+        ],
+        [
+          150,
+          "石家庄 (shijiazhuang) - 150"
+        ],
+        [
+          307,
+          "保定 (baoding) - 307"
+        ],
+        [
+          149,
+          "沧州 (cangzhou) - 149"
+        ],
+        [
+          207,
+          "承德 (chengde) - 207"
+        ],
+        [
+          151,
+          "邯郸 (handan) - 151"
+        ],
+        [
+          208,
+          "衡水 (hengshui) - 208"
+        ],
+        [
+          191,
+          "廊坊 (langfang) - 191"
+        ],
+        [
+          148,
+          "秦皇岛 (qinhuangdao) - 148"
+        ],
+        [
+          265,
+          "唐山 (tangshan) - 265"
+        ],
+        [
+          266,
+          "邢台 (xingtai) - 266"
+        ],
+        [
+          264,
+          "张家口 (zhangjiakou) - 264"
+        ],
+        [
+          268,
+          "郑州 (zhengzhou) - 268"
+        ],
+        [
+          267,
+          "安阳 (anyang) - 267"
+        ],
+        [
+          215,
+          "鹤壁 (hebi) - 215"
+        ],
+        [
+          211,
+          "焦作 (jiaozuo) - 211"
+        ],
+        [
+          210,
+          "开封 (kaifeng) - 210"
+        ],
+        [
+          153,
+          "洛阳 (luoyang) - 153"
+        ],
+        [
+          344,
+          "漯河 (luohe) - 344"
+        ],
+        [
+          309,
+          "南阳 (nanyang) - 309"
+        ],
+        [
+          213,
+          "平顶山 (pingdingshan) - 213"
+        ],
+        [
+          209,
+          "濮阳 (puyang) - 209"
+        ],
+        [
+          212,
+          "三门峡 (sanmenxia) - 212"
+        ],
+        [
+          154,
+          "商丘 (shangqiu) - 154"
+        ],
+        [
+          152,
+          "新乡 (xinxiang) - 152"
+        ],
+        [
+          214,
+          "信阳 (xinyang) - 214"
+        ],
+        [
+          155,
+          "许昌 (xuchang) - 155"
+        ],
+        [
+          308,
+          "周口 (zhoukou) - 308"
+        ],
+        [
+          269,
+          "驻马店 (zhumadian) - 269"
+        ],
+        [
+          1277,
+          "济源 (jiyuan) - 1277"
+        ],
+        [
+          48,
+          "哈尔滨 (haerbin) - 48"
+        ],
+        [
+          50,
+          "大庆 (daqing) - 50"
+        ],
+        [
+          38,
+          "大兴安岭地区 (daxinganling) - 38"
+        ],
+        [
+          43,
+          "鹤岗 (hegang) - 43"
+        ],
+        [
+          39,
+          "黑河 (heihe) - 39"
+        ],
+        [
+          46,
+          "鸡西 (jixi) - 46"
+        ],
+        [
+          42,
+          "佳木斯 (jiamusi) - 42"
+        ],
+        [
+          49,
+          "牡丹江 (mudanjiang) - 49"
+        ],
+        [
+          47,
+          "七台河 (qitaihe) - 47"
+        ],
+        [
+          41,
+          "齐齐哈尔 (qiqihaer) - 41"
+        ],
+        [
+          45,
+          "双鸭山 (shuangyashan) - 45"
+        ],
+        [
+          44,
+          "绥化 (suihua) - 44"
+        ],
+        [
+          40,
+          "伊春 (yichun) - 40"
+        ],
+        [
+          218,
+          "武汉 (wuhan) - 218"
+        ],
+        [
+          122,
+          "鄂州 (ezhou) - 122"
+        ],
+        [
+          373,
+          "恩施土家族苗族自治州 (enshi) - 373"
+        ],
+        [
+          271,
+          "黄冈 (huanggang) - 271"
+        ],
+        [
+          311,
+          "黄石 (huangshi) - 311"
+        ],
+        [
+          217,
+          "荆门 (jingmen) - 217"
+        ],
+        [
+          157,
+          "荆州 (jingzhou) - 157"
+        ],
+        [
+          1293,
+          "潜江 (qianjiang) - 1293"
+        ],
+        [
+          2734,
+          "神农架林区 (shennongjialinqu) - 2734"
+        ],
+        [
+          216,
+          "十堰 (shiyan) - 216"
+        ],
+        [
+          371,
+          "随州 (suizhou) - 371"
+        ],
+        [
+          2654,
+          "天门 (tianmen) - 2654"
+        ],
+        [
+          1713,
+          "仙桃 (xiantao) - 1713"
+        ],
+        [
+          362,
+          "咸宁 (xianning) - 362"
+        ],
+        [
+          156,
+          "襄阳 (xiangyang) - 156"
+        ],
+        [
+          310,
+          "孝感 (xiaogan) - 310"
+        ],
+        [
+          270,
+          "宜昌 (yichang) - 270"
+        ],
+        [
+          158,
+          "长沙 (changsha) - 158"
+        ],
+        [
+          219,
+          "常德 (changde) - 219"
+        ],
+        [
+          275,
+          "郴州 (chenzhou) - 275"
+        ],
+        [
+          159,
+          "衡阳 (hengyang) - 159"
+        ],
+        [
+          363,
+          "怀化 (huaihua) - 363"
+        ],
+        [
+          221,
+          "娄底 (loudi) - 221"
+        ],
+        [
+          273,
+          "邵阳 (shaoyang) - 273"
+        ],
+        [
+          313,
+          "湘潭 (xiangtan) - 313"
+        ],
+        [
+          274,
+          "湘西土家族苗族自治州 (xiangxizhou) - 274"
+        ],
+        [
+          272,
+          "益阳 (yiyang) - 272"
+        ],
+        [
+          314,
+          "永州 (yongzhou) - 314"
+        ],
+        [
+          220,
+          "岳阳 (yueyang) - 220"
+        ],
+        [
+          312,
+          "张家界 (zhangjiajie) - 312"
+        ],
+        [
+          222,
+          "株洲 (zhuzhou) - 222"
+        ],
+        [
+          315,
+          "南京 (nanjing) - 315"
+        ],
+        [
+          348,
+          "常州 (changzhou) - 348"
+        ],
+        [
+          162,
+          "淮安 (huaian) - 162"
+        ],
+        [
+          347,
+          "连云港 (lianyungang) - 347"
+        ],
+        [
+          161,
+          "南通 (nantong) - 161"
+        ],
+        [
+          224,
+          "苏州 (suzhou) - 224"
+        ],
+        [
+          277,
+          "宿迁 (suqian) - 277"
+        ],
+        [
+          276,
+          "泰州 (taizhou) - 276"
+        ],
+        [
+          317,
+          "无锡 (wuxi) - 317"
+        ],
+        [
+          316,
+          "徐州 (xuzhou) - 316"
+        ],
+        [
+          223,
+          "盐城 (yancheng) - 223"
+        ],
+        [
+          346,
+          "扬州 (yangzhou) - 346"
+        ],
+        [
+          160,
+          "镇江 (zhenjiang) - 160"
+        ],
+        [
+          163,
+          "南昌 (nanchang) - 163"
+        ],
+        [
+          226,
+          "抚州 (fuzhou) - 226"
+        ],
+        [
+          365,
+          "赣州 (ganzhou) - 365"
+        ],
+        [
+          318,
+          "吉安 (jian) - 318"
+        ],
+        [
+          225,
+          "景德镇 (jingdezhen) - 225"
+        ],
+        [
+          349,
+          "九江 (jiujiang) - 349"
+        ],
+        [
+          350,
+          "萍乡 (pingxiang) - 350"
+        ],
+        [
+          364,
+          "上饶 (shangrao) - 364"
+        ],
+        [
+          164,
+          "新余 (xinyu) - 164"
+        ],
+        [
+          278,
+          "宜春 (yichun) - 278"
+        ],
+        [
+          279,
+          "鹰潭 (yingtan) - 279"
+        ],
+        [
+          53,
+          "长春 (changchun) - 53"
+        ],
+        [
+          51,
+          "白城 (baicheng) - 51"
+        ],
+        [
+          57,
+          "白山 (baishan) - 57"
+        ],
+        [
+          55,
+          "吉林市 (jilinshi) - 55"
+        ],
+        [
+          183,
+          "辽源 (liaoyuan) - 183"
+        ],
+        [
+          56,
+          "四平 (siping) - 56"
+        ],
+        [
+          52,
+          "松原 (songyuan) - 52"
+        ],
+        [
+          165,
+          "通化 (tonghua) - 165"
+        ],
+        [
+          54,
+          "延边朝鲜族自治州 (yanbian) - 54"
+        ],
+        [
+          58,
+          "沈阳 (shenyang) - 58"
+        ],
+        [
+          320,
+          "鞍山 (anshan) - 320"
+        ],
+        [
+          227,
+          "本溪 (benxi) - 227"
+        ],
+        [
+          280,
+          "朝阳 (zhaoyang) - 280"
+        ],
+        [
+          167,
+          "大连 (dalian) - 167"
+        ],
+        [
+          282,
+          "丹东 (dandong) - 282"
+        ],
+        [
+          184,
+          "抚顺 (fushun) - 184"
+        ],
+        [
+          59,
+          "阜新 (fuxin) - 59"
+        ],
+        [
+          319,
+          "葫芦岛 (huludao) - 319"
+        ],
+        [
+          166,
+          "锦州 (jinzhou) - 166"
+        ],
+        [
+          351,
+          "辽阳 (liaoyang) - 351"
+        ],
+        [
+          228,
+          "盘锦 (panjin) - 228"
+        ],
+        [
+          60,
+          "铁岭 (tieling) - 60"
+        ],
+        [
+          281,
+          "营口 (yingkou) - 281"
+        ],
+        [
+          321,
+          "呼和浩特 (huhehaote) - 321"
+        ],
+        [
+          230,
+          "阿拉善盟 (alashanmeng) - 230"
+        ],
+        [
+          229,
+          "包头 (baotou) - 229"
+        ],
+        [
+          169,
+          "巴彦淖尔 (bayannaoer) - 169"
+        ],
+        [
+          297,
+          "赤峰 (chifeng) - 297"
+        ],
+        [
+          283,
+          "鄂尔多斯 (eerduosi) - 283"
+        ],
+        [
+          61,
+          "呼伦贝尔 (hulunbeier) - 61"
+        ],
+        [
+          64,
+          "通辽 (tongliao) - 64"
+        ],
+        [
+          123,
+          "乌海 (wuhai) - 123"
+        ],
+        [
+          168,
+          "乌兰察布 (wulanchabu) - 168"
+        ],
+        [
+          63,
+          "锡林郭勒盟 (xilinguolemeng) - 63"
+        ],
+        [
+          62,
+          "兴安盟 (xinganmeng) - 62"
+        ],
+        [
+          360,
+          "银川 (yinchuan) - 360"
+        ],
+        [
+          246,
+          "固原 (guyuan) - 246"
+        ],
+        [
+          335,
+          "石嘴山 (shizuishan) - 335"
+        ],
+        [
+          322,
+          "吴忠 (wuzhong) - 322"
+        ],
+        [
+          181,
+          "中卫 (zhongwei) - 181"
+        ],
+        [
+          66,
+          "西宁 (xining) - 66"
+        ],
+        [
+          72,
+          "果洛藏族自治州 (guoluozhou) - 72"
+        ],
+        [
+          69,
+          "海东市 (haidong) - 69"
+        ],
+        [
+          67,
+          "海北藏族自治州 (haibeizhou) - 67"
+        ],
+        [
+          68,
+          "海南藏族自治州 (hainanzhou) - 68"
+        ],
+        [
+          65,
+          "海西蒙古族藏族自治州 (haixizhou) - 65"
+        ],
+        [
+          70,
+          "黄南藏族自治州 (huangnanzhou) - 70"
+        ],
+        [
+          71,
+          "玉树藏族自治州 (yushuzhou) - 71"
+        ],
+        [
+          288,
+          "济南 (jinan) - 288"
+        ],
+        [
+          235,
+          "滨州 (binzhou) - 235"
+        ],
+        [
+          174,
+          "东营 (dongying) - 174"
+        ],
+        [
+          372,
+          "德州 (dezhou) - 372"
+        ],
+        [
+          353,
+          "菏泽 (heze) - 353"
+        ],
+        [
+          286,
+          "济宁 (jining) - 286"
+        ],
+        [
+          366,
+          "聊城 (liaocheng) - 366"
+        ],
+        [
+          234,
+          "临沂 (linyi) - 234"
+        ],
+        [
+          236,
+          "青岛 (qingdao) - 236"
+        ],
+        [
+          173,
+          "日照 (rizhao) - 173"
+        ],
+        [
+          325,
+          "泰安 (taian) - 325"
+        ],
+        [
+          175,
+          "威海 (weihai) - 175"
+        ],
+        [
+          287,
+          "潍坊 (weifang) - 287"
+        ],
+        [
+          326,
+          "烟台 (yantai) - 326"
+        ],
+        [
+          172,
+          "枣庄 (zaozhuang) - 172"
+        ],
+        [
+          354,
+          "淄博 (zibo) - 354"
+        ],
+        [
+          176,
+          "太原 (taiyuan) - 176"
+        ],
+        [
+          356,
+          "长治 (changzhi) - 356"
+        ],
+        [
+          355,
+          "大同 (datong) - 355"
+        ],
+        [
+          290,
+          "晋城 (jincheng) - 290"
+        ],
+        [
+          238,
+          "晋中 (jinzhong) - 238"
+        ],
+        [
+          368,
+          "临汾 (linfen) - 368"
+        ],
+        [
+          327,
+          "吕梁 (lvliang) - 327"
+        ],
+        [
+          237,
+          "朔州 (shuozhou) - 237"
+        ],
+        [
+          367,
+          "忻州 (xinzhou) - 367"
+        ],
+        [
+          357,
+          "阳泉 (yangquan) - 357"
+        ],
+        [
+          328,
+          "运城 (yuncheng) - 328"
+        ],
+        [
+          233,
+          "西安 (xian) - 233"
+        ],
+        [
+          324,
+          "安康 (ankang) - 324"
+        ],
+        [
+          171,
+          "宝鸡 (baoji) - 171"
+        ],
+        [
+          352,
+          "汉中 (hanzhong) - 352"
+        ],
+        [
+          285,
+          "商洛 (shangluo) - 285"
+        ],
+        [
+          232,
+          "铜川 (tongchuan) - 232"
+        ],
+        [
+          170,
+          "渭南 (weinan) - 170"
+        ],
+        [
+          323,
+          "咸阳 (xianyang) - 323"
+        ],
+        [
+          284,
+          "延安 (yanan) - 284"
+        ],
+        [
+          231,
+          "榆林 (yulin) - 231"
+        ],
+        [
+          75,
+          "成都 (chengdu) - 75"
+        ],
+        [
+          185,
+          "阿坝藏族羌族自治州 (abazhou) - 185"
+        ],
+        [
+          239,
+          "巴中 (bazhong) - 239"
+        ],
+        [
+          369,
+          "达州 (dazhou) - 369"
+        ],
+        [
+          74,
+          "德阳 (deyang) - 74"
+        ],
+        [
+          73,
+          "甘孜藏族自治州 (ganzizhou) - 73"
+        ],
+        [
+          241,
+          "广安 (guangan) - 241"
+        ],
+        [
+          329,
+          "广元 (guangyuan) - 329"
+        ],
+        [
+          79,
+          "乐山 (leshan) - 79"
+        ],
+        [
+          80,
+          "凉山彝族自治州 (liangshanzhou) - 80"
+        ],
+        [
+          331,
+          "泸州 (luzhou) - 331"
+        ],
+        [
+          291,
+          "南充 (nanchong) - 291"
+        ],
+        [
+          77,
+          "眉山 (meishan) - 77"
+        ],
+        [
+          240,
+          "绵阳 (mianyang) - 240"
+        ],
+        [
+          248,
+          "内江 (neijiang) - 248"
+        ],
+        [
+          81,
+          "攀枝花 (panzhihua) - 81"
+        ],
+        [
+          330,
+          "遂宁 (suining) - 330"
+        ],
+        [
+          76,
+          "雅安 (yaan) - 76"
+        ],
+        [
+          186,
+          "宜宾 (yibin) - 186"
+        ],
+        [
+          242,
+          "资阳 (ziyang) - 242"
+        ],
+        [
+          78,
+          "自贡 (zigong) - 78"
+        ],
+        [
+          100,
+          "拉萨 (lasa) - 100"
+        ],
+        [
+          103,
+          "阿里地区 (ali) - 103"
+        ],
+        [
+          99,
+          "昌都市 (changdu) - 99"
+        ],
+        [
+          98,
+          "林芝市 (linzhi) - 98"
+        ],
+        [
+          101,
+          "那曲地区 (naqu) - 101"
+        ],
+        [
+          102,
+          "日喀则市 (rikaze) - 102"
+        ],
+        [
+          97,
+          "山南地区 (shannan) - 97"
+        ],
+        [
+          92,
+          "乌鲁木齐 (wulumuqi) - 92"
+        ],
+        [
+          731,
+          "阿拉尔 (alaer) - 731"
+        ],
+        [
+          85,
+          "阿克苏地区 (akesu) - 85"
+        ],
+        [
+          96,
+          "阿勒泰地区 (aletai) - 96"
+        ],
+        [
+          86,
+          "巴音郭楞蒙古自治州 (bayinguoleng) - 86"
+        ],
+        [
+          88,
+          "博尔塔拉蒙古自治州 (boertalazhou) - 88"
+        ],
+        [
+          93,
+          "昌吉回族自治州 (changjizhou) - 93"
+        ],
+        [
+          91,
+          "哈密 (hami) - 91"
+        ],
+        [
+          82,
+          "和田地区 (hetian) - 82"
+        ],
+        [
+          83,
+          "喀什地区 (kashi) - 83"
+        ],
+        [
+          95,
+          "克拉玛依 (kelamayi) - 95"
+        ],
+        [
+          84,
+          "克孜勒苏柯尔克孜自治州 (kezilesuzhou) - 84"
+        ],
+        [
+          770,
+          "石河子 (shihezi) - 770"
+        ],
+        [
+          94,
+          "塔城地区 (tacheng) - 94"
+        ],
+        [
+          792,
+          "图木舒克 (tumushuke) - 792"
+        ],
+        [
+          89,
+          "吐鲁番地区 (tulufan) - 89"
+        ],
+        [
+          789,
+          "五家渠 (wujiaqu) - 789"
+        ],
+        [
+          90,
+          "伊犁哈萨克自治州 (yilizhou) - 90"
+        ],
+        [
+          3301,
+          "北屯 (beitun) - 3301"
+        ],
+        [
+          3302,
+          "铁门关 (tiemenguan) - 3302"
+        ],
+        [
+          3303,
+          "双河 (shuanghe) - 3303"
+        ],
+        [
+          3304,
+          "可克达拉 (kekedala) - 3304"
+        ],
+        [
+          3305,
+          "昆玉 (kunyu) - 3305"
+        ],
+        [
+          3370,
+          "胡杨河 (huyanghe) - 3370"
+        ],
+        [
+          104,
+          "昆明 (kunming) - 104"
+        ],
+        [
+          112,
+          "保山 (baoshan) - 112"
+        ],
+        [
+          105,
+          "楚雄彝族自治州 (chuxiongzhou) - 105"
+        ],
+        [
+          111,
+          "大理白族自治州 (dalizhou) - 111"
+        ],
+        [
+          116,
+          "德宏傣族景颇族自治州 (dehongzhou) - 116"
+        ],
+        [
+          115,
+          "迪庆藏族自治州 (diqingzhou) - 115"
+        ],
+        [
+          107,
+          "红河哈尼族彝族自治州 (honghezhou) - 107"
+        ],
+        [
+          114,
+          "丽江 (lijiang) - 114"
+        ],
+        [
+          110,
+          "临沧 (lincang) - 110"
+        ],
+        [
+          113,
+          "怒江傈僳族自治州 (nujiangzhou) - 113"
+        ],
+        [
+          108,
+          "普洱 (puer) - 108"
+        ],
+        [
+          249,
+          "曲靖 (qujing) - 249"
+        ],
+        [
+          336,
+          "昭通 (zhaotong) - 336"
+        ],
+        [
+          177,
+          "文山壮族苗族自治州 (wenshan) - 177"
+        ],
+        [
+          109,
+          "西双版纳傣族自治州 (xishuangbanna) - 109"
+        ],
+        [
+          106,
+          "玉溪 (yuxi) - 106"
+        ],
+        [
+          179,
+          "杭州 (hangzhou) - 179"
+        ],
+        [
+          294,
+          "湖州 (huzhou) - 294"
+        ],
+        [
+          334,
+          "嘉兴 (jiaxing) - 334"
+        ],
+        [
+          333,
+          "金华 (jinhua) - 333"
+        ],
+        [
+          292,
+          "丽水 (lishui) - 292"
+        ],
+        [
+          180,
+          "宁波 (ningbo) - 180"
+        ],
+        [
+          243,
+          "衢州 (quzhou) - 243"
+        ],
+        [
+          293,
+          "绍兴 (shaoxing) - 293"
+        ],
+        [
+          244,
+          "台州 (taizhou) - 244"
+        ],
+        [
+          178,
+          "温州 (wenzhou) - 178"
+        ],
+        [
+          245,
+          "舟山 (zhoushan) - 245"
+        ],
+        [
+          9002,
+          "台北 (taibei) - 9002"
+        ],
+        [
+          9019,
+          "高雄 (gaoxiong) - 9019"
+        ],
+        [
+          9017,
+          "台中 (taizhong) - 9017"
+        ],
+        [
+          9016,
+          "台南 (tainan) - 9016"
+        ],
+        [
+          9010,
+          "新北 (xinbei) - 9010"
+        ],
+        [
+          9011,
+          "基隆 (jilong) - 9011"
+        ],
+        [
+          9006,
+          "新竹县 (xinzhuxian) - 9006"
+        ],
+        [
+          9013,
+          "嘉义县 (jiayixian) - 9013"
+        ],
+        [
+          9001,
+          "桃园 (taoyuan) - 9001"
+        ],
+        [
+          9018,
+          "新竹市 (xinzhushi) - 9018"
+        ],
+        [
+          9004,
+          "嘉义市 (jiayishi) - 9004"
+        ],
+        [
+          9020,
+          "苗栗 (miaoli) - 9020"
+        ],
+        [
+          9005,
+          "彰化 (zhanghua) - 9005"
+        ],
+        [
+          9003,
+          "南投 (nantou) - 9003"
+        ],
+        [
+          9014,
+          "云林 (yunlin) - 9014"
+        ],
+        [
+          9012,
+          "屏东 (pingdong) - 9012"
+        ],
+        [
+          9009,
+          "宜兰 (yilan) - 9009"
+        ],
+        [
+          9015,
+          "花莲 (hualian) - 9015"
+        ],
+        [
+          9008,
+          "台东 (taidong) - 9008"
+        ],
+        [
+          9007,
+          "澎湖 (penghu) - 9007"
+        ],
+        [
+          2912,
+          "香港 (xianggang) - 2912"
+        ],
+        [
+          2911,
+          "澳门 (aomen) - 2911"
+        ]
+      ],
+      "description": "Parameter defines the city to search in, with its Baidu Maps city code (e.g., `131` for Beijing, `289` for Shanghai, or `257` for Guangzhou). Head to the Baidu Maps cities page for the cities of China. Cities in other countries have codes too (e.g., `49872` for Paris): a search near their coordinates returns it in `search_information.city_code`. Without it, Baidu Maps searches in the city named in q, in China or abroad, or lists the cities with results in `cities`. With lat and lon, it searches in the city at the coordinates. With lat and lon, the city must be the one where the coordinates are: Baidu Maps only searches in the city of c, even when the coordinates are elsewhere.",
+      "group": "geographic_location"
+    },
+    "lat": {
+      "type": "number",
+      "description": "Parameter defines the latitude to search near (e.g., `39.908776`). Results are the places near these coordinates, and their `distance` field says how far each one is. In China, including Hong Kong, Macau and Taiwan, Baidu Maps uses coordinates shifted a few hundred meters from GPS coordinates, like all maps of mainland China (a system called GCJ-02). Parameter is required when using lon parameter. c is optional with coordinates: without it, the city at the coordinates is used. If it's set, it must be the city where the coordinates are.",
+      "group": "geographic_location"
+    },
+    "lon": {
+      "type": "number",
+      "description": "Parameter defines the longitude to search near (e.g., `116.39759`). Results are the places near these coordinates, and their `distance` field says how far each one is. In China, including Hong Kong, Macau and Taiwan, Baidu Maps uses coordinates shifted a few hundred meters from GPS coordinates, like all maps of mainland China (a system called GCJ-02). Parameter is required when using lat parameter. c is optional with coordinates: without it, the city at the coordinates is used. If it's set, it must be the city where the coordinates are.",
+      "group": "geographic_location"
+    },
+    "page": {
+      "type": "number",
+      "description": "Value is used to get results on a specific page. (e.g., `1` (default) is the first page of results, `2` is the 2nd page of results, `3` is the 3rd page of results, etc.). Baidu Maps returns up to 10 results per page.",
+      "group": "pagination"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `baidu_maps` to use the Baidu Maps API engine.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the Baidu Maps results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}

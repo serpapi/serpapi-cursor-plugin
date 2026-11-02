@@ -8,12 +8,12 @@
     },
     "start_date": {
       "required": true,
-      "description": "Parameter defines the first date of the price calendar. Each date has the best price of a 1-night stay starting that day. The format is **YYYY-MM-DD**. e.g. `2026-10-27`",
+      "description": "Parameter defines the first date of the price calendar. Each date has the best price of a 1-night stay starting that day. The format is **YYYY-MM-DD**. e.g. `2026-11-03`",
       "group": "advanced_parameters"
     },
     "end_date": {
       "required": true,
-      "description": "Parameter defines the last date of the price calendar. It can't be more than 3 years from now. The format is **YYYY-MM-DD**. e.g. `2026-12-25`",
+      "description": "Parameter defines the last date of the price calendar. It can't be more than 3 years from now. The format is **YYYY-MM-DD**. e.g. `2027-01-01`",
       "group": "advanced_parameters"
     },
     "adults": {
@@ -1036,7 +1036,7 @@
       "group": "serpapi_parameters"
     },
     "output": {
-      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a markdown-formatted version optimized for LLMs and AI agents.",
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
       "group": "serpapi_parameters"
     },
     "json_restrictor": {

@@ -1,0 +1,81 @@
+{
+  "engine": "trader_joes",
+  "params": {
+    "q": {
+      "required": true,
+      "description": "Parameter defines the search query. You can use anything that you would use in a regular Trader Joe's search.",
+      "group": "search_query"
+    },
+    "store_id": {
+      "type": "number",
+      "description": "Parameter defines the Trader Joe's store to search in, so only products sold in this store are returned (e.g., `454` for Austin - Northwest). Head to the Trader Joe's stores page for a full list of store IDs. When it isn't set, or when no store has this ID, products sold in any store are returned.",
+      "group": "localization"
+    },
+    "category_id": {
+      "type": "number",
+      "description": "Parameter defines the category of the products (e.g., `194` for Coffee & Tea). Head to the Trader Joe's categories page for a full list of category IDs.",
+      "group": "advanced_filters"
+    },
+    "characteristics": {
+      "description": "Parameter defines the characteristics the products must all have. It's a comma-separated list of options (e.g., `organic,vegan`). Available options: `kosher` - Kosher `organic` - Organic `gluten_free` - Gluten Free `vegan` - Vegan `antibiotic_free` - Antibiotic Free `dairy_free` - Dairy Free `grass_fed` - Grass Fed `vegetarian` - Vegetarian `fair_trade` - Fair Trade",
+      "group": "advanced_filters"
+    },
+    "tags": {
+      "description": "Parameter defines the tags the products must all have, from the Trader Joe's \"fun tags\" like Date Night or Cheese Board. It's a comma-separated list of options (e.g., `date_night,cheese_board`). Head to the Trader Joe's tags page for a full list of tags.",
+      "group": "advanced_filters"
+    },
+    "new_products": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to only show the products Trader Joe's marks as new. It can be set to `true` or `false` (default).",
+      "group": "advanced_filters"
+    },
+    "sort_by": {
+      "type": "select",
+      "options": [
+        "price_low_to_high",
+        "price_high_to_low",
+        "popularity"
+      ],
+      "description": "Parameter defines the sorting order of the results. It defaults to relevance. Available options: `price_low_to_high` - Price Low to High `price_high_to_low` - Price High to Low `popularity` - Popularity",
+      "group": "sorting"
+    },
+    "page": {
+      "type": "number",
+      "description": "Parameter defines the page number of the results (e.g., `1` (default) is the first page of results, `2` is the 2nd page of results, etc.). Trader Joe's returns up to 15 results per page.",
+      "group": "pagination"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `trader_joes` to use the Trader Joe's API engine.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the Trader Joe's results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}

@@ -56,12 +56,7 @@
     },
     "include_markdown": {
       "type": "checkbox",
-      "description": "Parameter defines whether to add the page's main content as Markdown in `text_content.markdown`. Default: `false`.",
-      "group": "fetch_settings"
-    },
-    "include_inline_assets": {
-      "type": "checkbox",
-      "description": "Parameter defines whether to include inline",
+      "description": "Parameter defines whether to include the page's main content as Markdown in `markdown`. Default: `true`.",
       "group": "fetch_settings"
     }
   },
@@ -100,7 +95,7 @@
       "group": "serpapi_parameters"
     },
     "output": {
-      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a markdown-formatted version optimized for LLMs and AI agents.",
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
       "group": "serpapi_parameters"
     },
     "json_restrictor": {

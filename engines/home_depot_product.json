@@ -2,9 +2,12 @@
   "engine": "home_depot_product",
   "params": {
     "product_id": {
-      "required": true,
-      "description": "The Home Depot identifier of a product. Only Product IDs gathered from the Home Depot US are supported.",
+      "description": "The Home Depot identifier of a product (the *Internet #* on the product page). Only Product IDs gathered from the Home Depot US are supported. Either product\\_id or store\\_sku should be set.",
       "group": "search_query"
+    },
+    "store_sku": {
+      "description": "The Home Depot Store SKU of a product (the *Store SKU #* on the product page, returned as `store_sku_number`). Only products listed in Home Depot's search can be found, so discontinued ones may not be. A Store SKU can be shared by several products, in which case the one returned may change between searches; use product\\_id to request a specific one. Only Store SKUs from the Home Depot US are supported. Either product\\_id or store\\_sku should be set.",
+      "group": "advanced_home_depot_product_parameters"
     },
     "delivery_zip": {
       "description": "ZIP Postal code. To filter the shipping products by a selected area.",
@@ -40,7 +43,7 @@
       "group": "serpapi_parameters"
     },
     "output": {
-      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a markdown-formatted version optimized for LLMs and AI agents.",
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
       "group": "serpapi_parameters"
     },
     "json_restrictor": {

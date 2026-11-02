@@ -1240,9 +1240,30 @@
         "nws",
         "shop",
         "vid",
-        "pts"
+        "pts",
+        "bks"
       ],
-      "description": "(to be matched) parameter defines the type of search you want to do. It can be set to: `(no tbm parameter)`: regular Google Search, `isch`: Google Images API, `lcl`: Google Local API, `vid`: Google Videos API, `nws`: Google News API, `shop`: Google Shopping API, `pts`: Google Patents API, or any other Google service.",
+      "description": "(To Be Matched) This parameter defines the type of search you want to do. Options: `(no selection)` - regular Google Search `isch` - Google Images API `lcl` - Google Local API `vid` - Google Videos API `nws` - Google News API `shop` - Google Shopping API `pts` - Google Patents API `bks` - Google Books API tbm and udm parameters can't be used together.",
+      "group": "search_type"
+    },
+    "udm": {
+      "type": "select",
+      "options": [
+        "web",
+        [
+          "50",
+          "AI Mode"
+        ],
+        [
+          "39",
+          "Short Videos"
+        ],
+        [
+          "18",
+          "Forums"
+        ]
+      ],
+      "description": "This parameter defines the type of Google Search display mode you want to use. Options: `(no selection)` - regular Google Search `web` or `14` - Web results `50` - Google AI Mode API `39` - Google Short Videos API `18` - Google Forums API tbm and udm parameters can't be used together.",
       "group": "search_type"
     },
     "start": {
@@ -1286,7 +1307,7 @@
       "group": "serpapi_parameters"
     },
     "output": {
-      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a markdown-formatted version optimized for LLMs and AI agents.",
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
       "group": "serpapi_parameters"
     },
     "json_restrictor": {
