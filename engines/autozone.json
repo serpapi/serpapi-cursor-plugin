@@ -1,0 +1,119 @@
+{
+  "engine": "autozone",
+  "params": {
+    "q": {
+      "required": true,
+      "description": "Parameter defines the query you want to search. You can use anything that you would use in a regular AutoZone search (e.g., `oil filter`, `brake pads`, or a part number like `S9972`).",
+      "group": "search_query"
+    },
+    "store_id": {
+      "description": "Parameter defines the AutoZone store to search (e.g., `4254`). The store changes the order of the results and adds their `in_store_pickup` availability. It defaults to `6997`, the store AutoZone uses when no store is selected.",
+      "group": "localization"
+    },
+    "vehicle_year": {
+      "description": "Parameter defines the year of the vehicle to find parts for (e.g., `2015`). Parameter requires vehicle\\_make and vehicle\\_model parameters to also be set.",
+      "group": "vehicle"
+    },
+    "vehicle_make": {
+      "description": "Parameter defines the make of the vehicle, as named on AutoZone (e.g., `Toyota`). Parameter requires vehicle\\_year and vehicle\\_model parameters to also be set.",
+      "group": "vehicle"
+    },
+    "vehicle_model": {
+      "description": "Parameter defines the model of the vehicle, as named on AutoZone (e.g., `Camry`). Parameter requires vehicle\\_year and vehicle\\_make parameters to also be set.",
+      "group": "vehicle"
+    },
+    "vehicle_engine": {
+      "description": "Parameter defines the engine of the vehicle, as named on AutoZone (e.g., `4 Cylinders 2.5L GAS`). Parameter requires vehicle\\_year, vehicle\\_make, and vehicle\\_model parameters to also be set.",
+      "group": "vehicle"
+    },
+    "vehicle_submodel": {
+      "description": "Parameter defines the submodel of the vehicle, as named on AutoZone (e.g., `LE`). Without it, parts that only fit some submodels have a `fitment: needs_more_info`. Parameter requires vehicle\\_year, vehicle\\_make, and vehicle\\_model parameters to also be set.",
+      "group": "vehicle"
+    },
+    "vehicle_type": {
+      "type": "select",
+      "options": [
+        "car_truck",
+        "motorcycle",
+        "recreational"
+      ],
+      "description": "Parameter defines the type of the vehicle. It defaults to `car_truck` when vehicle\\_year, vehicle\\_make, and vehicle\\_model are set. Available options: `car_truck` - Car & Truck `motorcycle` - Motorcycle `recreational` - Recreational Parameter requires vehicle\\_year, vehicle\\_make, and vehicle\\_model parameters to also be set.",
+      "group": "vehicle"
+    },
+    "sort": {
+      "type": "select",
+      "options": [
+        "featured",
+        "price_low",
+        "price_high",
+        "recently_added",
+        "rating_high",
+        "best_seller"
+      ],
+      "description": "Parameter defines the sorting of the results. It defaults to `featured`. Available options: `featured` - Featured `price_low` - Price (low to high) `price_high` - Price (high to low) `recently_added` - Recently Added `rating_high` - Customer Rating `best_seller` - Best Sellers",
+      "group": "advanced_filters"
+    },
+    "facet": {
+      "description": "Parameter defines the filters to apply. It's a comma-separated list of filter values (e.g., `sub_brand_name_display_s:Duralast,avg_rating_range_ss:2~4 TO *~4 and up` for **Duralast** with **4 stars and up**). Filter values are available in `filters[].options[].value` of the results when include\\_filters is set to `true`.",
+      "group": "advanced_filters"
+    },
+    "min_price": {
+      "type": "number",
+      "description": "Parameter defines the minimum price of the products, in whole US dollars (e.g., `20`).",
+      "group": "advanced_filters"
+    },
+    "max_price": {
+      "type": "number",
+      "description": "Parameter defines the maximum price of the products, in whole US dollars (e.g., `50`).",
+      "group": "advanced_filters"
+    },
+    "page": {
+      "type": "number",
+      "description": "Value is used to get results on a specific page. (e.g., `1` (default) is the first page of results, `2` is the 2nd page of results, `3` is the 3rd page of results, etc.).",
+      "group": "pagination"
+    },
+    "ps": {
+      "type": "number",
+      "description": "Parameter defines the number of results per page, between `1` and `100`. It defaults to `24`.",
+      "group": "pagination"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `autozone` to use the AutoZone API engine.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the AutoZone results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    },
+    "include_filters": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to include the `filters` of the search in the JSON response, with the values to use in facet. It can be set to `true` or `false` (default).",
+      "group": "serpapi_parameters"
+    }
+  }
+}

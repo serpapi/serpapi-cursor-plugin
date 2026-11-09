@@ -1,0 +1,94 @@
+{
+  "engine": "doordash",
+  "params": {
+    "q": {
+      "required": true,
+      "description": "Parameter defines the search query. You can use anything that you would use in a regular DoorDash search (e.g., `pizza`, `sushi`, or `milk`), up to 15 words.",
+      "group": "search_query"
+    },
+    "address": {
+      "required": true,
+      "description": "Parameter defines the delivery address to search stores around, like the address set on DoorDash. It can be a street address (e.g., `350 5th Ave, New York, NY 10118`) or a ZIP or postal code (e.g., `10001`). Addresses in the United States, Canada, Australia, and New Zealand are supported. DoorDash matches incomplete addresses and addresses in other countries to a place with the same name (e.g., `Berlin, Germany` finds stores in Berlin, Pennsylvania), so a street address or a ZIP code works best.",
+      "group": "localization"
+    },
+    "store_type": {
+      "type": "select",
+      "options": [
+        "all",
+        "restaurant",
+        "grocery",
+        "retail",
+        "pets",
+        "alcohol",
+        "flowers"
+      ],
+      "description": "Parameter defines the type of stores to search, like the tabs of the DoorDash search page. By default, DoorDash searches all types of stores, except for some product searches, where it picks a type itself (e.g., `pets` for `dog food`). Use `all` to always search all types of stores. Available options: `all` - All `restaurant` - Restaurant `grocery` - Grocery `retail` - Retail `pets` - Pets `alcohol` - Alcohol `flowers` - Flowers",
+      "group": "advanced_filters"
+    },
+    "min_rating": {
+      "type": "select",
+      "options": [
+        "4.5",
+        "4.6",
+        "4.7",
+        "4.8",
+        "4.9"
+      ],
+      "description": "Parameter defines the minimum rating of the stores, like the Ratings filter of DoorDash. Available options: `4.5` - Over 4.5 `4.6` - Over 4.6 `4.7` - Over 4.7 `4.8` - Over 4.8 `4.9` - Over 4.9",
+      "group": "advanced_filters"
+    },
+    "deals": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to only show the stores with deals (e.g., `$5 off on $25+`), like the Deals filter of DoorDash. It can be set to `true` or `false` (default).",
+      "group": "advanced_filters"
+    },
+    "fastest": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to only show the stores delivering the fastest, like the Fastest filter of DoorDash. It can be set to `true` or `false` (default).",
+      "group": "advanced_filters"
+    },
+    "pickup": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to only show the stores offering pickup, with their pickup time and drive time instead of their delivery time and fee, like switching DoorDash from Delivery to Pickup. It can be set to `true` or `false` (default).",
+      "group": "advanced_filters"
+    },
+    "page": {
+      "type": "number",
+      "description": "Parameter defines the page number of the results (e.g., `1` (default) is the first page of results, `2` is the 2nd page of results, etc.). Each page covers 50 stores. With deals, fastest, or min\\_rating, there's a single page, like on DoorDash, which only shows those of its first 50 stores that match them and doesn't load more as you scroll. Searches where DoorDash shows products first (e.g., `dog food`, or with store\\_type set to `retail`, `pets`, or `alcohol`) also have a single page, which can have more than 50 stores.",
+      "group": "pagination"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `doordash` to use the DoorDash API engine.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the DoorDash results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}

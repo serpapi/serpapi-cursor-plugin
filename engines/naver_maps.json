@@ -47,11 +47,11 @@
       "group": "advanced_filters"
     },
     "check_in_date": {
-      "description": "Parameter defines the check-in date. The format is **YYYY-MM-DD** (e.g., `2026-12-02`). It must be used together with check\\_out\\_date. Dates apply to accommodation lists, such as 펜션, 캠핑장, and 글램핑. With dates, Naver Maps only returns the places available for the stay, and `price` is the average nightly price.",
+      "description": "Parameter defines the check-in date. The format is **YYYY-MM-DD** (e.g., `2026-12-08`). It must be used together with check\\_out\\_date. Dates apply to accommodation lists, such as 펜션, 캠핑장, and 글램핑. With dates, Naver Maps only returns the places available for the stay, and `price` is the average nightly price.",
       "group": "dates_and_guests"
     },
     "check_out_date": {
-      "description": "Parameter defines the check-out date. The format is **YYYY-MM-DD** (e.g., `2026-12-04`). It must be used together with check\\_in\\_date, and be later than it.",
+      "description": "Parameter defines the check-out date. The format is **YYYY-MM-DD** (e.g., `2026-12-10`). It must be used together with check\\_in\\_date, and be later than it.",
       "group": "dates_and_guests"
     },
     "adults": {

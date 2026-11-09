@@ -1,0 +1,92 @@
+{
+  "engine": "tiktok_shop",
+  "params": {
+    "q": {
+      "required": true,
+      "description": "Parameter defines the query you want to search. You can use anything that you would use in a regular TikTok Shop search (e.g., `coffee`, `phone case`, or `vitamin c serum`).",
+      "group": "search_query"
+    },
+    "sort": {
+      "type": "select",
+      "options": [
+        "relevance",
+        "best_seller",
+        "newest"
+      ],
+      "description": "Parameter defines the sorting of the results. It defaults to `relevance`. Available options: `relevance` - Relevance `best_seller` - Best sellers `newest` - Newest TikTok Shop's Price low to high and Price high to low options aren't supported: TikTok Shop returns the same products in the same order for both, not sorted by price. Use min\\_price and max\\_price to filter by price instead.",
+      "group": "advanced_filters"
+    },
+    "deals": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to only show products with deals, like TikTok Shop's Deals filter. It can be set to `true` or `false` (default). TikTok Shop applies it loosely and also returns some products without a discount or deal label.",
+      "group": "advanced_filters"
+    },
+    "category_id": {
+      "description": "Parameter defines the categories of the products, like TikTok Shop's Categories filter. It's a comma-separated list of category IDs (e.g., `914824` for Drinks, or `914824,915336` for Drinks and Snacks). Category IDs are available in `filters[].options[].category_id` of the results.",
+      "group": "advanced_filters"
+    },
+    "color_id": {
+      "description": "Parameter defines the colors of the products, like TikTok Shop's Color filter. It's a comma-separated list of color IDs (e.g., `1001063` for Black, or `1001063,1001079` for Black and White). Color IDs are available in `filters[].options[].color_id` of the results.",
+      "group": "advanced_filters"
+    },
+    "min_price": {
+      "type": "number",
+      "description": "Parameter defines the minimum price of the products, as a whole number of US dollars (e.g., `10`). TikTok Shop applies it loosely and also returns some products priced below it, often limited-time deals.",
+      "group": "advanced_filters"
+    },
+    "max_price": {
+      "type": "number",
+      "description": "Parameter defines the maximum price of the products, as a whole number of US dollars (e.g., `50`). TikTok Shop applies it loosely and also returns some products priced above it.",
+      "group": "advanced_filters"
+    },
+    "rating": {
+      "type": "select",
+      "options": [
+        [
+          "4",
+          "4 Stars & Up"
+        ]
+      ],
+      "description": "Parameter defines the minimum rating of the products, like TikTok Shop's Rating filter. Available options: `4` - 4 Stars & Up TikTok Shop applies it slightly loosely and also returns a few products rated below it.",
+      "group": "advanced_filters"
+    },
+    "page": {
+      "type": "number",
+      "description": "Value is used to get results on a specific page. (e.g., `1` (default) is the first page of results, `2` is the 2nd page of results, `3` is the 3rd page of results, etc.). TikTok Shop returns up to 30 results per page, and `serpapi_pagination.next` is only present when there's a next page.",
+      "group": "pagination"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `tiktok_shop` to use the TikTok Shop API engine.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the TikTok Shop results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}

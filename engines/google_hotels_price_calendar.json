@@ -8,12 +8,12 @@
     },
     "start_date": {
       "required": true,
-      "description": "Parameter defines the first date of the price calendar. Each date has the best price of a 1-night stay starting that day. The format is **YYYY-MM-DD**. e.g. `2026-11-03`",
+      "description": "Parameter defines the first date of the price calendar. Each date has the best price of a 1-night stay starting that day. The format is **YYYY-MM-DD**. e.g. `2026-11-09`",
       "group": "advanced_parameters"
     },
     "end_date": {
       "required": true,
-      "description": "Parameter defines the last date of the price calendar. It can't be more than 3 years from now. The format is **YYYY-MM-DD**. e.g. `2027-01-01`",
+      "description": "Parameter defines the last date of the price calendar. It can't be more than 3 years from now. The format is **YYYY-MM-DD**. e.g. `2027-01-07`",
       "group": "advanced_parameters"
     },
     "adults": {

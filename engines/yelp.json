@@ -10,10 +10,6 @@
       "description": "Parameter defines from where you want the search to originate. You can use any location you would use in a regular Yelp search. Following location formats are acceptable: - 706 Mission St, San Francisco, CA - San Francisco, CA - San Francisco, CA 94103 - 94103",
       "group": "geographic_location"
     },
-    "l": {
-      "description": "Parameter defines the distance (map radius) or neighborhoods you want to search in. You can use our JSON endpoint to fetch values for either of them. Values for distance are accessible through `filters.distance` (e.g. value for 'Bird's-eye View' is `g:-97.86003112792969,30.21635515266855,-97.65541076660156,30.394199462058317`). You can also specify neighborhoods to search in. Values for neighborhoods are accessible through `filters.neighborhoods`. The value for a single neighborhood is formed in the next order: `filters.neighborhoods.value` + `filters.neighborhoods.list[0].value` (e.g. `p:TX:Austin::Downtown`). You can also set value for multiple neighborhoods: `filters.neighborhoods.value` + `[filters.neighborhoods.list[0].value,filters.neighborhoods.list[1].value]` (e.g. `p:TX:Austin::[Downtown,East_Austin]`). Distance and neighborhoods values can't be used together.",
-      "group": "geographic_location"
-    },
     "yelp_domain": {
       "type": "select",
       "options": [
@@ -62,10 +58,6 @@
       "description": "Parameter defines the Yelp domain to use. It defaults to `yelp.com`. Head to the Yelp domains for a full list of supported Yelp domains.",
       "group": "localization"
     },
-    "cflt": {
-      "description": "Parameter is used to define a category. It can be used alongside find\\_desc parameter to refine the search.",
-      "group": "advanced_yelp_parameters"
-    },
     "sortby": {
       "type": "select",
       "options": [
@@ -76,13 +68,13 @@
       "description": "Parameter is used for sorting results. Available options: `recommended` - Recommended (default) `rating` - Highest Rated `review_count` - Most Reviewed",
       "group": "advanced_yelp_parameters"
     },
-    "attrs": {
-      "description": "Parameter is used for refining results. You can add more filters like 'price', 'features', etc. to your search. You can use our JSON endpoint to fetch values. Values for filters are accessible through `filters` (e.g. value for filtering results by 'No Smoking' is `Smoking.no`). You can also use multiple values: `filters.features[0].value,filters.features[1].value` (e.g. `GoodForKids,DogsAllowed`)",
-      "group": "advanced_yelp_parameters"
-    },
     "start": {
       "type": "number",
-      "description": "Parameter defines the result offset. It skips the given number of results. It's used for pagination. (e.g., `0` (default) is the first page of results, `10` is the 2nd page of results, `20` is the 3rd page of results, etc.).",
+      "description": "Parameter defines the result offset. It skips the given number of results. It's used for pagination. (e.g., `0` (default) is the first page of results, `10` is the 2nd page of results, `20` is the 3rd page of results). Yelp returns at most 25 results for a search, so the maximum value is `24`. Yelp ranks results differently for each visitor, so pages requested with start can repeat or miss results. Use next\\_page\\_token to keep the ranking of the first page.",
+      "group": "pagination"
+    },
+    "next_page_token": {
+      "description": "Parameter defines the next page token. It is used for retrieving the next page of results with the same ranking as the first page. Up to `10` results are returned per page. Duplicate results can occasionally appear across pages because Yelp reorders results between requests. The same happens on yelp.com. The next page token can be found in the SerpApi JSON response: `serpapi_pagination -> next_page_token`. It can't be used together with the start parameter.",
       "group": "pagination"
     }
   },

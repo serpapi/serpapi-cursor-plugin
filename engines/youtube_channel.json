@@ -219,6 +219,7 @@
     "tab": {
       "type": "select",
       "options": [
+        "home",
         "videos",
         "shorts",
         "streams",
@@ -226,7 +227,7 @@
         "playlists",
         "posts"
       ],
-      "description": "Parameter defines the channel content tab to retrieve. Available options: `videos` - Videos (default), returned in `videos_results` `shorts` - Shorts, returned in `shorts_results` `streams` - Live streams, returned in `streams_results` `podcasts` - Podcasts, returned in `podcasts_results` `playlists` - Playlists, returned in `playlists_results` `posts` - Community posts, returned in `posts_results` Can't be used together with search\\_query. `podcasts` and `posts` can't be used together with sort.",
+      "description": "Parameter defines the channel content tab to retrieve. Available options: `home` - Home, returned in `trailer` and `featured_channels` `videos` - Videos (default), returned in `videos_results` `shorts` - Shorts, returned in `shorts_results` `streams` - Live streams, returned in `streams_results` `podcasts` - Podcasts, returned in `podcasts_results` `playlists` - Playlists, returned in `playlists_results` `posts` - Community posts, returned in `posts_results` Can't be used together with search\\_query. `home`, `podcasts` and `posts` can't be used together with sort.",
       "group": "advanced_youtube_channel_parameters"
     },
     "sort": {
@@ -238,7 +239,7 @@
         "dd",
         "lad"
       ],
-      "description": "Parameter defines the sorting order. Available options depend on tab: videos / shorts / streams: `latest` - Latest (default) `popular` - Popular `oldest` - Oldest playlists: `dd` - Date added (newest) (default) `lad` - Last video added sort can't be used with search\\_query or `tab=podcasts` or `tab=posts`.",
+      "description": "Parameter defines the sorting order. Available options depend on tab: videos / shorts / streams: `latest` - Latest (default) `popular` - Popular `oldest` - Oldest playlists: `dd` - Date added (newest) (default) `lad` - Last video added sort can't be used with search\\_query or `tab=home` or `tab=podcasts` or `tab=posts`.",
       "group": "advanced_youtube_channel_parameters"
     },
     "search_query": {

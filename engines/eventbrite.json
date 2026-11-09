@@ -1,0 +1,151 @@
+{
+  "engine": "eventbrite",
+  "params": {
+    "q": {
+      "description": "Parameter defines the query you want to search (e.g., `jazz`, `yoga`, or `tech meetup`). It works like Eventbrite's search box: some queries, like `comedy`, return only the matching events, while others, like `jazz`, return all the events of the place with the best matches first. You can't tell in advance which kind a query is. Without q, the search returns all the events of the place. To get only matching events, use category, event\\_type, price, or the dates. To search for events in a place, use location instead of adding the place to the query.",
+      "group": "search_query"
+    },
+    "location": {
+      "type": "location",
+      "description": "Parameter defines the location to search for events in (e.g., `Austin, Texas, United States`). It's required unless online is set to `true`. If several locations match the location requested, we'll pick the most popular one. Head to the /locations.json API if you need more precise control. It is recommended to specify location at the city level. Either location should be set, or online should be set to `true`.",
+      "group": "geographic_location"
+    },
+    "online": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to search for Eventbrite's online events instead of the events in a location. It can be set to `true` or `false` (default). online and location parameters can't be used together.",
+      "group": "geographic_location"
+    },
+    "date": {
+      "type": "select",
+      "options": [
+        "today",
+        "tomorrow",
+        "this_weekend",
+        "this_week",
+        "next_week",
+        "this_month",
+        "next_month"
+      ],
+      "description": "Parameter defines the dates of the events. It defaults to all current and future events. Available options: `today` - Today `tomorrow` - Tomorrow `this_weekend` - This weekend `this_week` - This week `next_week` - Next week `this_month` - This month `next_month` - Next month To search for events on other dates, use start\\_date and end\\_date instead.",
+      "group": "dates"
+    },
+    "start_date": {
+      "description": "Parameter defines the first day of the date range to search for events in. The format is **YYYY-MM-DD** (e.g., `2026-12-08`). It can't be in the past. It must be used together with end\\_date, and can't be used with date.",
+      "group": "dates"
+    },
+    "end_date": {
+      "description": "Parameter defines the last day of the date range to search for events in. The format is **YYYY-MM-DD** (e.g., `2026-12-10`). It can't be earlier than start\\_date, and can be the same day to search for the events of a single day. It must be used together with start\\_date, and can't be used with date.",
+      "group": "dates"
+    },
+    "category": {
+      "type": "select",
+      "options": [
+        "business_and_professional",
+        "science_and_technology",
+        "music",
+        "film_media_and_entertainment",
+        "performing_and_visual_arts",
+        "fashion_and_beauty",
+        "health_and_wellness",
+        "sports_and_fitness",
+        "travel_and_outdoor",
+        "food_and_drink",
+        "charity_and_causes",
+        "government_and_politics",
+        "community_and_culture",
+        "religion_and_spirituality",
+        "family_and_education",
+        "seasonal_and_holiday",
+        "home_and_lifestyle",
+        "auto_boat_and_air",
+        "hobbies_and_special_interest",
+        "school_activities",
+        "other"
+      ],
+      "description": "Parameter defines the category of the events (e.g., `music`). It takes a single category. Available options: `business_and_professional` - Business & professional `science_and_technology` - Science & technology `music` - Music `film_media_and_entertainment` - Film, media & entertainment `performing_and_visual_arts` - Performing & visual arts `fashion_and_beauty` - Fashion & beauty `health_and_wellness` - Health & wellness `sports_and_fitness` - Sports & fitness `travel_and_outdoor` - Travel & outdoor `food_and_drink` - Food & drink `charity_and_causes` - Charity & causes `government_and_politics` - Government & politics `community_and_culture` - Community & culture `religion_and_spirituality` - Religion & spirituality `family_and_education` - Family & education `seasonal_and_holiday` - Seasonal & holiday `home_and_lifestyle` - Home & lifestyle `auto_boat_and_air` - Auto, boat & air `hobbies_and_special_interest` - Hobbies & special interest `school_activities` - School activities `other` - Other",
+      "group": "advanced_filters"
+    },
+    "event_type": {
+      "type": "select",
+      "options": [
+        "conference",
+        "seminar",
+        "tradeshow",
+        "convention",
+        "festival",
+        "concert",
+        "screening",
+        "dinner",
+        "class",
+        "meeting",
+        "party",
+        "rally",
+        "tournament",
+        "game",
+        "race",
+        "tour",
+        "attraction",
+        "camp",
+        "appearance",
+        "other"
+      ],
+      "description": "Parameter defines the type of the events (e.g., `concert`). It takes a single type. Used together with category, only the events matching both are returned (e.g., `music` concerts). Available options: `conference` - Conference `seminar` - Seminar or talk `tradeshow` - Tradeshow, consumer show, or expo `convention` - Convention `festival` - Festival or fair `concert` - Concert or performance `screening` - Screening `dinner` - Dinner or gala `class` - Class, training, or workshop `meeting` - Meeting or networking event `party` - Party or social gathering `rally` - Rally `tournament` - Tournament `game` - Game or competition `race` - Race or endurance event `tour` - Tour `attraction` - Attraction `camp` - Camp, trip, or retreat `appearance` - Appearance or signing `other` - Other",
+      "group": "advanced_filters"
+    },
+    "price": {
+      "type": "select",
+      "options": [
+        "free",
+        "paid"
+      ],
+      "description": "Parameter defines the price of the events. It takes a single value, and defaults to both free and paid events. Available options: `free` - Free `paid` - Paid",
+      "group": "advanced_filters"
+    },
+    "sort_by": {
+      "type": "select",
+      "options": [
+        "date"
+      ],
+      "description": "Parameter defines the sorting of the events. It defaults to Eventbrite's relevance ranking. Available options: `date` - Date (soonest first)",
+      "group": "advanced_filters"
+    },
+    "page": {
+      "type": "number",
+      "description": "Value is used to get results on a specific page. (e.g., `1` (default) is the first page of results, `2` is the 2nd page of results, `3` is the 3rd page of results, etc.). Eventbrite returns up to 20 events per page, and up to 50 pages (about 1,000 events) per search. A higher page returns an error. To get more events, split the search with narrower dates, category, or event\\_type.",
+      "group": "pagination"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `eventbrite` to use the Eventbrite API engine.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the Eventbrite results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "engine": "glassdoor_reviews",
+  "params": {
+    "employer_id": {
+      "required": true,
+      "description": "Parameter defines the Glassdoor ID of the company (e.g., `9079` for Google). It is the number after `E` in Glassdoor company URLs (e.g., https://www.glassdoor.com/Reviews/Google-Reviews-E9079.htm), and the `employer_id` of our Glassdoor Companies API results.",
+      "group": "search_query"
+    },
+    "location": {
+      "description": "Parameter defines the location of the reviewers' jobs: a city, state or country (e.g., `New York, NY`, `California`, or `India`). We use the first location Glassdoor suggests with that name, or else its first suggestion.",
+      "group": "geographic_location"
+    },
+    "language": {
+      "type": "select",
+      "options": [
+        "en",
+        "fr",
+        "de",
+        "es",
+        "pt",
+        "it",
+        "nl"
+      ],
+      "description": "Parameter defines the language of the reviews. It defaults to `en` (English). Glassdoor's search of q only covers English reviews, so the language doesn't apply to searches with q. Available options: `en` - English `fr` - French `de` - German `es` - Spanish `pt` - Portuguese `it` - Italian `nl` - Dutch",
+      "group": "localization"
+    },
+    "q": {
+      "description": "Parameter defines the text to search for in the reviews, like the review search box of Glassdoor (e.g., `work life balance` or `remote`).",
+      "group": "advanced_filters"
+    },
+    "sort_by": {
+      "type": "select",
+      "options": [
+        "most_relevant",
+        "newest",
+        "oldest",
+        "highest_rating",
+        "lowest_rating"
+      ],
+      "description": "Parameter defines the sorting order of the reviews. It defaults to `most_relevant`. Available options: `most_relevant` - Most relevant `newest` - Newest `oldest` - Oldest `highest_rating` - Highest rating `lowest_rating` - Lowest rating",
+      "group": "advanced_filters"
+    },
+    "rating": {
+      "type": "select",
+      "options": [
+        [
+          "1",
+          "1 star"
+        ],
+        [
+          "2",
+          "2 stars"
+        ],
+        [
+          "3",
+          "3 stars"
+        ],
+        [
+          "4",
+          "4 stars"
+        ],
+        [
+          "5",
+          "5 stars"
+        ]
+      ],
+      "description": "Parameter defines the overall rating of the reviews, from `1` to `5` stars. Searches with q return the reviews rated rating or higher (e.g., `4` for 4 and 5 stars).",
+      "group": "advanced_filters"
+    },
+    "employment_status": {
+      "description": "Parameter defines the employment status of the reviewers. Separate several statuses with a comma (e.g., `intern,contract`). It defaults to `full_time,part_time`. Available options: `full_time` - Full-time `part_time` - Part-time `contract` - Contract `intern` - Intern `freelance` - Freelance",
+      "group": "advanced_filters"
+    },
+    "current_employees": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to only show the reviews of current employees. It can be set to `true` or `false` (default).",
+      "group": "advanced_filters"
+    },
+    "job_title": {
+      "description": "Parameter defines the job title of the reviewers (e.g., `Software Engineer`).",
+      "group": "advanced_filters"
+    },
+    "page": {
+      "type": "number",
+      "description": "Parameter defines the page number of the reviews (e.g., `1` (default) is the first page of reviews, `2` is the 2nd page of reviews, etc.).",
+      "group": "pagination"
+    },
+    "num": {
+      "type": "number",
+      "description": "Parameter defines the number of reviews per page, from `1` to `100`. It defaults to `10`, like on Glassdoor.",
+      "group": "pagination"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `glassdoor_reviews` to use the Glassdoor Reviews API engine.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the Glassdoor Reviews results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}

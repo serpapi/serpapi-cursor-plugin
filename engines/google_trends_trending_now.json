@@ -2085,7 +2085,7 @@
     },
     "hours": {
       "type": "number",
-      "description": "Parameter defines the number of past hours to retrieve the results for. It defaults to `24` (Past 24 hours). The predefined value from Google are the following: -`4` (Past 4 hours) -`24` (Past 24 hours) -`48` (Past 48 hours) -`168` (Past 7 days).",
+      "description": "Parameter defines the number of past hours to retrieve the results for. It defaults to `24` (Past 24 hours). It can be set to: -`4` (Past 4 hours) -`24` (Past 24 hours) -`48` (Past 48 hours) -`168` (Past 7 days).",
       "group": "advanced_parameters"
     },
     "category_id": {

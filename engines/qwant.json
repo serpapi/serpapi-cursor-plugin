@@ -1,0 +1,131 @@
+{
+  "engine": "qwant",
+  "params": {
+    "q": {
+      "required": true,
+      "description": "Parameter defines the query you want to search. You can use anything that you would use in a regular Qwant search.",
+      "group": "search_query"
+    },
+    "locale": {
+      "type": "select",
+      "options": [
+        "es_AR",
+        "en_AU",
+        "de_AT",
+        "nl_BE",
+        "fr_BE",
+        "bg_BG",
+        "en_CA",
+        "fr_CA",
+        "es_CL",
+        "cs_CZ",
+        "da_DK",
+        "et_EE",
+        "fi_FI",
+        "fr_FR",
+        "de_DE",
+        "el_GR",
+        "hu_HU",
+        "en_IE",
+        "he_IL",
+        "it_IT",
+        "en_MY",
+        "es_MX",
+        "nl_NL",
+        "en_NZ",
+        "nb_NO",
+        "pl_PL",
+        "pt_PT",
+        "ro_RO",
+        "ca_ES",
+        "es_ES",
+        "sv_SE",
+        "fr_CH",
+        "de_CH",
+        "it_CH",
+        "th_TH",
+        "en_GB",
+        "en_US"
+      ],
+      "description": "Parameter defines the country and the language of the search, as a Qwant locale made of a language code and a country code (e.g., `en_US` for the United States in English, `fr_FR` for France in French, or `de_CH` for Switzerland in German). It defaults to `en_US`. Available locales: `es_AR` - Argentina (Spanish) `en_AU` - Australia (English) `de_AT` - Austria (German) `nl_BE` - Belgium (Dutch) `fr_BE` - Belgium (French) `bg_BG` - Bulgaria (Bulgarian) `en_CA` - Canada (English) `fr_CA` - Canada (French) `es_CL` - Chile (Spanish) `cs_CZ` - Czechia (Czech) `da_DK` - Denmark (Danish) `et_EE` - Estonia (Estonian) `fi_FI` - Finland (Finnish) `fr_FR` - France (French) `de_DE` - Germany (German) `el_GR` - Greece (Greek) `hu_HU` - Hungary (Hungarian) `en_IE` - Ireland (English) `he_IL` - Israel (Hebrew) `it_IT` - Italy (Italian) `en_MY` - Malaysia (English) `es_MX` - Mexico (Spanish) `nl_NL` - Netherlands (Dutch) `en_NZ` - New Zealand (English) `nb_NO` - Norway (Norwegian) `pl_PL` - Poland (Polish) `pt_PT` - Portugal (Portuguese) `ro_RO` - Romania (Romanian) `ca_ES` - Spain (Catalan) `es_ES` - Spain (Spanish) `sv_SE` - Sweden (Swedish) `fr_CH` - Switzerland (French) `de_CH` - Switzerland (German) `it_CH` - Switzerland (Italian) `th_TH` - Thailand (Thai) `en_GB` - United Kingdom (English) `en_US` - United States (English)",
+      "group": "localization"
+    },
+    "safe": {
+      "type": "select",
+      "options": [
+        [
+          "0",
+          "Off"
+        ],
+        [
+          "1",
+          "Moderate"
+        ],
+        [
+          "2",
+          "Strict"
+        ]
+      ],
+      "description": "Parameter defines the level of filtering for adult content, like Qwant's SafeSearch setting. It can be set to `0` (Off), `1` (Moderate - default), or `2` (Strict).",
+      "group": "advanced_filters"
+    },
+    "freshness": {
+      "type": "select",
+      "options": [
+        "day",
+        "week",
+        "month"
+      ],
+      "description": "Parameter defines how recent the results must be, like Qwant's Freshness filter. It can be set to: `day` - Past 24 hours `week` - Past week `month` - Past month Results of any date are returned by default.",
+      "group": "advanced_filters"
+    },
+    "offset": {
+      "type": "number",
+      "description": "Parameter defines the result offset. It skips the given number of results, like Qwant's \"Display more results\" button. It can be set to `0` (default), `10`, `20`, `30`, or `40`, Qwant's maximum. Qwant returns 10 results on the first page and usually only a few after them: the next pages often have a single result or none.",
+      "group": "pagination"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `qwant` to use the Qwant API engine.",
+      "group": "serpapi_parameters"
+    },
+    "device": {
+      "type": "device",
+      "options": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "description": "Parameter defines the device to use to get the results. It can be set to `desktop` (default) to use a regular browser, `tablet` to use a tablet browser (currently using iPads), or `mobile` to use a mobile browser.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the Qwant results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}

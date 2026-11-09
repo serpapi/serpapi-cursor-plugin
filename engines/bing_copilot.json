@@ -5,6 +5,21 @@
       "required": true,
       "description": "Parameter defines the search query for Bing Copilot. You can use anything that you would use in a regular Bing Copilot search.",
       "group": "search_query"
+    },
+    "location": {
+      "type": "location",
+      "description": "Parameter defines from where you want the search to originate. If several locations match the location requested, we'll pick the most popular one. Head to the /locations.json API if you need more precise control. It is recommended to specify location at the city level in order to simulate a real user’s search. If location is omitted, the search may take on the location of the proxy. Parameter can't be used with lat or lon parameters.",
+      "group": "geographic_location"
+    },
+    "lat": {
+      "type": "number",
+      "description": "Parameter defines a GPS latitude for the search origin. Parameter is required when using lon parameter. Parameter can't be used with location parameter.",
+      "group": "geographic_location"
+    },
+    "lon": {
+      "type": "number",
+      "description": "Parameter defines a GPS longitude for the search origin. Parameter is required when using lat parameter. Parameter can't be used with location parameter.",
+      "group": "geographic_location"
     }
   },
   "common_params": {

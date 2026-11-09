@@ -3,7 +3,7 @@
   "params": {
     "place_id": {
       "required": true,
-      "description": "Parameter defines the Tripadvisor place ID. To extract the ID of a place, you can use our Tripadvisor Search API. NOTE: Tripadvisor has discontinued support for Vacation Rentals. As a result, requesting details for a Vacation Rental `place_id` may return incomplete data or no data at all.",
+      "description": "Parameter defines the Tripadvisor place ID. To extract the ID of a place, you can use our Tripadvisor Search API. NOTE: Tripadvisor has discontinued support for Vacation Rentals. As a result, requesting details for a Vacation Rental `place_id` may return incomplete data or no data at all. NOTE: Cruise ships aren't returned by the Tripadvisor Search API. You can find a ship's `place_id` in the URL of its page. For example, in `https://www.tripadvisor.com/Cruise_Review-d15691866-Reviews-Royal_Caribbean_Symphony_of_the_Seas`, the `place_id` is `15691866`.",
       "group": "search_query"
     },
     "tripadvisor_domain": {

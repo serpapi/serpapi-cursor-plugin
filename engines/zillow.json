@@ -2,7 +2,7 @@
   "engine": "zillow",
   "params": {
     "region_id": {
-      "description": "Parameter defines the Zillow region ID for the area you want to search in. A region can be a city, neighborhood, ZIP code, county, or state (e.g., `10221` for Austin, TX). To find a Region ID, go to Zillow, search for the area you want, and extract the number preceding `_rid` from the resulting URL. For example, in `https://www.zillow.com/homes/10221_rid/`, the Region ID is `10221`. Either region\\_id or map\\_bounds should be set. They can also be used together to restrict a region search to the given map bounds.",
+      "description": "Parameter defines the Zillow region ID for the area you want to search in. A region can be a city, neighborhood, ZIP Code, county, or state (e.g., `10221` for Austin, TX). To find a Region ID, go to Zillow, search for the area you want, and extract the number preceding `_rid` from the resulting URL. For example, in `https://www.zillow.com/homes/10221_rid/`, the Region ID is `10221`. Either region\\_id or map\\_bounds should be set. They can also be used together to restrict a region search to the given map bounds.",
       "group": "search_query"
     },
     "map_bounds": {

@@ -1,0 +1,74 @@
+{
+  "engine": "glassdoor_companies",
+  "params": {
+    "q": {
+      "description": "Parameter defines the name of the company to search for, like the company search box of Glassdoor (e.g., `Google` or `bank`). Without it, Glassdoor lists the companies with the most reviews.",
+      "group": "search_query"
+    },
+    "location": {
+      "description": "Parameter defines the location of the companies' offices: a city, state or country (e.g., `New York, NY`, `Texas`, or `Germany`). We use the first location Glassdoor suggests with that name, or else its first suggestion. Like on Glassdoor, the location doesn't apply to searches with q.",
+      "group": "geographic_location"
+    },
+    "min_rating": {
+      "type": "select",
+      "options": [
+        [
+          "1",
+          "1.0+"
+        ],
+        [
+          "2",
+          "2.0+"
+        ],
+        [
+          "3",
+          "3.0+"
+        ],
+        [
+          "4",
+          "4.0+"
+        ]
+      ],
+      "description": "Parameter defines the minimum overall Glassdoor rating of the companies, from `1` to `4` (e.g., `4` for companies rated 4.0 and up).",
+      "group": "advanced_filters"
+    },
+    "page": {
+      "type": "number",
+      "description": "Parameter defines the page number of the results (e.g., `1` (default) is the first page of results, `2` is the 2nd page of results, etc.). Each page has up to `10` companies.",
+      "group": "pagination"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `glassdoor_companies` to use the Glassdoor Companies API engine.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the Glassdoor Companies results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}

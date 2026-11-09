@@ -1,0 +1,181 @@
+{
+  "engine": "glassdoor_jobs",
+  "params": {
+    "q": {
+      "description": "Parameter defines the job search query, like the job title or keyword search box of Glassdoor (e.g., `software engineer`, `nurse`, or `Python`). q, location, or employer\\_id is required.",
+      "group": "search_query"
+    },
+    "location": {
+      "description": "Parameter defines the location of the jobs, like the location search box of Glassdoor: a city, state or country (e.g., `New York, NY`, `Texas`, `London`, or `Germany`). We use the first location Glassdoor suggests with that name, or else its first suggestion, and the JSON response shows it in `search_information.location`. Without it, Glassdoor searches jobs in the United States. Without q, Glassdoor doesn't search some countries (e.g., `Canada` or `Germany`), and the JSON response has an error. q, location, or employer\\_id is required.",
+      "group": "geographic_location"
+    },
+    "radius": {
+      "type": "select",
+      "options": [
+        [
+          "0",
+          "Within 0"
+        ],
+        [
+          "5",
+          "Within 5"
+        ],
+        [
+          "10",
+          "Within 10"
+        ],
+        [
+          "15",
+          "Within 15"
+        ],
+        [
+          "25",
+          "Within 25"
+        ],
+        [
+          "50",
+          "Within 50"
+        ],
+        [
+          "100",
+          "Within 100"
+        ]
+      ],
+      "description": "Parameter defines the maximum distance from location, in miles in the United States and in kilometers elsewhere, like the Distance filter of Glassdoor. It defaults to `25` for cities. Available options: `0` - Within 0 `5` - Within 5 `10` - Within 10 `15` - Within 15 `25` - Within 25 `50` - Within 50 `100` - Within 100",
+      "group": "geographic_location"
+    },
+    "date_posted": {
+      "type": "select",
+      "options": [
+        [
+          "1",
+          "Last day"
+        ],
+        [
+          "3",
+          "Last 3 days"
+        ],
+        [
+          "7",
+          "Last week"
+        ],
+        [
+          "14",
+          "Last 2 weeks"
+        ],
+        [
+          "30",
+          "Last month"
+        ]
+      ],
+      "description": "Parameter defines the maximum number of days since the jobs were posted. Available options: `1` - Last day `3` - Last 3 days `7` - Last week `14` - Last 2 weeks `30` - Last month",
+      "group": "advanced_filters"
+    },
+    "job_type": {
+      "type": "select",
+      "options": [
+        "full_time",
+        "part_time",
+        "contract"
+      ],
+      "description": "Parameter defines the type of the jobs. Available options: `full_time` - Full-time `part_time` - Part-time `contract` - Contract",
+      "group": "advanced_filters"
+    },
+    "seniority_level": {
+      "type": "select",
+      "options": [
+        "internship",
+        "entry_level",
+        "mid_senior_level",
+        "director",
+        "executive"
+      ],
+      "description": "Parameter defines the seniority level of the jobs. Available options: `internship` - Internship `entry_level` - Entry level `mid_senior_level` - Mid-senior level `director` - Director `executive` - Executive",
+      "group": "advanced_filters"
+    },
+    "remote": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to only show remote jobs, like the Remote only filter of Glassdoor. It can be set to `true` or `false` (default).",
+      "group": "advanced_filters"
+    },
+    "easy_apply": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to only show jobs you can apply to on Glassdoor, like the Easy Apply only filter of Glassdoor. It can be set to `true` or `false` (default).",
+      "group": "advanced_filters"
+    },
+    "min_rating": {
+      "type": "select",
+      "options": [
+        [
+          "1",
+          "1.0+"
+        ],
+        [
+          "2",
+          "2.0+"
+        ],
+        [
+          "3",
+          "3.0+"
+        ],
+        [
+          "4",
+          "4.0+"
+        ]
+      ],
+      "description": "Parameter defines the minimum Glassdoor rating of the companies, from `1` to `4` (e.g., `4` for companies rated 4.0 and up).",
+      "group": "advanced_filters"
+    },
+    "min_salary": {
+      "type": "number",
+      "description": "Parameter defines the minimum yearly salary of the jobs, in the currency of location (e.g., `100000`).",
+      "group": "advanced_filters"
+    },
+    "max_salary": {
+      "type": "number",
+      "description": "Parameter defines the maximum yearly salary of the jobs, in the currency of location (e.g., `150000`).",
+      "group": "advanced_filters"
+    },
+    "employer_id": {
+      "description": "Parameter defines the Glassdoor ID of the company to show the jobs of (e.g., `9079` for Google). It is the number after `E` in Glassdoor company URLs (e.g., https://www.glassdoor.com/Reviews/Google-Reviews-E9079.htm), and the `company_id` of jobs and `employer_id` of our Glassdoor Companies API results. q, location, or employer\\_id is required.",
+      "group": "advanced_filters"
+    },
+    "next_page_token": {
+      "description": "Parameter defines the token of the next page of results. Up to `30` results are returned per page, for up to `30` pages. The token is in the JSON response: `serpapi_pagination.next_page_token`. Use it with the same other parameters as the search it comes from.",
+      "group": "pagination"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `glassdoor_jobs` to use the Glassdoor Jobs API engine.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the Glassdoor Jobs results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}

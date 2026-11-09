@@ -1,0 +1,65 @@
+{
+  "engine": "napa",
+  "params": {
+    "q": {
+      "required": true,
+      "description": "Parameter defines the search query. You can use anything that you would use in a regular NAPA Auto Parts search: a part name, a brand, or a part number, including the part numbers of other brands that NAPA products replace (e.g., `brake cleaner`, `Brakleen`, `CRC 05050`, or `PH3614`). Like on napaonline.com, some queries lead to a category of products (e.g., `oil filter` leads to Oil Filters). The category is returned in `search_information.category`. Others lead to another search (e.g., `generator` leads to `portable generator`), returned in `search_information.showing_results_for`.",
+      "group": "search_query"
+    },
+    "store_id": {
+      "description": "Parameter defines the NAPA Auto Parts store to get the prices, promotions, and availability from. It's the number at the end of the URL of the store page on napaonline.com (e.g., `22706` for `https://www.napaonline.com/en/ca/healdsburg/store/22706`). It defaults to `28693`, a store in Chicago, IL. Prices and availability differ between stores, and only the products available to the store are listed.",
+      "group": "localization"
+    },
+    "sort": {
+      "type": "select",
+      "options": [
+        "relevance",
+        "price_low_to_high",
+        "price_high_to_low",
+        "product_description",
+        "line_abbreviation",
+        "part_number"
+      ],
+      "description": "Parameter defines the sorting of the results. It defaults to `relevance`. Available options: `relevance` - Relevance `price_low_to_high` - Price - low to high `price_high_to_low` - Price - high to low `product_description` - Product description `line_abbreviation` - Product line abbreviation `part_number` - Part number",
+      "group": "advanced_parameters"
+    },
+    "page": {
+      "type": "number",
+      "description": "Value is used to get results on a specific page. (e.g., `1` (default) is the first page of results, `2` is the 2nd page of results, `3` is the 3rd page of results, etc.). NAPA returns up to 12 results per page.",
+      "group": "pagination"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `napa` to use the NAPA API engine.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the NAPA results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}

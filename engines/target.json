@@ -11,7 +11,7 @@
       "group": "localization"
     },
     "delivery_zip": {
-      "description": "Parameter defines the US ZIP code to deliver to (e.g., `10001`). It's used for the shipping dates and the same day delivery availability. It defaults to the location of the store.",
+      "description": "Parameter defines the US ZIP Code to deliver to (e.g., `10001`). It's used for the shipping dates and the same day delivery availability. It defaults to the location of the store.",
       "group": "localization"
     },
     "sort": {

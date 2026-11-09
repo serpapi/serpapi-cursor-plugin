@@ -1,0 +1,118 @@
+{
+  "engine": "amazon_fresh",
+  "params": {
+    "k": {
+      "description": "Parameter defines the query you want to search. You can use anything that you would use in a regular Amazon Fresh search. This parameter can't be used with the node parameter.",
+      "group": "search_query"
+    },
+    "delivery_zip": {
+      "required": true,
+      "description": "Parameter defines the ZIP or postal code of the delivery location. Amazon Fresh shows the products, prices, and delivery options available at that location. For example, `10001` on `amazon.com`, `EC1A 1BB` on `amazon.co.uk`, or `100-0001` on `amazon.co.jp`. ZIP+4 codes aren't supported.",
+      "group": "localization"
+    },
+    "amazon_domain": {
+      "type": "select",
+      "options": [
+        "amazon.it",
+        "amazon.co.jp",
+        "amazon.es",
+        "amazon.co.uk",
+        "amazon.com"
+      ],
+      "description": "Parameter defines the Amazon domain to use. It defaults to `amazon.com`. Amazon Fresh is available on `amazon.com`, `amazon.co.uk`, `amazon.co.jp`, `amazon.it`, and `amazon.es`.",
+      "group": "localization"
+    },
+    "language": {
+      "type": "select",
+      "options": [
+        "amazon.it|it_IT",
+        "amazon.it|en_GB",
+        "amazon.co.jp|ja_JP",
+        "amazon.co.jp|en_US",
+        "amazon.co.jp|zh_CN",
+        "amazon.es|es_ES",
+        "amazon.es|pt_PT",
+        "amazon.es|en_GB",
+        "amazon.co.uk|en_GB",
+        "amazon.com|en_US",
+        "amazon.com|es_US"
+      ],
+      "description": "Parameter defines the language to use for the Amazon Fresh search. It's a locale name represented as \\_. (e.g., on amazon.com `en_US` for English, `es_US` for Spanish, or on amazon.co.jp `ja_JP` for Japanese). Head to Amazon languages for a full list of supported Amazon languages.",
+      "group": "localization"
+    },
+    "s": {
+      "type": "select",
+      "options": [
+        "relevanceblender",
+        "price-asc-rank",
+        "price-desc-rank",
+        "review-rank",
+        "date-desc-rank",
+        "exact-aware-popularity-rank"
+      ],
+      "description": "Parameter is used for sorting results. It defaults to `relevanceblender` (Featured). Available options: `relevanceblender` - Featured `price-asc-rank` - Price: Low to High `price-desc-rank` - Price: High to Low `review-rank` - Avg. Customer Review `date-desc-rank` - Newest Arrivals `exact-aware-popularity-rank` - Best Sellers",
+      "group": "advanced_amazon_parameters"
+    },
+    "node": {
+      "description": "Parameter defines the Amazon Fresh department to browse without a search query. For example, `16318981` for **Fresh Fruits** on `amazon.com`. Department IDs are the `n:` values in `filters.department[].rh` (e.g., `n:16318981`). To switch departments while browsing, change node or follow the department's `serpapi_link`: Amazon ignores departments in rh while node is set. This parameter can't be used with the k parameter.",
+      "group": "advanced_filters"
+    },
+    "rh": {
+      "description": "Parameter defines items filtering based on their attributes. The structure is a list of `key:value` pairs separated by `,`. For example `n:16318981,p_n_program_participation:17428820011` to filter for products in the **Fresh Fruits** department (`n:16318981`) that are **SNAP EBT Eligible** (`p_n_program_participation:17428820011`) on `amazon.com`. Use `p_36:-` for a price range, with prices multiplied by 100 (e.g., `p_36:300-500` for $3.00 to $5.00). Available filters depend on the query and are returned in `filters`, along with a `serpapi_link` to apply each of them.",
+      "group": "advanced_filters"
+    },
+    "dc": {
+      "type": "checkbox",
+      "description": "Parameter defines the exclusion of results from an auto-corrected query when the original query is spelled wrong. It can be set to `true` to exclude these results, or `false` to include them (default).",
+      "group": "advanced_filters"
+    },
+    "page": {
+      "type": "number",
+      "description": "Parameter defines the page number. It's used for pagination. (e.g., `1` (default) is the first page of results, `2` is the 2nd page of results, `3` is the 3rd page of results, etc.).",
+      "group": "pagination"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `amazon_fresh` to use the Amazon Fresh API engine.",
+      "group": "serpapi_parameters"
+    },
+    "device": {
+      "type": "device",
+      "options": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "description": "Parameter defines the device to use to get the results. It can be set to `desktop` (default) to use a regular browser, `tablet` to use a tablet browser (currently using iPads), or `mobile` to use a mobile browser.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the Amazon Fresh results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}

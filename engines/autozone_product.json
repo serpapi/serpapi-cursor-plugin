@@ -1,0 +1,81 @@
+{
+  "engine": "autozone_product",
+  "params": {
+    "product_id": {
+      "required": true,
+      "description": "Parameter defines the AutoZone product to get. The product ID is the number at the end of the product's page URL on AutoZone (e.g., `832327` for `https://www.autozone.com/p/duralast-gold-battery-24f-dlg/832327`).",
+      "group": "search_query"
+    },
+    "store_id": {
+      "description": "Parameter defines the AutoZone store to get the in-store pickup availability for, shown as `in_store_pickup` (e.g., `4254` for 10633 US Hwy 290 E, Manor, TX). The store ID is the store number shown as Store # in AutoZone's store details.",
+      "group": "localization"
+    },
+    "vehicle_year": {
+      "description": "Parameter defines the year of the vehicle to check the fitment of the product for (e.g., `2015`). Parameter requires vehicle\\_make and vehicle\\_model parameters to also be set.",
+      "group": "vehicle"
+    },
+    "vehicle_make": {
+      "description": "Parameter defines the make of the vehicle, as named on AutoZone (e.g., `Toyota`). Parameter requires vehicle\\_year and vehicle\\_model parameters to also be set.",
+      "group": "vehicle"
+    },
+    "vehicle_model": {
+      "description": "Parameter defines the model of the vehicle, as named on AutoZone (e.g., `Camry`). Parameter requires vehicle\\_year and vehicle\\_make parameters to also be set.",
+      "group": "vehicle"
+    },
+    "vehicle_engine": {
+      "description": "Parameter defines the engine of the vehicle, as named on AutoZone (e.g., `4 Cylinders 2.5L GAS`). Parameter requires vehicle\\_year, vehicle\\_make, and vehicle\\_model parameters to also be set.",
+      "group": "vehicle"
+    },
+    "vehicle_submodel": {
+      "description": "Parameter defines the submodel of the vehicle, as named on AutoZone (e.g., `LE`). Without it, products that only fit some submodels have a `fitment: needs_more_info`. Parameter requires vehicle\\_year, vehicle\\_make, and vehicle\\_model parameters to also be set.",
+      "group": "vehicle"
+    },
+    "vehicle_type": {
+      "type": "select",
+      "options": [
+        "car_truck",
+        "motorcycle",
+        "recreational"
+      ],
+      "description": "Parameter defines the type of the vehicle. It defaults to `car_truck` when vehicle\\_year, vehicle\\_make, and vehicle\\_model are set. Available options: `car_truck` - Car & Truck `motorcycle` - Motorcycle `recreational` - Recreational Parameter requires vehicle\\_year, vehicle\\_make, and vehicle\\_model parameters to also be set.",
+      "group": "vehicle"
+    },
+    "vehicle_token": {
+      "description": "Parameter defines the vehicle with the token of an AutoZone Search API search for it, from `search_information.vehicle.vehicle_token` or the `serpapi_link` of its results, without looking the vehicle up on AutoZone. Parameter can't be used together with vehicle\\_year, vehicle\\_make, vehicle\\_model, vehicle\\_engine, vehicle\\_submodel, and vehicle\\_type parameters.",
+      "group": "vehicle"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `autozone_product` to use the AutoZone Product API engine.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the AutoZone Product results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}

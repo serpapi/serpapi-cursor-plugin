@@ -210,11 +210,11 @@
       "group": "localization"
     },
     "check_in_date": {
-      "description": "Parameter defines the check-in date. The format is **YYYY-MM-DD** (e.g., `2026-12-02`). It must be used together with check\\_out\\_date. When dates aren't set, Booking.com returns properties without prices.",
+      "description": "Parameter defines the check-in date. The format is **YYYY-MM-DD** (e.g., `2026-12-08`). It must be used together with check\\_out\\_date. When dates aren't set, Booking.com returns properties without prices.",
       "group": "dates_and_guests"
     },
     "check_out_date": {
-      "description": "Parameter defines the check-out date. The format is **YYYY-MM-DD** (e.g., `2026-12-05`). It must be used together with check\\_in\\_date, and be up to 90 nights later than it.",
+      "description": "Parameter defines the check-out date. The format is **YYYY-MM-DD** (e.g., `2026-12-11`). It must be used together with check\\_in\\_date, and be up to 90 nights later than it.",
       "group": "dates_and_guests"
     },
     "flex_window": {
