@@ -1007,7 +1007,7 @@
       "group": "advanced_google_flights_calendar_parameters"
     },
     "date_range_start": {
-      "description": "Parameter defines the start date of the date range. The format is YYYY-MM-DD. e.g. `2026-11-08` Default to today's date. When fixed\\_outbound\\_date is set to `true`, this date is also used as the outbound date.",
+      "description": "Parameter defines the start date of the date range. The format is YYYY-MM-DD. e.g. `2026-11-16` Default to today's date. When fixed\\_outbound\\_date is set to `true`, this date is also used as the outbound date.",
       "group": "advanced_google_flights_calendar_parameters"
     },
     "date_range_end": {
@@ -1066,6 +1066,45 @@
       "type": "number",
       "description": "Parameter defines the number of infants on lap. Default to 0.",
       "group": "number_of_passengers"
+    },
+    "stops": {
+      "type": "select",
+      "options": [
+        [
+          0,
+          "Any number of stops (default) - 0"
+        ],
+        [
+          1,
+          "Nonstop only - 1"
+        ],
+        [
+          2,
+          "1 stop or fewer - 2"
+        ],
+        [
+          3,
+          "2 stops or fewer - 3"
+        ]
+      ],
+      "description": "Parameter defines the number of stops during the flight. Available options: `0` - Any number of stops (default) `1` - Nonstop only `2` - 1 stop or fewer `3` - 2 stops or fewer",
+      "group": "advanced_filters"
+    },
+    "exclude_airlines": {
+      "description": "Parameter defines the airline codes to be excluded. Split multiple airlines with comma. Each airline code should be a 2-character IATA code consisting of either two uppercase letters or one uppercase letter and one digit. You can search for airline codes on IATA. For example, `UA` is United Airlines. Additionally, alliances can be also included here: `STAR_ALLIANCE` - Star Alliance `SKYTEAM` - SkyTeam `ONEWORLD` - Oneworld exclude\\_airlines and include\\_airlines parameters can't be used together.",
+      "group": "advanced_filters"
+    },
+    "include_airlines": {
+      "description": "Parameter defines the airline codes to be included. Split multiple airlines with comma. Each airline code should be a 2-character IATA code consisting of either two uppercase letters or one uppercase letter and one digit. You can search for airline codes on IATA. For example, `UA` is United Airlines. Additionally, alliances can be also included here: `STAR_ALLIANCE` - Star Alliance `SKYTEAM` - SkyTeam `ONEWORLD` - Oneworld exclude\\_airlines and include\\_airlines parameters can't be used together.",
+      "group": "advanced_filters"
+    },
+    "outbound_times": {
+      "description": "Parameter defines the outbound times range. It's a string containing two (for departure only) or four (for departure and arrival) comma-separated numbers. Each number represents the beginning of an hour. For example: `4,18`: 4:00 AM - 7:00 PM departure `0,18`: 12:00 AM - 7:00 PM departure `19,23`: 7:00 PM - 12:00 AM departure `4,18,3,19`: 4:00 AM - 7:00 PM departure, 3:00 AM - 8:00 PM arrival `0,23,3,19`: unrestricted departure, 3:00 AM - 8:00 PM arrival",
+      "group": "advanced_filters"
+    },
+    "return_times": {
+      "description": "Parameter defines the return times range. It's a string containing two (for departure only) or four (for departure and arrival) comma-separated numbers. Each number represents the beginning of an hour. For example: `4,18`: 4:00 AM - 7:00 PM departure `0,18`: 12:00 AM - 7:00 PM departure `19,23`: 7:00 PM - 12:00 AM departure `4,18,3,19`: 4:00 AM - 7:00 PM departure, 3:00 AM - 8:00 PM arrival `0,23,3,19`: unrestricted departure, 3:00 AM - 8:00 PM arrival Parameter should only be used when type parameter is set to: `1` (Round trip)",
+      "group": "advanced_filters"
     }
   },
   "common_params": {

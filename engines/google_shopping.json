@@ -12,7 +12,7 @@
       "group": "geographic_location"
     },
     "uule": {
-      "description": "Parameter is the Google encoded location you want to use for the search. uule and location parameters can't be used together. For consistent results with coordinates-based uule parameter, a matching gl parameter is required. Head to UULE Generator if you need to convert a location or GPS coordinates to uule parameter, and vice versa.",
+      "description": "Parameter is the Google encoded location you want to use for the search. uule and location parameters can't be used together. For consistent results with coordinates-based uule parameter, a matching gl parameter is required. Head to UULE Generator if you need to convert a location or GPS coordinates to uule parameter, and vice versa. The radius of a coordinates-based uule is not used.",
       "group": "geographic_location"
     },
     "google_domain": {
@@ -285,7 +285,7 @@
         "vg",
         "wf"
       ],
-      "description": "Parameter defines the country to use for the Google search. It's a two-letter country code. (e.g., `us` for the United States, `uk` for United Kingdom, or `fr` for France) Head to the Google Shopping countries for a full list of supported Google Shopping countries.",
+      "description": "Parameter defines the country to use for the Google search. It's a two-letter country code. (e.g., `us` for the United States, `uk` for United Kingdom, or `fr` for France) Head to the Google Shopping countries for a full list of supported Google Shopping countries. When location is a country or a state, it defaults to the country of the location.",
       "group": "localization"
     },
     "hl": {

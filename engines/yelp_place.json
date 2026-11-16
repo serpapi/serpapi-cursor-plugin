@@ -57,7 +57,7 @@
     "business_alert": {
       "required": false,
       "type": "checkbox",
-      "description": "Set parameter to `true` to include business alert information when available. It defaults to `false`.",
+      "description": "Set parameter to `true` to include business alert information when available. It defaults to `false`. Business alerts are temporarily unavailable. With this parameter, `place_results` are returned without `business_alert`.",
       "group": "advanced_parameters"
     },
     "full_menu": {

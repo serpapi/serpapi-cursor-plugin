@@ -85,7 +85,7 @@
         "amazon.co.uk|en_GB",
         "amazon.com|en_US",
         "amazon.com|es_US",
-        "amazon.com.mx|pt_MX"
+        "amazon.com.mx|es_MX"
       ],
       "description": "Parameter defines the language to use for the Amazon search. It's a locale name represented as \\_. (e.g., on amazon.com `en_US` for English, `es_US` for Spanish, or on amazon.co.jp `ja_JP` for Japanese). Head to Amazon languages for a full list of supported Amazon languages.",
       "group": "localization"

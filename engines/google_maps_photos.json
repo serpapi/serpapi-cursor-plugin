@@ -658,11 +658,11 @@
       "group": "localization"
     },
     "category_id": {
-      "description": "Parameter defines the ID of a category. You can find the value of an ID inside the `categories` array, using our Google Maps Photos API. The number, and the type of categories can vary between places.",
+      "description": "Parameter defines the ID of a category. The number, and the type of categories can vary between places, and a search returns no results for a category the place doesn't have. Common categories: `CgIgAQ` - All (default) `CgIgARICGAI` - Latest `CgIgARICCAQ` - Videos `CgIgARICEAE` - By owner `CgIgARICEAI` - From visitors `CgIgARICCAI` - Street View & 360° `CgIYIQ` - Menu `CgIYIA` - Food & drink `CgIYIg` - Vibe `CgIYEA` - Rooms `CgIYFA` - Amenities `CgIYEw` - Exterior `CgIYEg` - Inside Other category IDs are supported as well.",
       "group": "advanced_google_maps_photos_parameters"
     },
     "next_page_token": {
-      "description": "Parameter defines the next page token. It is used for retrieving the next page results. `20` results are returned per page.",
+      "description": "Parameter defines the next page token. It is used for retrieving the next page results. `10` results are returned per page.",
       "group": "pagination"
     }
   },

@@ -87,13 +87,17 @@
         "amazon.co.uk|en_GB",
         "amazon.com|en_US",
         "amazon.com|es_US",
-        "amazon.com.mx|pt_MX"
+        "amazon.com.mx|es_MX"
       ],
       "description": "Parameter defines the language to use for the Amazon search. It's a locale name represented as \\_. (e.g., on amazon.com `en_US` for English, `es_US` for Spanish, or on amazon.co.jp `ja_JP` for Japanese). Head to Amazon languages for a full list of supported Amazon languages.",
       "group": "localization"
     },
     "delivery_zip": {
-      "description": "ZIP Postal code. To filter the shipping products by a selected area.",
+      "description": "ZIP Postal code. To filter the shipping products by a selected area. This parameter can't be used with `amazon.ae`, `amazon.sa`, or `amazon.eg` domains. Use the delivery\\_city parameter instead.",
+      "group": "advanced_amazon_parameters"
+    },
+    "delivery_city": {
+      "description": "City name (e.g. `Dubai`) where delivery location is city-based rather than ZIP/postal code. Filters shipping products by the selected area. Supported only on `amazon.ae`, `amazon.sa`, and `amazon.eg` domains. Use the delivery\\_zip parameter for other domains.",
       "group": "advanced_amazon_parameters"
     },
     "shipping_location": {

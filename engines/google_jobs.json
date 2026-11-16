@@ -12,7 +12,7 @@
       "group": "geographic_location"
     },
     "uule": {
-      "description": "Parameter is the Google encoded location you want to use for the search. uule and location parameters can't be used together. For consistent results with coordinates-based uule parameter, a matching gl parameter is required. Head to UULE Generator if you need to convert a location or GPS coordinates to uule parameter, and vice versa.",
+      "description": "Parameter is the Google encoded location you want to use for the search. uule and location parameters can't be used together. For consistent results with coordinates-based uule parameter, a matching gl parameter is required. Head to UULE Generator if you need to convert a location or GPS coordinates to uule parameter, and vice versa. The radius of a coordinates-based uule is not used.",
       "group": "geographic_location"
     },
     "google_domain": {
@@ -315,7 +315,7 @@
         "zm",
         "zw"
       ],
-      "description": "Parameter defines the country to use for the Google Jobs search. It's a two-letter country code. (e.g., `us` for the United States, `uk` for United Kingdom, or `fr` for France) Head to the Google Jobs countries page for a full list of supported Google Jobs countries.",
+      "description": "Parameter defines the country to use for the Google Jobs search. It's a two-letter country code. (e.g., `us` for the United States, `uk` for United Kingdom, or `fr` for France) Head to the Google Jobs countries page for a full list of supported Google Jobs countries. When location is set, it defaults to the country of the location, if Google Jobs supports that country.",
       "group": "localization"
     },
     "hl": {
@@ -966,7 +966,7 @@
         "zh-tw",
         "zu-za"
       ],
-      "description": "Parameter defines the language to use for the Google Jobs search. It's a two or three-letter language code. (e.g., `en` for English, `es` for Spanish, or `fr` for French), optionally followed by a two-letter or three-digit region code (e.g., `en-gb` for British English, or `es-419` for Latin American Spanish). Head to the Google languages page for a full list of supported Google languages.",
+      "description": "Parameter defines the language to use for the Google Jobs search. It's a two or three-letter language code. (e.g., `en` for English, `es` for Spanish, or `fr` for French), optionally followed by a two-letter or three-digit region code (e.g., `en-gb` for British English, or `es-419` for Latin American Spanish). Head to the Google languages page for a full list of supported Google languages. Searches fall back to English (`en`) when Google has no Google Jobs page in the requested or default language, such as Polish or Romanian. Send `hl=en` to skip the extra tries.",
       "group": "localization"
     },
     "next_page_token": {

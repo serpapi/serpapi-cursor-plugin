@@ -1,0 +1,103 @@
+{
+  "engine": "brave_images",
+  "params": {
+    "q": {
+      "required": true,
+      "description": "Parameter defines the query you want to search. You can use anything that you would use in a regular Brave Images search.",
+      "group": "search_query"
+    },
+    "country": {
+      "type": "select",
+      "options": [
+        "ar",
+        "au",
+        "at",
+        "be",
+        "br",
+        "ca",
+        "cl",
+        "cn",
+        "dk",
+        "fi",
+        "fr",
+        "de",
+        "gr",
+        "hk",
+        "in",
+        "id",
+        "it",
+        "jp",
+        "kr",
+        "my",
+        "mx",
+        "nl",
+        "nz",
+        "no",
+        "pl",
+        "pt",
+        "ph",
+        "ru",
+        "sa",
+        "sg",
+        "za",
+        "es",
+        "se",
+        "ch",
+        "tw",
+        "tr",
+        "gb",
+        "us"
+      ],
+      "description": "Parameter defines the country to search from. It's a two-letter country code (e.g., `us` (default) for the United States, `gb` for the United Kingdom, or `fr` for France). Head to the Brave countries page for a full list of supported Brave countries.",
+      "group": "localization"
+    },
+    "safe_search": {
+      "type": "select",
+      "options": [
+        "off",
+        "moderate",
+        "strict"
+      ],
+      "description": "Parameter defines the level of filtering for adult content. Brave filters it with `moderate` when it isn't set. Available options: `off` - Off `moderate` - Moderate `strict` - Strict",
+      "group": "advanced_filters"
+    },
+    "spelling": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to fix the spelling of misspelled queries, like Brave. It can be set to `true` (default) to search for the spelling fix (e.g., `minecraft mods` for `minecarft modz`), as shown in `search_information.spelling_fix`, or `false` to search for the query as typed, like Brave's Search instead for link.",
+      "group": "advanced_filters"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `brave_images` to use the Brave Images API engine.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the Brave Images results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}

@@ -86,13 +86,17 @@
         "amazon.co.uk|en_GB",
         "amazon.com|en_US",
         "amazon.com|es_US",
-        "amazon.com.mx|pt_MX"
+        "amazon.com.mx|es_MX"
       ],
       "description": "Parameter defines the language to use for the Amazon search. It's a locale name represented as \\_. (e.g., on amazon.com `en_US` for English, `es_US` for Spanish, or on amazon.co.jp `ja_JP` for Japanese). Head to Amazon languages for a full list of supported Amazon languages.",
       "group": "localization"
     },
     "delivery_zip": {
-      "description": "ZIP Postal code. To filter the shipping products by a selected area.",
+      "description": "ZIP Postal code. To filter the shipping products by a selected area. This parameter can't be used with `amazon.ae`, `amazon.sa`, or `amazon.eg` domains. Use delivery\\_city parameter instead.",
+      "group": "advanced_amazon_parameters"
+    },
+    "delivery_city": {
+      "description": "City name (e.g. `Dubai`) for `amazon.ae`, `amazon.sa`, and `amazon.eg` domains, where delivery location is city-based rather than ZIP/postal code. Filters shipping products by the selected area. This parameter can't be used with other domains or with the delivery\\_zip parameter.",
       "group": "advanced_amazon_parameters"
     },
     "shipping_location": {
@@ -359,6 +363,10 @@
     },
     "rh": {
       "description": "Parameter defines items filtering based on their attributes. The structure is a list of `key:value` pairs separated by `,`. For example `n:16318031,p_n_cpf_eligible:21512497011,p_72:1248897011` to filter for products in **Coffee** department (`n:16318031`) that are **Climate Pledge Friendly** (`p_n_cpf_eligible:21512497011`) and rated **4 Stars & Up** (`p_72:1248897011`). Head to Amazon Category Nodes for a full list of supported Amazon Categories.",
+      "group": "advanced_filters"
+    },
+    "emi": {
+      "description": "Parameter defines the merchant ID to limit results to items sold by that merchant. For example, `ATVPDKIKX0DER` limits results to items sold by Amazon.com itself on `amazon.com`. Merchant IDs differ between Amazon domains. Sellers' merchant IDs can be found in the `rh` values of seller filters, after `p_6:`.",
       "group": "advanced_filters"
     },
     "dc": {

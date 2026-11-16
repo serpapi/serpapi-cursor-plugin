@@ -30,11 +30,11 @@
       "group": "dates"
     },
     "start_date": {
-      "description": "Parameter defines the first day of the date range to search for events in. The format is **YYYY-MM-DD** (e.g., `2026-12-08`). It can't be in the past. It must be used together with end\\_date, and can't be used with date.",
+      "description": "Parameter defines the first day of the date range to search for events in. The format is **YYYY-MM-DD** (e.g., `2026-12-16`). It can't be in the past. It must be used together with end\\_date, and can't be used with date.",
       "group": "dates"
     },
     "end_date": {
-      "description": "Parameter defines the last day of the date range to search for events in. The format is **YYYY-MM-DD** (e.g., `2026-12-10`). It can't be earlier than start\\_date, and can be the same day to search for the events of a single day. It must be used together with start\\_date, and can't be used with date.",
+      "description": "Parameter defines the last day of the date range to search for events in. The format is **YYYY-MM-DD** (e.g., `2026-12-18`). It can't be earlier than start\\_date, and can be the same day to search for the events of a single day. It must be used together with start\\_date, and can't be used with date.",
       "group": "dates"
     },
     "category": {

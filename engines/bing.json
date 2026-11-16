@@ -106,7 +106,7 @@
         "GB",
         "US"
       ],
-      "description": "Parameter defines the country to search from. It follows the 2-character ISO\\_3166-1 format. (e.g., `us` for United States, `de` for Germany, `gb` for United Kingdom, etc.).",
+      "description": "Parameter defines the country to search from. It follows the 2-character ISO\\_3166-1 format. (e.g., `us` for United States, `de` for Germany, `gb` for United Kingdom, etc.). This parameter and the mkt query parameter are mutually exclusive—do not specify both. For countries with more than one language (e.g. CH, BE, CA, US), use mkt to choose the language.",
       "group": "localization"
     },
     "first": {
