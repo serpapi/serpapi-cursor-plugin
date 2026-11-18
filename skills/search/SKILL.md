@@ -1,32 +1,44 @@
 ---
 name: search
-description: Search Google, Bing, Amazon, Walmart, YouTube, Google Maps, Google Scholar, and 100+ other engines via the SerpApi REST API. Calls the API using curl. Use when the user wants to search the web, find products or prices, look up local businesses, research academic papers, check news, find jobs, compare flights or hotels, analyze SERPs, or retrieve any search engine results.
+description: Search Google, Bing, Amazon, Walmart, YouTube, Google Maps, Google Scholar, and 100+ other engines through SerpApi, using the plugin's SerpApi MCP server or curl. Use when the user wants to search the web, find products or prices, look up local businesses, research academic papers, check news, find jobs, compare flights or hotels, analyze SERPs, or retrieve any search engine results. If access or a key is missing, follow serpapi-setup.
 ---
 
 # SerpApi Search
 
-Search any engine via a single REST endpoint. Each API call costs one search credit.
+Search any engine through SerpApi with the same parameters on either route below. Each API call costs one search credit.
 
-**Important:** Always use `curl` via the Shell tool to call the SerpApi REST API. Do not use WebFetch, WebSearch, or any other HTTP tool.
+## Access
 
-## Setup
+Use the first route that works and keep it for the rest of the task. The user's explicit choice of route overrides this order.
 
-The API key must be set as an environment variable:
+1. **SerpApi MCP server (default).** If the plugin's `serpapi` MCP server exposes a `search` tool, call it. Its key comes from Cursor's plugin settings, so nothing is needed in the shell.
+2. **curl (fallback).** If the MCP tools are unavailable, or `search` returns `Missing API key` or `Invalid SerpApi API key`, use `curl` via the Shell tool with `SERPAPI_API_KEY`. If the variable is not set in the shell, load it from a stored source in the same command as the request, as described in [credentials](../serpapi-setup/references/credentials.md). In PowerShell, call `curl.exe` and read `$env:SERPAPI_API_KEY`; the [cURL guide](../serpapi-setup/references/curl.md) has a recipe for each shell.
+3. **Neither works.** Follow the [serpapi-setup](../serpapi-setup/SKILL.md) skill, discovering it by name if the link is unavailable. Keep the request pending, never ask for the key in chat, and ask before substituting another provider.
 
-```bash
-export SERPAPI_API_KEY="your_key_here"
+Do not use WebFetch, WebSearch, or any other HTTP tool for SerpApi requests.
+
+## Request Pattern
+
+Every search follows the same pattern regardless of engine.
+
+MCP `search` tool, with the parameters inside `params`:
+
+```json
+{"params": {"engine": "ENGINE", "QUERY_PARAM": "QUERY"}, "mode": "compact"}
 ```
 
-If `SERPAPI_API_KEY` is not set, tell the user:
-> Set your SerpApi API key: `export SERPAPI_API_KEY="your_key"` — get one free at https://serpapi.com/manage-api-key
+`mode: "compact"` removes response metadata; omit it for the full response. Do not put `api_key` in `params`.
 
-## API Pattern
-
-Every search follows the same pattern regardless of engine:
+curl:
 
 ```bash
-curl -s "https://serpapi.com/search.json?engine=ENGINE&QUERY_PARAM=QUERY&api_key=$SERPAPI_API_KEY"
+printf '%s' "$SERPAPI_API_KEY" | curl -q -s --get 'https://serpapi.com/search.json' \
+  --data-urlencode 'api_key@-' \
+  --data-urlencode 'engine=ENGINE' \
+  --data-urlencode 'QUERY_PARAM=QUERY'
 ```
+
+The key is piped in, so it never appears in curl's arguments, and curl URL-encodes each value. Keep `-q` first: it makes curl ignore `~/.curlrc`, where a verbose or trace setting would print the key.
 
 The only things that vary per engine are:
 1. The `engine` value
@@ -84,6 +96,8 @@ Pick the engine based on user intent:
 
 Each engine has its own parameters documented in a JSON schema file at `engines/<engine_name>.json` relative to this plugin's root directory. Read the relevant file when you need engine-specific parameter details.
 
+These bundled files are the default source. Only when an engine has no bundled file, read the MCP resource `serpapi://engines/<engine_name>` from the `serpapi` server; `serpapi://engines` lists every engine.
+
 The JSON schema structure:
 - `params`: engine-specific parameters (query, filters, pagination, etc.)
 - `common_params`: shared SerpApi parameters (api_key, device, no_cache, etc.)
@@ -128,25 +142,32 @@ For price comparisons or cross-engine research, query multiple engines sequentia
 
 ```bash
 # Compare prices across Amazon, Walmart, and Google Shopping
-curl -s "https://serpapi.com/search.json?engine=amazon&k=airpods+pro&api_key=$SERPAPI_API_KEY"
-curl -s "https://serpapi.com/search.json?engine=walmart&query=airpods+pro&api_key=$SERPAPI_API_KEY"
-curl -s "https://serpapi.com/search.json?engine=google_shopping&q=airpods+pro&api_key=$SERPAPI_API_KEY"
+printf '%s' "$SERPAPI_API_KEY" | curl -q -s --get 'https://serpapi.com/search.json' \
+  --data-urlencode 'api_key@-' --data-urlencode 'engine=amazon' --data-urlencode 'k=airpods pro'
+printf '%s' "$SERPAPI_API_KEY" | curl -q -s --get 'https://serpapi.com/search.json' \
+  --data-urlencode 'api_key@-' --data-urlencode 'engine=walmart' --data-urlencode 'query=airpods pro'
+printf '%s' "$SERPAPI_API_KEY" | curl -q -s --get 'https://serpapi.com/search.json' \
+  --data-urlencode 'api_key@-' --data-urlencode 'engine=google_shopping' --data-urlencode 'q=airpods pro'
 ```
 
 Consolidate and compare the results for the user.
 
+On the MCP route, make one `search` call per engine with the same parameters.
+
 ## Rules
 
-1. **Always use `curl` via the Shell tool.** Do not use WebFetch, WebSearch, or other HTTP tools.
+1. **Use the SerpApi MCP tools or `curl` via the Shell tool**, in the order under Access. Do not use WebFetch, WebSearch, or other HTTP tools.
 2. **Confirm before searching** when the query or engine choice is ambiguous. Each non-cached call costs one credit.
-3. **Show the curl command** before executing so the user sees exactly what's being called.
+3. **Show the request** before executing, as tool arguments or the curl command, so the user sees exactly what's being called.
 4. **Prefer `google_light`** over `google` for simple web searches.
 5. **Use `no_cache=false`** (the default) to benefit from free cached results.
-6. **URL-encode query parameters** properly. Spaces become `+` or `%20`.
+6. **Let curl encode parameters.** Pass each one as `--data-urlencode 'name=value'` with the value in plain text. MCP `params` values are plain text too.
 7. **Read the engine schema** from `engines/<engine>.json` when you need to look up available parameters for a specific engine.
+8. **On a key or access failure**, stop repeating the call and follow `serpapi-setup`. Never ask for the key in chat.
 
 ## Additional Resources
 
+- Setup and repair: [serpapi-setup](../serpapi-setup/SKILL.md)
 - For practical curl examples, see [examples.md](examples.md)
 - Interactive playground: https://serpapi.com/playground
 - Full API docs: https://serpapi.com/search-api
