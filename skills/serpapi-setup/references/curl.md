@@ -103,4 +103,4 @@ For POSIX, check the saved JSON even after HTTP 200: the API can return an `erro
 
 Keep the response file private. For an error response, use an available local parser to extract the error and redact credentials and URLs before returning it as tool output; do not print the raw body. Preserve the HTTP status and sanitized error for setup's repair path. Inspect only the selected result and status on success. Delete the temporary response after inspection, including after failure (use `rm -- /recorded/absolute/response-path` for POSIX; the PowerShell block already removes its file).
 
-For later searches, change the engine/query and select the result fields needed for the task. See [JSON Restrictor](https://serpapi.com/json-restrictor) and the [search](../../search/SKILL.md) skill's engine table.
+For later searches, change the engine/query and select the result fields needed for the task. See [JSON Restrictor](https://serpapi.com/json-restrictor) and the [serpapi-web-search](../../serpapi-web-search/SKILL.md) skill's engine table.

@@ -37,7 +37,7 @@ Make one small real search with `engine=google_light`, `q=coffee`, or the origin
 2. Require a successful call, valid results, and no API `error`. A connected server, HTTP 200, or exit code 0 alone is insufficient. The coffee probe must return a nonempty organic title and link. Empty results from another query are inconclusive; use the probe if needed.
 3. After repair, repeat the corrected original operation through the same route. A passing probe with a failing task means access works but the task remains unresolved.
 4. Report the route, execution host, credential source/location without its value, checks passed, and anything pending. Keep the retrieval method available for future sessions; do not write a permanent verified flag.
-5. Resume the [search](../search/SKILL.md) skill, discovering it by name if the sibling link is unavailable. If live calls are disallowed or results cannot be inspected, report verification pending.
+5. Resume the original task with the [serpapi-web-search](../serpapi-web-search/SKILL.md) or [serpapi-extract](../serpapi-extract/SKILL.md) skill, discovering it by name if the sibling link is unavailable. If live calls are disallowed or results cannot be inspected, report verification pending.
 
 ## Diagnose failures
 

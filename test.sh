@@ -16,8 +16,9 @@ echo "Checking plugin structure..."
 
 [ -f "$PLUGIN_DIR/.cursor-plugin/plugin.json" ] && pass "plugin.json exists" || fail "plugin.json missing"
 [ -f "$PLUGIN_DIR/.cursor-plugin/marketplace.json" ] && pass "marketplace.json exists" || fail "marketplace.json missing"
-[ -f "$PLUGIN_DIR/skills/search/SKILL.md" ] && pass "SKILL.md exists" || fail "SKILL.md missing"
-[ -f "$PLUGIN_DIR/skills/search/examples.md" ] && pass "examples.md exists" || fail "examples.md missing"
+for f in serpapi-web-search/SKILL.md serpapi-web-search/references/gotchas.md serpapi-web-search/references/recipes.md serpapi-extract/SKILL.md serpapi-extract/references/api.md; do
+    [ -f "$PLUGIN_DIR/skills/$f" ] && pass "$f exists" || fail "$f missing"
+done
 [ -d "$PLUGIN_DIR/engines" ] && pass "engines/ directory exists" || fail "engines/ directory missing"
 [ -f "$PLUGIN_DIR/mcp.json" ] && pass "mcp.json exists" || fail "mcp.json missing"
 
@@ -101,6 +102,54 @@ else
     fail "save-key.sh wrote through a symlinked config directory given with a trailing slash"
 fi
 rm -rf "$HELPER_TMP"
+
+echo ""
+
+# --- Skill links and engine references ---
+echo "Checking skill links and engine references..."
+
+DOC_PROBLEMS=$(python3 - "$PLUGIN_DIR" <<'PY' 2>/dev/null || printf 'links: checker failed\nengines: checker failed\n'
+import glob, os, re, sys
+root = sys.argv[1]
+docs = sorted(glob.glob(f"{root}/skills/**/*.md", recursive=True)) + [f"{root}/README.md"]
+for doc in docs:
+    text = open(doc, encoding="utf-8").read()
+    rel = os.path.relpath(doc, root)
+    for target in re.findall(r"\]\(([^)\s]+)\)", text):
+        if re.match(r"[a-z][a-z0-9+.-]*:", target) or target.startswith("#"):
+            continue
+        path = os.path.normpath(os.path.join(os.path.dirname(doc), target.split("#")[0]))
+        if not os.path.exists(path):
+            print(f"links: {rel} -> {target}")
+    if not rel.startswith("skills"):
+        continue
+    engines = set(re.findall(r'"engine":\s*"([a-z0-9_]+)"', text))
+    engines |= set(re.findall(r"engine=([a-z0-9_]+)", text))
+    column = None
+    for line in text.splitlines():
+        if not line.startswith("|"):
+            column = None
+            continue
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if "Engine" in cells:
+            column = cells.index("Engine")
+        elif column is not None and column < len(cells):
+            engines |= set(re.findall(r"`([a-z0-9_]+)`", cells[column]))
+    for engine in sorted(engines):
+        if not os.path.exists(f"{root}/engines/{engine}.json"):
+            print(f"engines: {rel} names {engine}")
+PY
+)
+if ! printf '%s\n' "$DOC_PROBLEMS" | grep -q '^links:'; then
+    pass "Every relative link in the skills and README resolves"
+else
+    fail "Broken relative links: $(printf '%s\n' "$DOC_PROBLEMS" | grep '^links:' | sed 's/^links: //' | tr '\n' ';')"
+fi
+if ! printf '%s\n' "$DOC_PROBLEMS" | grep -q '^engines:'; then
+    pass "Every engine named in the skills has a bundled schema"
+else
+    fail "Engines without a bundled schema: $(printf '%s\n' "$DOC_PROBLEMS" | grep '^engines:' | sed 's/^engines: //' | tr '\n' ';')"
+fi
 
 echo ""
 

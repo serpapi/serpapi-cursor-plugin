@@ -1,6 +1,6 @@
 # <img src="https://user-images.githubusercontent.com/307597/154772945-1b7dba5f-21cf-41d0-bb2e-65b6eff4aaaf.png" width="30" height="30"/> SerpApi Plugin for Cursor
 
-A [Cursor plugin](https://cursor.com/docs/plugins) that gives Cursor Agent the ability to search Google, Amazon, Walmart, YouTube, Google Maps, Google Scholar, and [100+ other engines](https://serpapi.com/search-engine-apis) through [SerpApi](https://serpapi.com).
+A [Cursor plugin](https://cursor.com/docs/plugins) that gives Cursor Agent the ability to search Google, Amazon, Walmart, YouTube, Google Maps, Google Scholar, and [100+ other engines](https://serpapi.com/search-engine-apis) through [SerpApi](https://serpapi.com). It can also read web pages, list a site's URLs, and crawl pages through SerpApi's [Extract API](https://serpapi.com/extract-api).
 
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Engines](https://img.shields.io/badge/engines-112-blue.svg)](engines/)
@@ -54,28 +54,33 @@ Cursor Agent will automatically use SerpApi when you ask it to search for someth
 > *Compare prices for AirPods Pro on Amazon, Walmart, and eBay*
 >
 > *Find academic papers about transformer architectures published after 2020*
+>
+> *Read https://docs.python.org/3/whatsnew/ and summarize what changed*
 
-Or invoke the skill explicitly:
-
-```
-/search coffee shops near Times Square
-```
-
-You can also attach it as context:
+Or invoke a skill explicitly:
 
 ```
-@search
+/serpapi-web-search coffee shops near Times Square
+/serpapi-extract https://example.com/pricing
+```
+
+You can also attach one as context:
+
+```
+@serpapi-web-search
 ```
 
 ## Features
 
-- **One search skill, all engines** - `/search` covers all 100+ SerpApi engines. Cursor Agent picks the right one based on your intent.
+- **One search skill, all engines** - `/serpapi-web-search` covers all 100+ SerpApi engines. Cursor Agent picks the right one based on your intent.
+- **Page extraction** - `/serpapi-extract` reads a page you give it as Markdown, lists a site's URLs, or crawls a bounded set of pages.
+- **Markdown results** - Searches and extractions ask SerpApi for Markdown, which leaves out response metadata. JSON is used when you need structured data.
 - **MCP included** - Bundles SerpApi's hosted MCP server, so searches need no shell. Falls back to `curl` when the server isn't available.
 - **Guided setup** - `/serpapi-setup` stores your key without it appearing in chat, then verifies a real search.
 - **Always up to date** - Engine parameter schemas are auto-generated and kept fresh by weekly CI.
 - **Auto-invocation** - Cursor Agent detects search-related requests and loads the skill automatically. No need to remember slash commands.
 - **Cost-aware** - Defaults to `google_light` (faster, cheaper) for simple web searches. Confirms before making API calls.
-- **Schema-driven** - The plugin ships a complete engine selection table and JSON schemas for every engine's parameters, so the agent can construct the right API call without guessing.
+- **Schema-driven** - The plugin ships an engine selection table for common intents and JSON schemas for every engine's parameters, so the agent can construct the right API call without guessing.
 
 ## Supported Engines
 
