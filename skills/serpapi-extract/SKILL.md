@@ -26,7 +26,7 @@ MCP `extract` tool:
 {"params": {"url": "https://example.com/article", "output": "md"}}
 ```
 
-Two different settings are called `mode`. `params.mode` is the extraction mode from the table below. The tool's own `mode` argument only controls how a JSON response is trimmed. Do not put `api_key` in `params`.
+Two different settings are called `mode`. `params.mode` is the extraction mode from the table below. The tool's own `mode` argument shapes the response: leave it out, or set `"complete"`, whenever you want JSON. With `"compact"` the tool returns Markdown unless `params.output` is `"json"`, and JSON from a scrape is cut down to its `markdown` and `error` fields. Do not put `api_key` in `params`.
 
 curl:
 
@@ -48,7 +48,7 @@ The key is piped in, so it never appears in curl's arguments. Keep `-q` first so
 | List a site's URLs from its links and sitemaps | `map` | A list of URLs |
 | Follow links and read several pages of one site | `crawl` | Each page's content under its URL |
 
-Use `output=md` in all three modes. Leave `output` unset for JSON when the user wants structured data such as JSON-LD, Open Graph, or meta tags, or when you need `search_metadata.credits_consumed`; the page text is then in the top-level `markdown` field.
+Use `output=md` in all three modes. For JSON, leave `output` unset and, on the MCP route, leave the tool's own `mode` at its default. Ask for JSON when the user wants structured data such as JSON-LD, Open Graph, or meta tags, or when you need `search_metadata.credits_consumed`; the page text is then in the top-level `markdown` field.
 
 ## Limits
 

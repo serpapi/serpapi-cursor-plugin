@@ -1,6 +1,6 @@
 # Extract request examples
 
-Each example is a set of request parameters. On the MCP route, put it inside `params` of the `extract` tool. With curl, send each pair as `--data-urlencode 'name=value'` after the key, as in the skill's request pattern. Parameter definitions and limits are in `engines/extract.json` at the plugin root and in the [Extract API docs](https://serpapi.com/extract-api).
+Each example is a set of request parameters. On the MCP route, put it inside `params` of the `extract` tool and leave the tool's own `mode` argument out: with `"compact"`, the examples that ask for JSON return Markdown instead. With curl, send each pair as `--data-urlencode 'name=value'` after the key, as in the skill's request pattern. Parameter definitions and limits are in `engines/extract.json` at the plugin root and in the [Extract API docs](https://serpapi.com/extract-api).
 
 ## Page content as Markdown
 
