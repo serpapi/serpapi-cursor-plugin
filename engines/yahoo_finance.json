@@ -1,0 +1,76 @@
+{
+  "engine": "yahoo_finance",
+  "params": {
+    "q": {
+      "required": true,
+      "description": "Parameter defines the query you want to search. It can be the symbol of a stock, ETF, index, mutual fund, cryptocurrency, currency, or futures (e.g., `AAPL`).",
+      "group": "search_query"
+    },
+    "yahoo_domain": {
+      "type": "select",
+      "options": [
+        "au",
+        "ca",
+        "de",
+        "es",
+        "espanol",
+        "fr",
+        "hk",
+        "it",
+        "nz",
+        "sg",
+        "uk"
+      ],
+      "description": "Parameter defines the Yahoo! Finance domain to use (e.g., `de` for `de.finance.yahoo.com`). It defaults to `finance.yahoo.com`. The domain sets the region of `market_summary`, `trending_tickers`, and `suggestions`, the format of numbers, and the language of some names and descriptions. The quote's extracted values (e.g., `extracted_price`) are the same on every domain, but other domains often return prices that are several minutes older. Head to the Yahoo! Finance domains page for a full list of supported Yahoo! Finance domains.",
+      "group": "localization"
+    },
+    "window": {
+      "type": "select",
+      "options": [
+        "1D",
+        "5D",
+        "1M",
+        "6M",
+        "YTD",
+        "1Y",
+        "5Y",
+        "MAX"
+      ],
+      "description": "Parameter is used for setting the time range of the graph. It can be set to: `1D` - 1 Day `5D` - 5 Days `1M` - 1 Month `6M` - 6 Months `YTD` - Year to Date `1Y` - 1 Year `5Y` - 5 Years `MAX` - Maximum As Yahoo! Finance has no price for a time without trades, the graph has no point for it. Before and after the regular session, a stock can go several minutes without a trade.",
+      "group": "advanced_yahoo_finance_parameters"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `yahoo_finance` to use the Yahoo! Finance API engine.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the Yahoo! Finance results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}

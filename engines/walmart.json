@@ -10,7 +10,8 @@
       "type": "select",
       "options": [
         "walmart.com",
-        "walmart.com.mx"
+        "walmart.com.mx",
+        "walmart.ca"
       ],
       "description": "Parameter defines the Walmart domain to use. It defaults to `walmart.com`. Head to the Walmart Stores for a full list of supported stores per domain.",
       "group": "localization"
@@ -24,7 +25,7 @@
         "best_match",
         "rating_high"
       ],
-      "description": "Parameter defines sorting. (e.g. `price_low`, `price_high`, `best_seller`, `best_match`, `rating_high`, `new`). **Note:** `best_seller`, `rating_high`, and `new` are not supported for `walmart.com.mx`.",
+      "description": "Parameter defines sorting. (e.g. `price_low`, `price_high`, `best_seller`, `best_match`, `rating_high`, `new`). **Note:** `best_seller`, `rating_high`, and `new` are not supported for `walmart.com.mx`. On `walmart.ca`, Walmart sometimes answers `price_low` with a different set of results, which can leave out the cheapest products or show a product out of price order.",
       "group": "advanced_walmart_parameters"
     },
     "soft_sort": {
@@ -66,7 +67,7 @@
     },
     "page": {
       "type": "number",
-      "description": "Value is used to get the items on a specific page. (e.g., `1` (default) is the first page of results, `2` is the 2nd page of results, `3` is the 3rd page of results, etc.). Maximum page value is `100`.",
+      "description": "Value is used to get the items on a specific page. (e.g., `1` (default) is the first page of results, `2` is the 2nd page of results, `3` is the 3rd page of results, etc.). Maximum page value is `100` (`25` for `walmart.ca`).",
       "group": "pagination"
     }
   },

@@ -3,7 +3,7 @@
   "params": {
     "product_id": {
       "required": true,
-      "description": "Parameter defines the product id you want to search. You can use the specific id of a product that you would like to get the product page of.",
+      "description": "Parameter defines the ID of the application or game to search. You can find the ID from App Store API results, or from the URL of the app. For example, the `product_id` of \"https://apps.apple.com/us/app/the-great-coffee-app/id534220544\" is the long numerical value that comes after \"id\", which is 534220544.",
       "group": "search_query"
     },
     "type": {

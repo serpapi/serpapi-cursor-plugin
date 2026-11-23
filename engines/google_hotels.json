@@ -988,12 +988,12 @@
     },
     "check_in_date": {
       "required": true,
-      "description": "Parameter defines the check-in date. The format is **YYYY-MM-DD**. e.g. `2026-11-17`",
+      "description": "Parameter defines the check-in date. The format is **YYYY-MM-DD**. e.g. `2026-11-24`",
       "group": "advanced_parameters"
     },
     "check_out_date": {
       "required": true,
-      "description": "Parameter defines the check-out date. The format is **YYYY-MM-DD**. e.g. `2026-11-18`",
+      "description": "Parameter defines the check-out date. The format is **YYYY-MM-DD**. e.g. `2026-11-25`",
       "group": "advanced_parameters"
     },
     "adults": {
@@ -1008,6 +1008,11 @@
     },
     "children_ages": {
       "description": "Parameter defines the ages of children. The age range is from `1` to `17`, with children who haven't reached 1 year old being considered as `1`. Example for single child only: `5` Example for multiple children (separated by comma `,`): `5,8,10` The number of children's ages specified must match the children.",
+      "group": "advanced_parameters"
+    },
+    "geo_search": {
+      "type": "checkbox",
+      "description": "Set to `true` to perform the search as a user in the gl country would. Booking providers and their prices then more closely reflect what that user sees on Google Hotels. For the United States, and for countries where this is not available, the search is processed as usual. Default to `false`.",
       "group": "advanced_parameters"
     },
     "sort_by": {

@@ -7,7 +7,7 @@
       "group": "search_query"
     },
     "l": {
-      "description": "Parameter defines the location you want to search jobs in. You can use anything that you would use in the \"Where\" box of a regular Indeed job search (e.g., `New York, NY`, `Austin, TX`, `94103`, or `Remote`).",
+      "description": "Parameter defines the location you want to search jobs in. You can use anything that you would use in the \"Where\" box of a regular Indeed job search (e.g., `New York, NY`, `Austin, TX`, `94103`, or `Remote`). Only locations in the United States are supported.",
       "group": "geographic_location"
     },
     "radius": {
@@ -58,7 +58,7 @@
         "temporary",
         "internship"
       ],
-      "description": "Parameter defines the job type to filter results by. `fulltime` - Full-time `parttime` - Part-time `contract` - Contract `temporary` - Temporary `internship` - Internship",
+      "description": "Parameter defines the job type to filter results by. When few or no jobs match, Indeed fills the page with sponsored jobs of any type (`sponsored: true`). `fulltime` - Full-time `parttime` - Part-time `contract` - Contract `temporary` - Temporary `internship` - Internship",
       "group": "advanced_filters"
     },
     "fromage": {
@@ -87,9 +87,10 @@
     "sort": {
       "type": "select",
       "options": [
+        "relevance",
         "date"
       ],
-      "description": "Parameter defines the sort order of the results. Results are sorted by relevance by default. Set it to `date` to sort by date posted.",
+      "description": "Parameter defines the sort order of the results. It defaults to `relevance`. `relevance` - Relevance `date` - Date",
       "group": "advanced_filters"
     }
   },

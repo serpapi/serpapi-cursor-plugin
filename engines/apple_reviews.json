@@ -3,7 +3,7 @@
   "params": {
     "product_id": {
       "required": true,
-      "description": "Parameter defines the ID of a product you want to get the reviews for. You can find the ID of a product from App Store API json results, You can also get it from the URL of the app. For example `product_id` of \"https://apps.apple.com/us/app/the-great-coffee-app/id534220544\", is the long numerical value that comes after \"id\", 534220544 (default).",
+      "description": "Parameter defines the ID of the application or game to search for reviews. You can find the ID from App Store API results, or from the URL of the app. For example, the `product_id` of \"https://apps.apple.com/us/app/the-great-coffee-app/id534220544\" is the long numerical value that comes after \"id\", which is 534220544.",
       "group": "search_query"
     },
     "country": {

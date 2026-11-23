@@ -1,0 +1,161 @@
+{
+  "engine": "naver_knowledge_in",
+  "params": {
+    "query": {
+      "required": true,
+      "description": "Parameter defines the search query. You can use anything that you would use in a regular Naver Knowledge iN search.",
+      "group": "search_query"
+    },
+    "period": {
+      "description": "Parameter defines the time period for search results. This parameter defaults to `all`. Available options: `all`: search without time restrictions (default), `1h`: 1 hour, `1d`: 1 day, `1w`: 1 week, `1m`: 1 month, `3m`: 3 months, `6m`: 6 months, `1y`: 1 year, Custom date range in the format `fromYYYYMMDDtoYYYYMMDD` (e.g., `from20250801to20250830`).",
+      "group": "advanced_filters"
+    },
+    "answerer": {
+      "type": "select",
+      "options": [
+        [
+          "0",
+          "All (전체)"
+        ],
+        [
+          "1",
+          "eXpert"
+        ],
+        [
+          "2",
+          "Experts (전문가)"
+        ],
+        [
+          "3",
+          "Lawyers (변호사)"
+        ],
+        [
+          "4",
+          "Patent attorneys (변리사)"
+        ],
+        [
+          "5",
+          "Judicial scriveners (법무사)"
+        ],
+        [
+          "6",
+          "Labor attorneys (노무사)"
+        ],
+        [
+          "7",
+          "Accountants (회계사)"
+        ],
+        [
+          "8",
+          "Tax accountants (세무사)"
+        ],
+        [
+          "9",
+          "Doctors (의사)"
+        ],
+        [
+          "10",
+          "Korean medicine doctors (한의사)"
+        ],
+        [
+          "11",
+          "Veterinarians (수의사)"
+        ],
+        [
+          "12",
+          "Pharmacists (약사)"
+        ],
+        [
+          "13",
+          "Nutritionists (영양사)"
+        ],
+        [
+          "14",
+          "Fitness experts (운동전문가)"
+        ],
+        [
+          "15",
+          "Loss adjusters (손해사정사)"
+        ],
+        [
+          "16",
+          "Management consultants (경영지도사)"
+        ],
+        [
+          "17",
+          "Technical consultants (기술지도사)"
+        ],
+        [
+          "18",
+          "Professional engineers (기술사)"
+        ],
+        [
+          "19",
+          "Customs brokers (관세사)"
+        ],
+        [
+          "20",
+          "Knowledge partners (지식파트너)"
+        ],
+        [
+          "21",
+          "Top answerers by field (분야별 지식인)"
+        ],
+        [
+          "22",
+          "Jijon rank and above (지존이상)"
+        ]
+      ],
+      "description": "Parameter defines who answered the questions. This parameter defaults to `0`. Professionals mostly answer questions about their field, so they have the most results for queries in Korean about it (e.g., `3` - Lawyers for `이혼 소송`, divorce lawsuit), and can have few results, or none, for other queries. For some options, Naver may return no results for any query. Available options: `0` - All (전체) `1` - eXpert `2` - Experts (전문가) `3` - Lawyers (변호사) `4` - Patent attorneys (변리사) `5` - Judicial scriveners (법무사) `6` - Labor attorneys (노무사) `7` - Accountants (회계사) `8` - Tax accountants (세무사) `9` - Doctors (의사) `10` - Korean medicine doctors (한의사) `11` - Veterinarians (수의사) `12` - Pharmacists (약사) `13` - Nutritionists (영양사) `14` - Fitness experts (운동전문가) `15` - Loss adjusters (손해사정사) `16` - Management consultants (경영지도사) `17` - Technical consultants (기술지도사) `18` - Professional engineers (기술사) `19` - Customs brokers (관세사) `20` - Knowledge partners (지식파트너) `21` - Top answerers by field (분야별 지식인) `22` - Jijon rank and above (지존이상)",
+      "group": "advanced_filters"
+    },
+    "page": {
+      "type": "number",
+      "description": "Value is used to get results on a specific page. (e.g., `1` (default) is the first page of results, `2` is the 2nd page of results, `3` is the 3rd page of results, etc.). Each page has up to 10 results on desktop, and up to 15 results on mobile and tablet. Naver Knowledge iN returns at most 1,000 results for a query, so up to page `100` on desktop, and up to page `67` on mobile and tablet. Most queries have fewer results, and end on an earlier page.",
+      "group": "pagination"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `naver_knowledge_in` to use the Naver Knowledge iN API engine.",
+      "group": "serpapi_parameters"
+    },
+    "device": {
+      "type": "device",
+      "options": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "description": "Parameter defines the device to use to get the results. It can be set to `desktop` (default) to use a regular browser, `tablet` to use a tablet browser (currently using iPads), or `mobile` to use a mobile browser.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the Naver Knowledge iN results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}

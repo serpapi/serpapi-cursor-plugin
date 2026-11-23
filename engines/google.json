@@ -1261,9 +1261,10 @@
         [
           "18",
           "Forums"
-        ]
+        ],
+        "local_cs"
       ],
-      "description": "This parameter defines the type of Google Search display mode you want to use. Options: `(no selection)` - regular Google Search `web` or `14` - Web results `50` - Google AI Mode API `39` - Google Short Videos API `18` - Google Forums API tbm and udm parameters can't be used together.",
+      "description": "This parameter defines the type of Google Search display mode you want to use. Options: `(no selection)` - regular Google Search `web` or `14` - Web results `50` - Google AI Mode API `39` - Google Short Videos API `18` - Google Forums API `local_cs` or `11` - Google Places Sites API, for the countries its gl parameter supports tbm and udm parameters can't be used together.",
       "group": "search_type"
     },
     "start": {

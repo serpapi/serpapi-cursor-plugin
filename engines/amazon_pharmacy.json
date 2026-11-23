@@ -1,0 +1,93 @@
+{
+  "engine": "amazon_pharmacy",
+  "params": {
+    "k": {
+      "required": true,
+      "description": "Parameter defines the medication you want to search. For example, `Levothyroxine` or `cream`.",
+      "group": "search_query"
+    },
+    "language": {
+      "type": "select",
+      "options": [
+        "en_US",
+        "es_US"
+      ],
+      "description": "Parameter defines the language to use for the search. It can be set to `en_US` (English, default) or `es_US` (Spanish – Translated).",
+      "group": "localization"
+    },
+    "delivery_zip": {
+      "description": "Parameter defines the five-digit US ZIP code to deliver to (e.g., `02108`). Pass it as a string to preserve leading zeroes. Without it, results are for a delivery location in the US. The delivery information is for the ZIP code. For some locations, like Alaska, Hawaii, and Puerto Rico, Amazon Pharmacy doesn't show details, prices, or delivery information.",
+      "group": "advanced_amazon_parameters"
+    },
+    "s": {
+      "type": "select",
+      "options": [
+        "relevancerank",
+        "price-asc-rank",
+        "price-desc-rank",
+        "review-rank",
+        "date-desc-rank",
+        "exact-aware-popularity-rank"
+      ],
+      "description": "Parameter is used for sorting results. Available options: `relevancerank` - Featured (default) `price-asc-rank` - Price: Low to High `price-desc-rank` - Price: High to Low `review-rank` - Avg. Customer Review `date-desc-rank` - Newest Arrivals `exact-aware-popularity-rank` - Best Sellers Amazon Pharmacy returns a different set of results when they're sorted, often a smaller one, and its price order is approximate.",
+      "group": "advanced_amazon_parameters"
+    },
+    "rh": {
+      "description": "Parameter defines how to filter results based on their attributes. The structure is a list of `key:value` pairs separated by `,`. For example, `p_n_feature_fourteen_browse-bin:19763604011` filters for **Generic** medications. Head to Amazon Pharmacy Filters for common filter values. Available filters depend on the query, language, and device and are returned in `filters`. Follow a filter's `serpapi_link` to apply it. Department filters (`n` or `n:...`) are not supported, because searches are scoped to Amazon Pharmacy.",
+      "group": "advanced_filters"
+    },
+    "dc": {
+      "type": "checkbox",
+      "description": "Parameter defines the exclusion of results from an auto-corrected query when the original query is spelled wrong. It can be set to `true` to exclude these results, or `false` to include them (default).",
+      "group": "advanced_filters"
+    },
+    "page": {
+      "type": "number",
+      "description": "Parameter defines the page number. It defaults to `1` and must be an integer greater than or equal to `1`. Follow `serpapi_pagination.next` for the next page of results.",
+      "group": "pagination"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `amazon_pharmacy` to use the Amazon Pharmacy API engine.",
+      "group": "serpapi_parameters"
+    },
+    "device": {
+      "type": "device",
+      "options": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "description": "Parameter defines the device to use to get the results. It can be set to `desktop` (default) to use a regular browser, `tablet` to use a tablet browser (currently using iPads), or `mobile` to use a mobile browser.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the Amazon Pharmacy results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a Markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}
